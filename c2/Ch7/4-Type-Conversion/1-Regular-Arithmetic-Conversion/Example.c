@@ -12,10 +12,10 @@ int main()
     double d = 8.8;
     long double ld = 9.5;
 
-    printf("Before conversion:\nSize of c:%ld | Number of c:%d\n",sizeof(c),c);
+    printf("Before conversion: \nSize of c: %ld | Number of c: %d\n",sizeof(c),c);
 
     i=i+c;
 
-    printf("After conversion:\nSize of c:%ld | Number of c:%d\n",sizeof(c),c);
+    printf("After conversion: \nSize of c: %ld | Number of c: %d\n",sizeof(c),c);
     return 0;
 }
