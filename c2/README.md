@@ -1,6 +1,8 @@
 # Notes for *C Programming: A Modern Approach, 2nd Edition*
 
-At this directory, I will upload my practice result and write my notes here.
+At this directory, I will upload my write my notes here.
+
+My practice results will be in [Practice](./Practice/) directory. Programming questions and notes for questions are [here](./Practice/README.md)
 
 **Noted:** I'm using Chinese version, so some of the text may differ from the original book.
 
@@ -40,7 +42,7 @@ Bool flag; // same as int flag
 
 The compiler treats `Bool` type as synonymous with `int` type. Therefore, `flag` is just a common `int` variable.
 
-#### 7.5.1 The advantages of type definition
+#### 7.5.1 The Advantages of Type Definition
 
 Type definition make the program more readable. For example, we use two variables, `cash_in` and `cash_out` to store the mount of dollars. We declare `Dollars` as: 
 
@@ -55,7 +57,6 @@ Dollars cash_in, cash_out;
 ```
 
 This is more partical than `float cash_in, cash_out` .
-
 
 ## Chapter 8: Array
 
