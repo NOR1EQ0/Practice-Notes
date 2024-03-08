@@ -10,4 +10,14 @@ At this directory, I will upload my practice result and write my notes here.
 
 #### 7.4.4 Forced Type Conversion
 
+Example in book: 
+```c
+float f, frac_part;
+frac_part = f - (int) f;
+```
+
 ## Chapter 8: Array
+
+## Misc
+
+1. `sizeof(var)` return a long unsigned int. So we should format '%ld' expects argument of this type of data.
