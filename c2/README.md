@@ -8,8 +8,6 @@ At this directory, I will upload my practice result and write my notes here.
 
 ### 7.4 Type Conversion
 
-#### 7.4.1 Regular Arithmetic Conversion
-
 #### 7.4.4 Forced Type Conversion
 
 ## Chapter 8: Array
