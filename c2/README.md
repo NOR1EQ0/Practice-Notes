@@ -1,6 +1,6 @@
 # Notes for *C Programming: A Modern Approach, 2nd Edition*
 
-At this directory, I will upload my write my notes here.
+At this directory, I will write my notes here.
 
 My practice results will be in [Practice](./Practice/) directory. Programming questions and notes for questions are [here](./Practice/README.md)
 
