@@ -10,7 +10,7 @@ My English is pool so you may see something realllly weird, such as grammar prob
 
 2. *[C 语言教程 | 菜鸟教程](https://www.runoob.com/cprogramming) (C Language Tutorial | RUNOOB.COM)* by RUNOOB.COM
 
-3. *[牛客网专项练习](https://www.nowcoder.com/exam/intelligent) (Nowcoder Intelligent Exam)* by Nowcoder
+3. *[牛客网在线编程](https://www.nowcoder.com/exam/oj) (Nowcoder Online Programming)* by Nowcoder
 
 4. *[C Tutorial - Learn C Programming Language](https://www.geeksforgeeks.org/c-programming-language/)* by GeeksforGeeks
 
