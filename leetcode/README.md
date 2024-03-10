@@ -4,6 +4,34 @@ At this directory, I will write my notes here.
 
 These questions are machine-translated here, so there may be some texts confusing.
 
+## 2413 Smallest Even Multiple
+
+Finished on June 22, 2023.
+
+### Description
+
+Given a positive integer `n`, it returns the least common multiple of `2` and `n` (a positive integer).
+
+**Example 1:**
+
+> Input: n = 5
+>
+> Output: 10
+>
+> Explanation: The least common multiple of 5 and 2 is 10.
+
+**Example 2:**
+
+> Input: n = 6
+>
+> Output: 6
+>
+> Explanation: The least common multiple of 6 and 2 is 6. Note that a number will be a multiple of itself.
+
+**Tips:**
+
+* `1 <= n <= 150`
+
 ## 2651 Calculate Delayed Arrival Time
 
 Finished on March 9, 2024.
