@@ -47,6 +47,50 @@ char * toLowerCase(char * s){
 }
 ```
 
+## 771 Jewels and Stones
+
+Finished on March 11, 2024.
+
+### Description
+
+You are given the string `jewels` for the type of stones in the stone, and the string `stones` for the stones you own. Each character in `stones` represents a type of stone you have, and you want to know how many of the stones you have are gems.
+
+The letters are case sensitive, so `"a"` and `"A"` are different types of stones.
+
+**Example 1:**
+
+> **Input:** jewels = "aA", stones = "aAAbbbb"
+> 
+> **Output:** 3
+
+**Example 2:**
+
+> **Input:** jewels = "z", stones = "ZZ"
+> 
+> **Output:** 0
+
+**Tip:**
+
+* `1 <= jewels.length, stones.length <= 50`
+* `jewels` and `stones` are made up of English letters only
+* All characters in `jewels` are **unique**
+
+### Answer
+
+```c
+int numJewelsInStones(char* jewels, char* stones) {
+    int a = 0;
+    for (int i = 0; i < strlen(stones); i++) {
+        for (int k = 0; k < strlen(jewels); k++) {
+            if (stones[i] == jewels[k]) {
+                a++;
+            }
+        }
+    }
+    return a;
+}
+```
+
 ## 2235 Add Two Integers
 
 Finished on June 13, 2023. ~~WTF? The number of this question should be exchanged with [the first one](https://leetcode.cn/problems/two-sum)!~~
@@ -222,6 +266,78 @@ Tips:
 
 * `1 <= num, t <= 50`
 
+## 3028 Ant on the Boundary
+
+Finished on March 11, 2024.
+
+### Description
+
+There is an ant on the boundary, which sometimes goes **left** and sometimes **right**.
+
+You are given an array of nonzero integers `nums`. Ants will read the elements of `nums` in order, starting from the first element to the end. At each step, the ant moves according to the current value of the element:
+
+* If `nums[i] < 0`, move **left** by `-nums[i]` units.
+* If `nums[i] > 0`, move **right** by `nums[i]` units.
+
+Returns the number of times the ant **returns** to the boundary.
+
+**Notice:**
+
+* There is infinite space on either side of the boundary.
+* Only if the ants move `| nums [I] |` unit and to check if it is on the border. In other words, if the ant simply crossed the boundary during the movement, it would not be counted.
+
+
+**Example 1:**
+
+> **Input:** nums = [2,3,-5]
+> 
+> **Output:** 1
+> 
+> **Explanation:** After step 1, the ant is 2 units away from the right side of the boundary.
+> 
+> After step 2, the ant is 5 units away from the right side of the boundary.
+> 
+> After step 3, the ant is located on the boundary.
+> 
+> So the answer is 1.
+
+**Example 2:**
+
+> **Input:** nums = [3,2,-3,-4]
+> 
+> **Output:** 0
+> 
+> **Explanation:** After step 1, the ant is 3 units away from the right side of the boundary.
+> 
+> After step 2, the ant is 5 units away from the right side of the boundary.
+> 
+> After step 3, the ant is 2 units away from the right side of the boundary.
+> 
+> After step 4, the ant is 2 units away from the left side of the boundary.
+> 
+> The ant never returns to the boundary, so the answer is 0.
+
+
+**Tips:**
+
+* `1 <= nums.length <= 100`
+* `-10 <= nums[i] <= 10`
+* `nums[i] ! = 0`
+
+### Answer
+
+```c
+int returnToBoundaryCount(int* nums, int numsSize) {
+    int a=0,k=0;
+    for(int i=0;i<numsSize;i++){
+        a+=nums[i];
+        if(a==0)
+        k++;
+    }
+    return k;
+}
+```
+
 ## 3065 Minimum Operations to Exceed Threshold Value I
 
 Finished on March 10, 2024.
@@ -234,7 +350,7 @@ You can remove the smallest element of `nums` in a single operation.
 
 You need to make all the elements of the array greater than or equal to `k`. Please return the **minimum** number of operations required.
 
-Tips:
+**Tips:**
 
 * `1 <= nums.length <= 50`
 * `1 <= nums[i] <= 109`
