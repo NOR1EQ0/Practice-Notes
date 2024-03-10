@@ -23,5 +23,5 @@ I would like to write my notes in corresponding Markdown file in different direc
 |Directory|Content|
 |:----|:----|
 |[c2](./c2/)|Notes for *C Programming: A Modern Approach, 2nd Edition*|
-|[nowcoder](./nowcoder/)|Notes for *Nowcoder Intelligent Exam*|
+|[nowcoder](./nowcoder/)|Notes for *Nowcoder Online Programming*|
 |[leetcode](./leetcode/)|Notes for *LeetCode Problem Set*|

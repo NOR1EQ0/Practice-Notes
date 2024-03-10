@@ -32,6 +32,14 @@ Given a positive integer `n`, it returns the least common multiple of `2` and `n
 
 * `1 <= n <= 150`
 
+### Answer
+
+```c
+int smallestEvenMultiple(int n){
+    return n%2?n*2:n;
+}
+```
+
 ## 2651 Calculate Delayed Arrival Time
 
 Finished on March 9, 2024.
