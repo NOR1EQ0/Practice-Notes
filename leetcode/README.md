@@ -91,11 +91,86 @@ int numJewelsInStones(char* jewels, char* stones) {
 }
 ```
 
+## 1342 Number of Steps to Reduce A Number to Zero
+
+Finished on September 20, 2023.
+
+### Description
+
+Given a non-negative integer `num`, return the number of steps needed to turn it into 0. If the current number is even, you need to divide it by 2; Otherwise, subtract 1.
+
+
+
+**Example 1:**
+
+> **Input:** num = 14
+> 
+> **Output:** 6
+> 
+> **Explanation:**
+> 
+> Step 1) 14 is an even number, divide by 2 to get 7.
+> 
+> Step 2) 7 is odd, subtract 1 to get 6.
+> 
+> Step 3) 6 is an even number, divide by 2 to get 3.
+> 
+> Step 4) 3 is odd, subtract 1 to get 2.
+> 
+> Step 5) 2 is an even number, divide by 2 to get 1.
+> 
+> Step 6) 1 is odd, subtract 1 to get 0.
+
+**Example 2:**
+
+> **Input:** num = 8
+> 
+> **Output:** 4
+> 
+> **Explanation:**
+> 
+> Step 1) 8 is an even number, divide by 2 to get 4.
+> 
+> Step 2) 4 is an even number, divide by 2 to get 2.
+> 
+> Step 3) 2 is an even number, divide by 2 to get 1.
+> 
+> Step 4) 1 is odd, subtract 1 to get 0.
+
+**Example 3:**
+
+> **Input:** num = 123
+> 
+> **Output:** 12
+
+**Tip:**
+
+* `0 <= num <= 10^6`
+
+### Answer
+
+```c
+int numberOfSteps(int num){
+    int i = 0;
+        while (num != 0){
+            if (num % 2 == 0)
+            {
+                num /= 2;
+            }
+            else{
+                num--;
+            }
+            i++;
+        }
+        return i;
+}
+```
+
 ## 2235 Add Two Integers
 
 Finished on June 13, 2023. ~~WTF? The number of this question should be exchanged with [the first one](https://leetcode.cn/problems/two-sum)!~~
 
-## Description
+### Description
 
 You are given two integers `num1` and `num2`, and you return the sum of those integers.
 
@@ -223,7 +298,7 @@ Finished on March 10, 2024.
 
 ### Description
 
-I give you two integers num and t.
+You are given two integers `num` and `t`.
 
 An integer `x` is said to be reachable if it can be made equal to `num` no more than `t` times by performing the following operations:
 
@@ -265,6 +340,14 @@ It can be shown that there is no achievable number greater than 7.
 Tips:
 
 * `1 <= num, t <= 50`
+
+### Answer
+
+```c
+int theMaximumAchievableX(int num, int t){
+    return num+t*2;
+}
+```
 
 ## 3028 Ant on the Boundary
 
