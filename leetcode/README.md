@@ -349,6 +349,76 @@ int theMaximumAchievableX(int num, int t){
 }
 ```
 
+## 2942 Find Words Containing Character
+
+Finished on March 13, 2024.
+
+### Description
+
+You are given an array of strings, `words`, starting at index **0**, and a character, `x`.
+
+You need to return **an array of indices** where the word in the array contains the character `x`.
+
+**Note** that the returned array can be in **any** order.
+
+**Example 1:**
+
+> **Input:** words = ["leet","code"], x = "e"
+> 
+> **Output:** [0,1]
+> 
+> **Explanation:** "e" appears in both words: "l**ee**t" and "cod**e**". So we return the indices 0 and 1.
+
+**Example 2:**
+
+> **Input:** words = ["abc","bcd","aaaa","cbc"], x = "a"
+> 
+> **Output:** [0,2]
+> 
+> **Explanation:** "a" appears in "**a**bc" and "**aaaa**", so we return the indices 0 and 2.
+
+**Example 3:**
+
+> **Input:** words = ["abc","bcd","aaaa","cbc"], x = "z"
+> 
+> **Output:** []
+> 
+> **Explanation:** "z" does not appear in any of the words. So we return an empty array.
+
+
+Tips:
+
+* `1 <= words.length <= 50`
+* `1 <= words[i].length <= 50`
+* `x` is a lowercase English letter.
+* `words[i]` contains only lowercase English letters.
+
+### Answer
+
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* findWordsContaining(char** words, int wordsSize, char x, int* returnSize) {
+    int* arr = malloc(wordsSize * sizeof(int));
+    int index = 0;
+    for (int i = 0; i < wordsSize; i++) {
+        for (int j = 0; j < strlen(words[i]); j++) {
+            if (words[i][j] == x) {
+                arr[index++] = i;
+                break;
+            }
+        }
+    }
+    *returnSize = index;
+    return arr;
+}
+```
+
+### Issues
+
+Now I don't know how to reproduce and run the instances given by LeetCode in a proper way, so [this file](./2942/find-words-containing-character.c) is actually broken. Maybe I'm too dumb :( .
+
 ## 3028 Ant on the Boundary
 
 Finished on March 11, 2024.
