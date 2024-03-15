@@ -406,11 +406,17 @@ char* maximumOddBinaryNumber(char* s) {
 Other (Not yet available)
 
 ```c
+char* maximumOddBinaryNumber(char* s) {
+
+}
 ```
 
 Count the numbers of `1` and `0` and return a temporary array
 
 ```c
+char* maximumOddBinaryNumber(char* s) {
+    
+}
 ```
 
 ## 2942 Find Words Containing Character
