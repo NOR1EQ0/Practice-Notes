@@ -6,9 +6,17 @@ These questions are machine-translated here, so there may be some texts confusin
 
 ## Answer Status
 
+:white_check_mark:Already Done
+
+:black_square_button:In Queue
+
+:white_circle:In Mind
+
 |No.|Question|Status|
 |----|----|----|
 |1|Two Sum|:white_check_mark:|
+|709|To Lower Case|:white_check_mark:|
+|771|Jewels and Stones|:white_check_mark:|
 
 ## 1 Two Sum
 
