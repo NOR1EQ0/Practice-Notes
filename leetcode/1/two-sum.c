@@ -29,5 +29,6 @@ int main(int argc, char const *argv[])
     int target = 9;
     int returnSize;
     int *b = twoSum(nums, numsSize, target, &returnSize);
+    free(b);
     return 0;
 }

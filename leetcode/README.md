@@ -4,9 +4,15 @@ At this directory, I will write my notes here.
 
 These questions are machine-translated here, so there may be some texts confusing.
 
+## Answer Status
+
+|No.|Question|Status|
+|----|----|----|
+|1|Two Sum|:white_check_mark:|
+
 ## 1 Two Sum
 
-Haven't finshed...
+Finished on March 16, 2024.
 
 ### Description
 
@@ -46,6 +52,31 @@ You can return the answers in any order.
 * <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>
 
 * **There will only be one valid answer**
+
+### Answer
+
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    int *arr = malloc(2 * sizeof(int));
+    for (int i = 0; i < numsSize; i++)
+    {
+        for (int j = i + 1; j < numsSize; j++)
+        {
+            if (nums[i] + nums[j] == target)
+            {
+                arr[0] = i;
+                arr[1] = j;
+                break;
+            }
+        }
+    }
+    *returnSize = 2;
+    return arr;
+}
+```
 
 **Advanced:** Can you think of an algorithm with a time complexity less than <code>O(n<sup>2</sup>)</code>?
 
