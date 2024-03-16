@@ -2,7 +2,7 @@
 
 My notes about learning C Language. It will be my stupid past XD. But I won't mind it, because this repository may witness my growing process of learning C language. ~~I may go back on my words XD~~
 
-My English is pool so you may see something realllly weird, such as grammar problems, incorrect collocation of words, the use of wrong terms, and etc.. Just point it out! Every mistake would be my stepping-stone. (even this paragraph is machine-translated... You can see that my English really sucks XD)
+My English is poor so you may see something realllly weird, such as grammar problems, incorrect collocation of words, the use of wrong terms, and etc.. Just point it out! Every mistake would be my stepping-stone. (even this paragraph is machine-translated... You can see that my English really sucks XD)
 
 ## Reference
 

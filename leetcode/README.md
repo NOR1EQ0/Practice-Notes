@@ -4,6 +4,52 @@ At this directory, I will write my notes here.
 
 These questions are machine-translated here, so there may be some texts confusing.
 
+## 1 Two Sum
+
+Haven't finshed...
+
+## Description
+
+Given an array of integers `nums` and an integer target value `target`, find the **two** integers in the array that **sum up to the target value** and return their array indices.
+
+You can assume that there will only be one answer for each input. However, the same array element cannot appear more than once in the answer.
+
+You can return the answers in any order.
+
+**Example 1:**
+
+> **Input:** nums = [2,7,11,15], target = 9
+> 
+> **Output:** [0,1]
+> 
+> **Explanation:** Because nums[0] + nums[1] == 9, return [0, 1].
+
+**Example 2:**
+
+> **Input:** nums = [3,2,4], target = 6
+> 
+> **Output:** [1,2]
+
+**Example 3:**
+
+> **Input:** nums = [3,3], target = 6
+> 
+> **Output:** [0,1]
+
+
+**Tips:**
+
+* `2 <= nums.length <= 104`
+
+* <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>
+
+* <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>
+
+* **There will only be one valid answer**
+
+
+**Advanced:** Can you think of an algorithm with a time complexity less than <code>O(n<sup>2</sup>)</code>?
+
 ## 709 To Lower Case
 
 Finshed on June 27, 2023.
@@ -33,6 +79,7 @@ You are given a string `s`, convert the uppercase letters in the string to the s
 **Tips:**
 
 * `1 <= s.length <= 100`
+
 * `s` consists of printable characters from the ASCII character set
 
 ### Answer
@@ -273,6 +320,7 @@ Note that the time in this problem is in the 24-hour system.
 **Tips:**
 
 * `1 <= arrivaltime < 24`
+
 * `1 <= delayedTime <= 24`
 
 ### Answer
@@ -385,7 +433,9 @@ A string that represents and returns the largest binary odd number that can be g
 **Tips:**
 
 * `1 <= s.length <= 100`
+
 * `s` only consists of `'0'` and `'1'`
+
 * `s` contains at least one `'1'`
 
 ### Answer
@@ -459,8 +509,11 @@ You need to return **an array of indices** where the word in the array contains 
 Tips:
 
 * `1 <= words.length <= 50`
+
 * `1 <= words[i].length <= 50`
+
 * `x` is a lowercase English letter.
+
 * `words[i]` contains only lowercase English letters.
 
 ### Answer
@@ -541,7 +594,9 @@ Returns the number of times the ant **returns** to the boundary.
 **Tips:**
 
 * `1 <= nums.length <= 100`
+
 * `-10 <= nums[i] <= 10`
+
 * `nums[i] ! = 0`
 
 ### Answer
@@ -573,8 +628,11 @@ You need to make all the elements of the array greater than or equal to `k`. Ple
 **Tips:**
 
 * `1 <= nums.length <= 50`
+
 * `1 <= nums[i] <= 109`
+
 * `1 <= k <= 109`
+
 * The input guarantees that at least one subscript `i` such that `nums[i] >= k` exists.
 
 **Example 1:**
