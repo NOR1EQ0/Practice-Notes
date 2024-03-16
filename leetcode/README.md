@@ -6,17 +6,22 @@ These questions are machine-translated here, so there may be some texts confusin
 
 ## Answer Status
 
-:white_check_mark:Already Done
+|No.|Question|Difficulty|Status|Reproduction|
+|----|----|----|----|----|
+|1|Two Sum|Easy|Done|Done|
+|709|To Lower Case|Easy|Done||
+|771|Jewels and Stones|Easy|Done||
+|1342|Number of Steps to Reduce A Number to Zero|Easy|Done||
+|2235|Add Two Integers|Easy|Done||
+|2413|Smallest Even Multiple|Easy|Done||
+|2651|Calculate Delayed Arrival Time|Easy|Done||
+|2769|Find the Maximum Achievable Number|Easy|Done||
+|2864|Maximum Odd Binary Number|Easy|Done||
+|2942|Find Words Containing Character|Easy|Done|Done|
+|3028|Ant on the Boundary|Easy|Done||
+|3065|Minimum Operations to Exceed Threshold Value|Easy|Done||
 
-:black_square_button:In Queue
-
-:white_circle:In Mind
-
-|No.|Question|Status|
-|----|----|----|
-|1|Two Sum|:white_check_mark:|
-|709|To Lower Case|:white_check_mark:|
-|771|Jewels and Stones|:white_check_mark:|
+**Notice:** The difficulty listed here is sorted by LeetCode.
 
 ## 1 Two Sum
 
@@ -61,7 +66,11 @@ You can return the answers in any order.
 
 * **There will only be one valid answer**
 
+**Advanced:** Can you think of an algorithm with a time complexity less than <code>O(n<sup>2</sup>)</code>?
+
 ### Answer
+
+Brute-force travesal
 
 ```c
 /**
@@ -86,7 +95,9 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 }
 ```
 
-**Advanced:** Can you think of an algorithm with a time complexity less than <code>O(n<sup>2</sup>)</code>?
+### Reproduction
+
+File: [./1/two-sum.c](./1/two-sum.c)
 
 ## 709 To Lower Case
 
@@ -576,6 +587,8 @@ int* findWordsContaining(char** words, int wordsSize, char x, int* returnSize) {
 ### Reproduction
 
 File: [./2942/find-words-containing-character.c](./2942/find-words-containing-character.c)
+
+Normative Way: [./2942/normative-reproduction.c](./2942/normative-reproduction.c)
 
 ## 3028 Ant on the Boundary
 
