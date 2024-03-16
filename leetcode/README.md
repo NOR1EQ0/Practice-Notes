@@ -47,7 +47,6 @@ You can return the answers in any order.
 
 * **There will only be one valid answer**
 
-
 **Advanced:** Can you think of an algorithm with a time complexity less than <code>O(n<sup>2</sup>)</code>?
 
 ## 709 To Lower Case
