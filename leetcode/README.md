@@ -6,20 +6,20 @@ These questions are machine-translated here, so there may be some texts confusin
 
 ## Answer Status
 
-|No.|Question|Difficulty|Status|Reproduction|
-|----|----|----|----|----|
-|1|Two Sum|Easy|Done|Done|
-|709|To Lower Case|Easy|Done||
-|771|Jewels and Stones|Easy|Done||
-|1342|Number of Steps to Reduce A Number to Zero|Easy|Done||
-|2235|Add Two Integers|Easy|Done||
-|2413|Smallest Even Multiple|Easy|Done||
-|2651|Calculate Delayed Arrival Time|Easy|Done||
-|2769|Find the Maximum Achievable Number|Easy|Done||
-|2864|Maximum Odd Binary Number|Easy|Done||
-|2942|Find Words Containing Character|Easy|Done|Done|
-|3028|Ant on the Boundary|Easy|Done||
-|3065|Minimum Operations to Exceed Threshold Value|Easy|Done||
+|No.|Question|Tag|Difficulty|Status|Reproduction|
+|----|----|----|----|----|----|
+|1|Two Sum|`array` `hash-table`|Easy|Done|Done|
+|709|To Lower Case|`string`|Easy|Done| |
+|771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
+|1342|Number of Steps to Reduce A Number to Zero|`bit-manipulation` `math`|Easy|Done| |
+|2235|Add Two Integers|`math`|Easy|Done| |
+|2413|Smallest Even Multiple|`math` `number-theory`|Easy|Done| |
+|2651|Calculate Delayed Arrival Time|`math`|Easy|Done| |
+|2769|Find the Maximum Achievable Number|`math`|Easy|Done| |
+|2864|Maximum Odd Binary Number|`greedy` `math` `string`|Easy|Done| |
+|2942|Find Words Containing Character|`array` `string`|Easy|Done|Done|
+|3028|Ant on the Boundary|`array` `prefix-sum` `simulation`|Easy|Done| |
+|3065|Minimum Operations to Exceed Threshold Value|`array`|Easy|Done| |
 
 **Notice:** The difficulty listed here is sorted by LeetCode.
 
