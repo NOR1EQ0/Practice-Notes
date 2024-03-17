@@ -70,7 +70,7 @@ You can return the answers in any order.
 
 ### Answer
 
-Brute-force travesal
+Brute-force traversal
 
 ```c
 /**

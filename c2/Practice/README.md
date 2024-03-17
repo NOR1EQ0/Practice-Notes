@@ -6,7 +6,8 @@
 
     **Answer:** 
 
-    1. The minimum value of `n` is 46341.
+    1. Empty now...
+    <!-- 1. The minimum value of `n` is 46341. -->
 
 2. Modify [`square2.c`](../Chapter-6/3-for-Statement/square2.c) in Section 3 in Chapter 6. pause after every 24 square computation and display:
 
