@@ -15,8 +15,10 @@ These questions are machine-translated here, so there may be some texts confusin
 |2235|Add Two Integers|`math`|Easy|Done| |
 |2413|Smallest Even Multiple|`math` `number-theory`|Easy|Done| |
 |2651|Calculate Delayed Arrival Time|`math`|Easy|Done| |
+|2744|Find Maximum Number of String Pairs|`array` `hash-table` `string` `simulation`|Easy| | |
 |2769|Find the Maximum Achievable Number|`math`|Easy|Done| |
 |2864|Maximum Odd Binary Number|`greedy` `math` `string`|Easy|Done| |
+|2894|Divisible and Non-Divisible Sums Difference|`math`|Easy|Done|Done|
 |2942|Find Words Containing Character|`array` `string`|Easy|Done|Done|
 |3028|Ant on the Boundary|`array` `prefix-sum` `simulation`|Easy|Done| |
 |3065|Minimum Operations to Exceed Threshold Value|`array`|Easy|Done| |
@@ -389,6 +391,13 @@ int findDelayedArrivalTime(int arrivalTime, int delayedTime){
     return (arrivalTime + delayedTime) % 24;
 }
 ```
+
+## 2744 Find Maximum Number of String Pairs
+
+Haven't finished...
+
+### 
+
 ## 2769 Find the Maximum Achievable Number
 
 Finished on March 10, 2024.
@@ -402,8 +411,6 @@ An integer `x` is said to be reachable if it can be made equal to `num` no more 
 * Each operation increments or decrements the value of `x` by one, and optionally increases or decreases the value of `num` by `1`.
 
 Returns the maximum of all achievable numbers. It can be shown that there exists at least one achievable number.
-
-
 
 **Example 1:**
 
@@ -460,8 +467,6 @@ A string that represents and returns the largest binary odd number that can be g
 
 **Note** that the result string **can** contain leading zeros.
 
-
-
 **Example 1:**
 
 > **Input:** s = "010"
@@ -517,6 +522,92 @@ char* maximumOddBinaryNumber(char* s) {
     
 }
 ```
+
+## 2894 Divisible and Non-Divisible Sums Difference
+
+Finished on March 20, 2024.
+
+### Description
+
+You are given two positive integers `n` and `m`.
+
+Let's define two integers `num1` and `num2`, as follows:
+
+* `num1`: The sum of all integers in `[1, n]` that are **not divisible by** `m`.
+
+* `num2`: The sum of all integers in `[1, n]` that are **divisible by** `m`.
+
+Returns the integers `num1-num2`.
+
+**Example 1:**
+
+> **Input:** n = 10, m = 3
+>
+> **Output:** 19
+> 
+> **Explanation:** In this example:
+> 
+> \- Integers in the range [1, 10] that are not divisible by 3 are [1,2,4,5,7,8,10], num1 = The sum of these integers = 37.
+>
+> \- Integers in the range [1, 10] that are divisible by 3 are [3,6,9], num2 = The sum of these integers = 18.
+>
+> Return 37-18 = 19 as the answer.
+
+**Example 2:**
+
+> **Input:** n = 5, m = 6
+> 
+> **Output:** 15
+> 
+> **Explanation:** In this example:
+> 
+> \- Integers in the range [1, 5] that are not divisible by 6 are [1,2,3,4,5], num1 = The sum of these integers = 15.
+> 
+> \- Integers in the range [1, 5] that are divisible by 6 are [], num2 = The sum of these integers = 0.
+> 
+> Returns 15-0 = 15 as the answer.
+
+**Example 3:**
+
+> **Input:** n = 5, m = 1
+>
+> **Output:** -15
+> 
+> **Explanation:** In this example:
+> 
+> \- Integers in the range [1, 5] that are not divisible by 1 are [], num1 = The sum of these integers = 0.
+>
+> \- Integers in the range [1, 5] that are divisible by 1 are [1,2,3,4,5], num2 = The sum of these integers = 15.
+>
+> Return 0-15 = -15 as the answer.
+
+**Tips:**
+
+* `1 <= n, m <= 1000`
+
+### Answer
+
+```c
+int differenceOfSums(int n, int m)
+{
+    int num1 = 0, num2 = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if(i%m==0){
+            num2+=i;
+        }
+        else
+        {
+            num1+=i;
+        }
+    }
+    return num1-num2;
+}
+```
+
+### Reproduction
+
+File: [./2894/differentOfSums.c](./2894/differentOfSums.c)
 
 ## 2942 Find Words Containing Character
 
