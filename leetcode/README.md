@@ -9,6 +9,7 @@ These questions are machine-translated here, so there may be some texts confusin
 |No.|Question|Tag|Difficulty|Status|Reproduction|
 |----|----|----|----|----|----|
 |1|Two Sum|`array` `hash-table`|Easy|Done|Done|
+|35|Search Insert Position|`array` `binary-search`|Easy| | |
 |709|To Lower Case|`string`|Easy|Done| |
 |771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
 |1342|Number of Steps to Reduce A Number to Zero|`bit-manipulation` `math`|Easy|Done| |
@@ -100,6 +101,16 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 ### Reproduction
 
 File: [./1/two-sum.c](./1/two-sum.c)
+
+## 35 Search Insert Position
+
+Haven't finished...
+
+### Description
+
+### Answer
+
+### Reproduction
 
 ## 709 To Lower Case
 
@@ -396,7 +407,13 @@ int findDelayedArrivalTime(int arrivalTime, int delayedTime){
 
 Haven't finished...
 
-### 
+### Description
+
+### Answer
+
+### Reproduction
+
+FIle: [./2744/maximumNumberOfStringPairs.c](./2744/maximumNumberOfStringPairs.c)
 
 ## 2769 Find the Maximum Achievable Number
 
