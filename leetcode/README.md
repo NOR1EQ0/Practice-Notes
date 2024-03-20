@@ -9,7 +9,7 @@ These questions are machine-translated here, so there may be some texts confusin
 |No.|Question|Tag|Difficulty|Status|Reproduction|
 |----|----|----|----|----|----|
 |1|Two Sum|`array` `hash-table`|Easy|Done|Done|
-|35|Search Insert Position|`array` `binary-search`|Easy| | |
+|35|Search Insert Position|`array` `binary-search`|Easy|Done|Done|
 |709|To Lower Case|`string`|Easy|Done| |
 |771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
 |1342|Number of Steps to Reduce A Number to Zero|`bit-manipulation` `math`|Easy|Done| |
@@ -104,13 +104,71 @@ File: [./1/two-sum.c](./1/two-sum.c)
 
 ## 35 Search Insert Position
 
-Haven't finished...
+Finished on March 20, 2024.
 
 ### Description
 
+Given a sorted array and a target value, find the target value in the array and return its index. If the target value does not exist in the array, the position at which it will be inserted in order is returned.
+
+You must use an `O(log n)` algorithm.
+
+**Example 1:**
+
+> Input: nums = [1,3,5,6], target = 5
+> 
+> Output: 2
+
+**Example 2:**
+
+> **Input:** nums = [1,3,5,6], target = 2
+> 
+> **Output:** 1
+
+**Example 3:**
+
+> **Input:** nums = [1,3,5,6], target = 7
+> 
+> **Output:** 4
+
+**Tips:**
+
+* <code>1 <= nums.length <= 10<sup>4</sup></code>
+
+* <code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>
+
+* `nums` is an array with **no duplicates** in **ascending order**
+
+* <code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>
+
 ### Answer
 
+```c
+int searchInsert(int *nums, int numsSize, int target)
+{
+    int left = 0, right = numsSize - 1, mid;
+    if (target > nums[numsSize - 1])
+    {
+        return numsSize;
+    }
+    while (left < right)
+    {
+        mid = (left + right) / 2;
+        if (nums[mid] >= target)
+        {
+            right = mid;
+        }
+        else
+        {
+            left = mid + 1;
+        }
+    }
+    return left;
+}
+```
+
 ### Reproduction
+
+File: [./35/searchInsert.c](./35/searchInsert.c)
 
 ## 709 To Lower Case
 
@@ -408,6 +466,63 @@ int findDelayedArrivalTime(int arrivalTime, int delayedTime){
 Haven't finished...
 
 ### Description
+
+You are given an array of **different** strings, `words`, starting at index **0**.
+
+We say that the strings `words[i]` and `words[j]` match if they meet the following conditions:
+
+* The string `words[i]` is the reverse of `words[j]`.
+
+* `0 <= i < j < words.length`
+
+Return the **maximum** number of matches in the words `array`.
+
+Note that each string is matched at most once.
+
+**Example 1:**
+
+> **Input:** words = ["cd","ac","dc","ca","zz"]
+> 
+> **Output:** 2
+> 
+> **Explanation:** In this example, we can match 2 pairs of strings by:
+> 
+> \- We match the 0th string to the 2nd since the reverse string of word[0] is "dc" and is equal to words[2].
+> 
+> \- We match the first string to the third because the reverse string for word[1] is "ca" and is equal to words[3].
+> 
+> It can be shown that the maximum number of matches is two.
+
+**Example 2:**
+
+> **Input:** words = ["ab","ba","cc"]
+> 
+> **Output:** 1
+> 
+> **Explanation:** In this example, we can match 1 pair of strings by:
+> 
+> \- We match the zerth string to the first string because the reverse string "ab" of words[1] is equal to words[0].
+> 
+> It can be shown that the maximum number of matches is one.
+
+**Example 3:**
+
+> **Input:** words = ["aa","ab"]
+> 
+> **Output:** 0
+> 
+> **Explanation:** In this example, we cannot match any strings.
+
+
+**Tips:**
+
+* 1 <= words.length <= 50
+
+* words[i].length == 2
+
+* words contains different strings.
+
+* words[i] contains only lowercase English letters.
 
 ### Answer
 

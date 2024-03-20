@@ -3,32 +3,31 @@
 
 int searchInsert(int *nums, int numsSize, int target)
 {
-    int back = numsSize - 1;
-    int front = 0;
-    int position = 0;
-    for (; front<back;)
+    int left = 0, right = numsSize - 1, mid;
+    if (target > nums[numsSize - 1])
     {
-        if (nums[front] == target)
-        {
-            position = front;
-            break;
-        }
-        else if (nums[back] == target)
-        {
-            position = back;
-            break;
-        }
-        front++;
-        back--;
+        return numsSize;
     }
-    return position;
+    while (left < right)
+    {
+        mid = (left + right) / 2;
+        if (nums[mid] >= target)
+        {
+            right = mid;
+        }
+        else
+        {
+            left = mid + 1;
+        }
+    }
+    return left;
 }
 
 int main()
 {
     int nums[4] = {1, 3, 5, 6};
     int numsSize = sizeof(nums) / sizeof(int);
-    int target = 5;
+    int target = 7;
     int result = searchInsert(nums, numsSize, target);
     printf("Array: [1, 3, 5, 6]\nTarget: 5\nExpected Output: 2\n");
     printf("Result: %d\n", result);
