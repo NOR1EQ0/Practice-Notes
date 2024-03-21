@@ -3,12 +3,29 @@
 
 int lengthOfLongestSubstring(char *s)
 {
-    int tmp = 0, length = 0, head = 0;
-    for (int a=0;s[a];a++){
-        if(tmp==0&&head==0){
+    int left = 0, right = 0, length = 0;
+    while (s[right])
+    {
+        if (left != right)
+        {
+            if (s[left] == s[right])
+            {
+                length=right-left-1;
+                left = right;
+            }
+        }
+        else
+        {
+            if (right-left-1>=length)
+            {
+                length=right-left-1;
+            }
             
         }
+        
+        right++;
     }
+    return length;
 }
 
 int main()
