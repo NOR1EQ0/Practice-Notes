@@ -115,9 +115,9 @@ You must use an `O(log n)` algorithm.
 
 **Example 1:**
 
-> Input: nums = [1,3,5,6], target = 5
+> **Input:** nums = [1,3,5,6], target = 5
 > 
-> Output: 2
+> **Output:** 2
 
 **Example 2:**
 
