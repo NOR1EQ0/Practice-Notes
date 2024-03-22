@@ -9,6 +9,7 @@ These questions are machine-translated here, so there may be some texts confusin
 |No.|Question|Tag|Difficulty|Status|Reproduction|
 |----|----|----|----|----|----|
 |1|Two Sum|`array` `hash-table`|Easy|Done|Done|
+|3|Longest Substring without Repeating Characters|`hash-table` `string` `sliding-windows`|Medium| | |
 |35|Search Insert Position|`array` `binary-search`|Easy|Done|Done|
 |709|To Lower Case|`string`|Easy|Done| |
 |771|Jewels and Stones|`hash-table` `string`|Easy|Done| |

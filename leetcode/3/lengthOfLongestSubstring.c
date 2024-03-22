@@ -8,21 +8,20 @@ int lengthOfLongestSubstring(char *s)
     {
         if (left != right)
         {
-            if (s[left] == s[right])
+            if ((s[left] == s[right]) || (s[right] == s[right - 1]))
             {
-                length=right-left-1;
+                length = right - left;
                 left = right;
             }
         }
         else
         {
-            if (right-left-1>=length)
+            if (right - left >= length)
             {
-                length=right-left-1;
+                length = right - left - 1;
             }
-            
         }
-        
+
         right++;
     }
     return length;
@@ -30,7 +29,7 @@ int lengthOfLongestSubstring(char *s)
 
 int main()
 {
-    char s[] = "pwwkew";
+    char s[] = "abcabcbb";
     int length = lengthOfLongestSubstring(s);
     printf("String: %s\nExpected Output: 3\nResult: %d", s, length);
     return 0;
