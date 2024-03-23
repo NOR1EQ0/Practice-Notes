@@ -9,7 +9,7 @@ These questions are machine-translated here, so there may be some texts confusin
 |No.|Question|Tag|Difficulty|Status|Reproduction|
 |----|----|----|----|----|----|
 |1|Two Sum|`array` `hash-table`|Easy|Done|Done|
-|3|Longest Substring without Repeating Characters|`hash-table` `string` `sliding-windows`|Medium| | |
+|3|Longest Substring without Repeating Characters|`hash-table` `string` `sliding-windows`|Medium|Done| |
 |35|Search Insert Position|`array` `binary-search`|Easy|Done|Done|
 |709|To Lower Case|`string`|Easy|Done| |
 |771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
@@ -102,6 +102,94 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 ### Reproduction
 
 File: [./1/two-sum.c](./1/two-sum.c)
+
+## 3 Longest Substring without Repeating Characters
+
+Finished on March 23, 2024.
+
+### Description
+
+Given a string s, find the length of **longest substring** in which there are no repeated characters.
+
+**Example 1:**
+
+> **Input:** s = "abcabcbb"
+> 
+> **Output:** 3
+> 
+> **Explanation:** Because the longest substring with no repeated characters is "abc", it has length 3.
+
+**Example 2:**
+
+> **Input:** s = "bbbbb"
+> 
+> **Output:** 1
+> 
+> **Explanation:** Because the longest substring with no repeated characters is "b", its length is 1.
+
+**Example 3:**
+
+> **Input:** s = "pwwkew"
+> 
+> **Output:** 3
+> 
+> **Explanation:** Because the longest substring with no repeated characters is "wke", its length is 3.
+> 
+> Note that your answer must be the length of the **substring**; "pwke" is a *subsequency*, not a substring.
+
+**Tips:**
+
+* <code>0 <= s.length <= 5 * 10<sup>4</sup></code>
+
+* `s` consists of English letters, numbers, symbols and Spaces
+
+### Answer
+
+First commission:
+
+```c
+int lengthOfLongestSubstring(char *s)
+{
+    int left = 0, right = 0, length = 0;
+    while (s[right])
+    {
+        if (right - left >= length)
+        {
+            length = right - left;
+        }
+        int repeat = 0;
+        for (int i = left; i < right; i++)
+        {
+            if (s[i] == s[right])
+            {
+                repeat = 1;
+                break;
+            }
+        }
+        if (repeat)
+        {
+            left++;
+        }
+        else if (s[left] == s[right] || s[right] == s[right - 1])
+        {
+            left = right++;
+        }
+        else
+        {
+            right++;
+        }
+    }
+    if (right - left >= length)
+    {
+        length = right - left;
+    }
+    return length;
+}
+```
+
+### Reproduction
+
+First commission: [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c)
 
 ## 35 Search Insert Position
 
