@@ -11,13 +11,15 @@ These questions are machine-translated here, so there may be some texts confusin
 |1|Two Sum|`array` `hash-table`|Easy|Done|Done|
 |3|Longest Substring without Repeating Characters|`hash-table` `string` `sliding-windows`|Medium|Done| |
 |35|Search Insert Position|`array` `binary-search`|Easy|Done|Done|
+|322|Coin Change|`breadth-first-search` `array` `dynamic-programming`|Medium|Delay| |
+|518|Coin Change II|`array` `dynamic-programming`|Medium|Delay| |
 |709|To Lower Case|`string`|Easy|Done| |
 |771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
 |1342|Number of Steps to Reduce A Number to Zero|`bit-manipulation` `math`|Easy|Done| |
 |2235|Add Two Integers|`math`|Easy|Done| |
 |2413|Smallest Even Multiple|`math` `number-theory`|Easy|Done| |
 |2651|Calculate Delayed Arrival Time|`math`|Easy|Done| |
-|2744|Find Maximum Number of String Pairs|`array` `hash-table` `string` `simulation`|Easy| | |
+|2744|Find Maximum Number of String Pairs|`array` `hash-table` `string` `simulation`|Easy|Idle| |
 |2769|Find the Maximum Achievable Number|`math`|Easy|Done| |
 |2864|Maximum Odd Binary Number|`greedy` `math` `string`|Easy|Done| |
 |2894|Divisible and Non-Divisible Sums Difference|`math`|Easy|Done|Done|
@@ -145,7 +147,7 @@ Given a string s, find the length of **longest substring** in which there are no
 
 ### Answer
 
-First commission:
+First submission:
 
 ```c
 int lengthOfLongestSubstring(char *s)
@@ -189,7 +191,7 @@ int lengthOfLongestSubstring(char *s)
 
 ### Reproduction
 
-First commission: [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c)
+First commission: [./3/firstSubmission.c](./3/firstSubmission.c)
 
 ## 35 Search Insert Position
 
@@ -258,6 +260,62 @@ int searchInsert(int *nums, int numsSize, int target)
 ### Reproduction
 
 File: [./35/searchInsert.c](./35/searchInsert.c)
+
+## 322 Coin Change
+
+Click [here](#518-coin-change-ii) to see the next part of **Coin Change**.
+
+Haven't finished...
+
+### Description
+
+You are given an array of integers, `coins`, representing coins of different denominations. And an integer `amount`, which represents the total amount.
+
+Calculate and return **the minimum number of coins** needed to round up the total. If no combination of coins makes up the total amount, `-1` is returned.
+
+You can think of an infinite number of each kind of coin.
+
+**Example 1:**
+
+> **Input:** coins = `[1, 2, 5]`, amount = `11`
+> 
+> **Output:** `3`
+> 
+> **Explanation:** 11 = 5 + 5 + 1
+
+**Example 2:**
+
+> **Input:** coins = `[2]`, amount = `3`
+> 
+> **Output:** -1
+
+**Example 3:**
+
+> **Input:** coins = [1], amount = 0
+> 
+> **Output:** 0
+
+Tips:
+
+* `1 <= coins.length <= 12`
+
+* <code>1 <= coins[i] <= 2<sup>31</sup> - 1</code>
+
+* <code>0 <= amount <= 10<sup>4</sup></code>
+
+### Answer
+
+*Empty*
+
+### Reproduction
+
+*Empty*
+
+## 518 Coin Change II
+
+Click [here](#322-coin-change) to see the previous part of **Coin Change II**.
+
+Havent't finished...
 
 ## 709 To Lower Case
 
