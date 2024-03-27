@@ -6,24 +6,27 @@ At this directory, I will write my notes here.
 
 |No.|Question|Tag|Difficulty|Status|Reproduction|
 |----|----|----|----|----|----|
-|1|Two Sum|`array` `hash-table`|Easy|Done|Done|
-|3|Longest Substring Without Repeating Characters|`hash-table` `string` `sliding-windows`|Medium|Done| |
+|1|Two Sum|`Array` `Hash Table`|Easy|Done|Done|
+|3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |35|Search Insert Position|`array` `binary-search`|Easy|Done|Done|
-|322|Coin Change|`breadth-first-search` `array` `dynamic-programming`|Medium|Delay| |
-|518|Coin Change II|`array` `dynamic-programming`|Medium|Delay| |
-|709|To Lower Case|`string`|Easy|Done| |
-|771|Jewels and Stones|`hash-table` `string`|Easy|Done| |
-|1342|Number of Steps to Reduce a Number to Zero|`bit-manipulation` `math`|Easy|Done| |
-|2235|Add Two Integers|`math`|Easy|Done| |
-|2413|Smallest Even Multiple|`math` `number-theory`|Easy|Done| |
-|2651|Calculate Delayed Arrival Time|`math`|Easy|Done| |
-|2744|Find Maximum Number of String Pairs|`array` `hash-table` `string` `simulation`|Easy|Idle| |
-|2769|Find the Maximum Achievable Number|`math`|Easy|Done| |
-|2864|Maximum Odd Binary Number|`greedy` `math` `string`|Easy|Done| |
-|2894|Divisible and Non-divisible Sums Difference|`math`|Easy|Done|Done|
-|2942|Find Words Containing Character|`array` `string`|Easy|Done|Done|
-|3028|Ant on the Boundary|`array` `prefix-sum` `simulation`|Easy|Done| |
-|3065|Minimum Operations to Exceed Threshold Value|`array`|Easy|Done| |
+|66|Plus One|`Array` `Math`|Easy| | |
+|322|Coin Change|`breadth-first-search` `Array` `dynamic-programming`|Medium|Delay| |
+|518|Coin Change II|`Array` `dynamic-programming`|Medium|Delay| |
+|709|To Lower Case|`String`|Easy|Done| |
+|771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
+|1342|Number of Steps to Reduce a Number to Zero|`bit-manipulation` `Math`|Easy|Done| |
+|2235|Add Two Integers|`Math`|Easy|Done| |
+|2413|Smallest Even Multiple|`Math` `number-theory`|Easy|Done| |
+|2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
+|2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `simulation`|Easy|Idle| |
+|2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
+|2864|Maximum Odd Binary Number|`greedy` `Math` `String`|Easy|Done| |
+|2894|Divisible and Non-divisible Sums Difference|`Math`|Easy|Done|Done|
+|2942|Find Words Containing Character|`Array` `String`|Easy|Done|Done|
+|3028|Ant on the Boundary|`Array` `prefix-sum` `simulation`|Easy|Done| |
+|3065|Minimum Operations to Exceed Threshold Value|`Array`|Easy|Done| |
+
+<!-- Note: change the tag display style -->
 
 **Notice:** The difficulty listed here is sorted by LeetCode.
 
