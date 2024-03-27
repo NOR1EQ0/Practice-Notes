@@ -6,6 +6,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
 {
     int *tmp = (int *)malloc((digitsSize + 1) * sizeof(int));
     memset(tmp, NULL, sizeof(tmp));
+    
 }
 
 int main()
