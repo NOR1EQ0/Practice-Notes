@@ -12,7 +12,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
     }
     for (int i = digitsSize; i > 0; i--)
     {
-        if (tmp[i] + 1 == 10)
+        if (tmp[i] + 1 >= 10)
         {
             tmp[i] = 0;
             tmp[i - 1]++;
@@ -20,6 +20,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
     }
     *returnSize = tmp[0]==0 ? digitsSize : digitsSize + 1;
     int *arr = (int *)malloc(*returnSize * sizeof(int));
+    memset(arr,0,sizeof(arr));
     if (*returnSize == digitsSize)
     {
         for (int i = 0; i < *returnSize; i++)
@@ -40,7 +41,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
 
 int main()
 {
-    int digits[5] = {9, 9};
+    int digits[2] = {9, 9};
     int digitsSize = sizeof(digits) / sizeof(digits[0]);
     int returnSize;
     int *result = plusOne(digits, digitsSize, &returnSize);
