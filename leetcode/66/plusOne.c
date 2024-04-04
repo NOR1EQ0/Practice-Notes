@@ -5,22 +5,46 @@
 int *plusOne(int *digits, int digitsSize, int *returnSize)
 {
     int *tmp = (int *)malloc((digitsSize + 1) * sizeof(int));
-    memset(tmp, 0, sizeof(tmp));
-    for (int i = 0; i < digitsSize + 1; i++)
+    memset(tmp, 0, (digitsSize + 1) * sizeof(int));
+    for (int i = 0; i < digitsSize; i++)
     {
         tmp[i + 1] = digits[i];
     }
     for (int i = digitsSize; i > 0; i--)
     {
-        if (tmp[i] + 1 >= 10)
+        if (i == digitsSize)
         {
-            tmp[i] = 0;
-            tmp[i - 1]++;
+            if (tmp[i] + 1 >= 10)
+            {
+                tmp[i] = 0;
+                tmp[i - 1]++;
+            }
+            else
+            {
+                tmp[i]++;
+                break;
+            }
         }
+        else
+        {
+        }
+        // if (tmp[i] + 1 >= 10)
+        // {
+        //     tmp[i] = 0;
+        //     tmp[i - 1]++;
+        // }
+        // else if (i == digitsSize)
+        // {
+        //     tmp[i]++;
+        // }
+        // else
+        // {
+        //     continue;
+        // }
     }
-    *returnSize = tmp[0]==0 ? digitsSize : digitsSize + 1;
+    *returnSize = tmp[0] == 0 ? digitsSize : digitsSize + 1;
     int *arr = (int *)malloc(*returnSize * sizeof(int));
-    memset(arr,0,sizeof(arr));
+    memset(arr, 0, *returnSize * sizeof(int));
     if (*returnSize == digitsSize)
     {
         for (int i = 0; i < *returnSize; i++)
@@ -32,7 +56,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
     {
         for (int i = 0; i < *returnSize; i++)
         {
-            arr[i] = tmp[i];
+            memcpy(arr, tmp, *returnSize * sizeof(int));
         }
     }
     free(tmp);
