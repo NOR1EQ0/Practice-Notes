@@ -11,6 +11,7 @@ At this directory, I will write my notes here.
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
 |66|Plus One|`Array` `Math`|Easy| | |
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
+|434|Number of Segments in a String|`string`|Easy|Done|Delay|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
@@ -34,7 +35,7 @@ Optimization List:
 
 |No.|Optimization|Status|Comment / Barrier|
 |----|----|----|----|
-|3|Use pointers and remove redundant code|Stucked in LeetCode test|**Access violation**<br>Even [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c) can be compiled with GCC without warnings and run on my Ubuntu system in my virtual machine. But obviously, access violation is a big problem.<br>Even if I already know that, but it seems that I may write some wrong expressions in the 15th row. Maybe I shouldn use `if`, not ternary operator. But I don't think this change will solve access violation. Maybe I should malloc and maintain a place for `*(right-1)`? But that's weired...<br>I shouldn't write such a long comment in a table here XD|
+|3|Use pointers and remove redundant code|Stucked in LeetCode test|**Access violation**<br>Even [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c) can be compiled with GCC without warnings and run on my Ubuntu system in my virtual machine. But obviously, access violation is a big problem.<br>Even if I already know that, but it seems that I may write some wrong expressions in the 15th row. Maybe I shouldn use `if`, not ternary operator. But I don't think this change will solve access violation. Maybe I should malloc and maintain a place for `*(right-1)`? But that's weired...<br>I shouldn't write such a long comment in this table here XD|
 
 ## 1 Two Sum
 
@@ -317,6 +318,57 @@ You may assume that you have an infinite number of each kind of coin.
 ### Reproduction
 
 *Empty*
+
+## 434 Number of Segments in a String
+
+Finished on April 7, 2024.
+
+### Description
+
+Given a string `s`, return *the number of segments in the string*.
+
+A **segment** is defined to be a contiguous of **non-space characters**.
+
+**Example 1:**
+
+> **Input:** s = "Hello, my name is John"
+> 
+> **Output:** 5
+> 
+> **Explanation:** The five segments are ["Hello,", "my", "name", "is", "John"]
+
+**Example 2:**
+
+> **Input:** s = "Hello"
+> 
+> **Output:** 1
+
+**Constraints:**
+
+* `0 <= s.length <= 300`
+
+* `s` consists of lowercase and uppercase English letters, digits, or one of the following characters `"!@#$%^&*()_+-=',.:"`.
+
+* The only space character in `s` is `' '`.
+
+### Answer
+
+```c
+int countSegments(char *s)
+{
+    int ans = 0;
+    for (char *i = s; *i; i++)
+    {
+        if (*i != ' ' && (*(i + 1) == ' ' || !*(i + 1)))
+        {
+            ans++;
+        }
+        else
+            continue;
+    }
+    return ans;
+}
+```
 
 ## 518 Coin Change II
 
