@@ -11,7 +11,7 @@ At this directory, I will write my notes here.
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
 |66|Plus One|`Array` `Math`|Easy| | |
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
-|434|Number of Segments in a String|`string`|Easy|Done|Delay|
+|434|Number of Segments in a String|`string`|Easy|Done|Done|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
@@ -359,7 +359,7 @@ int countSegments(char *s)
     int ans = 0;
     for (char *i = s; *i; i++)
     {
-        if (*i != ' ' && (*(i + 1) == ' ' || !*(i + 1)))
+        if (*i != ' ' && (*(i + 1) == ' ' ^ !*(i + 1)))
         {
             ans++;
         }
@@ -369,6 +369,10 @@ int countSegments(char *s)
     return ans;
 }
 ```
+
+### Reproduction
+
+File: [./434/countSegments.c](./434/countSegments.c)
 
 ## 518 Coin Change II
 
