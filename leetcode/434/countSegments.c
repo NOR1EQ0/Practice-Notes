@@ -5,7 +5,7 @@ int countSegments(char *s)
     int ans = 0;
     for (char *i = s; *i; i++)
     {
-        if (*i != ' ' && (*(i + 1) == ' ' || !*(i + 1)))
+        if (*i != ' ' && (*(i + 1) == ' ' ^ !*(i + 1)))
         {
             ans++;
         }
@@ -17,8 +17,8 @@ int countSegments(char *s)
 
 int main()
 {
-    char str[] = "a, b, c";
+    char str[] = "Hello, my name is John";
     int segments = countSegments(str);
-    printf("%d", segments);
+    printf("String: %s\nExpected Output: 5\nResult: %d\n",str,segments);
     return 0;
 }
