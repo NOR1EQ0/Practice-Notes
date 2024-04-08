@@ -9,7 +9,7 @@ At this directory, I will write my notes here.
 |1|Two Sum|`Array` `Hash Table`|Easy|Done|Done|
 |3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
-|66|Plus One|`Array` `Math`|Easy| | |
+|66|Plus One|`Array` `Math`|Easy|Idle| |
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
 |434|Number of Segments in a String|`string`|Easy|Done|Done|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
@@ -18,6 +18,7 @@ At this directory, I will write my notes here.
 |1342|Number of Steps to Reduce a Number to Zero|`Bit Manipulation` `Math`|Easy|Done| |
 |2235|Add Two Integers|`Math`|Easy|Done| |
 |2413|Smallest Even Multiple|`Math` `Number Theory`|Easy|Done| |
+|2529|Maximum Count of Positive Integer and Negative Integer|`Array` `Binary Search` `Counting`|Easy| | |
 |2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
 |2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Idle| |
 |2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
@@ -618,6 +619,85 @@ int smallestEvenMultiple(int n){
     return n%2?n*2:n;
 }
 ```
+
+## 2529 Maximum Count of Positive Integer and Negative Integer
+
+Haven't finished...
+
+### Description
+
+Given an array `nums` sorted in **non-decreasing** order, return *the maximum between the number of positive integers and the number of negative integers*.
+
+* In other words, if the number of positive integers in `nums` is `pos` and the number of negative integers is `neg`, then return the maximum of `pos` and `neg`.
+
+**Note** that `0` is neither positive nor negative.
+
+**Example 1:**
+
+> **Input:** nums = [-2,-1,-1,1,2,3]
+> 
+> **Output:** 3
+> 
+> **Explanation:** There are 3 positive integers and 3 negative integers. The maximum count among them is 3.
+
+**Example 2:**
+
+> **Input:** nums = [-3,-2,-1,0,0,1,2]
+> 
+> **Output:** 3
+> 
+> **Explanation:** There are 2 positive integers and 3 negative integers. The maximum count among them is 3.
+
+**Example 3:**
+
+> **Input:** nums = [5,20,66,1314]
+> 
+> **Output:** 4
+> 
+> **Explanation:** There are 4 positive integers and 0 negative integers. The maximum count among them is 4.
+
+**Constraints:**
+
+* `1 <= nums.length <= 2000`
+
+* `-2000 <= nums[i] <= 2000`
+
+* `nums` is sorted in **a non-decreasing order**.
+
+**Follow up:** Can you solve the problem in `O(log(n))` time complexity?
+
+### Answer
+
+`O(n)` time complexity:
+
+```c
+int maximumCount(int *nums, int numsSize)
+{
+    int positiveCount = 0, negativeCount = 0;
+    for (int i = 0; i < numsSize; i++)
+    {
+        if (nums[i] > 0)
+        {
+            positiveCount++;
+        }
+        else if (nums[i] < 0)
+        {
+            negativeCount++;
+        }
+    }
+    return positiveCount > negativeCount ? positiveCount : negativeCount;
+}
+```
+
+`O(log(n))` time complexity:
+
+*Empty*
+
+### Reproduction
+
+`O(n)` time complexity: [./2529/maximumCount.c](./2529/maximumCount.c)
+
+`O(log(n))` time complexity: *Empty*
 
 ## 2651 Calculate Delayed Arrival Time
 
