@@ -10,6 +10,7 @@ At this directory, I will write my notes here.
 |3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
 |66|Plus One|`Array` `Math`|Easy|Idle| |
+|256|Add Digits|`Math` `Number Theory` `Simulation`|Easy|Done|Done|
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
 |434|Number of Segments in a String|`string`|Easy|Done|Done|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
@@ -269,6 +270,38 @@ int searchInsert(int *nums, int numsSize, int target)
 ### Reproduction
 
 File: [./35/searchInsert.c](./35/searchInsert.c)
+
+## 256 Add Digits
+
+Finished on April 17, 2024.
+
+### Description
+
+Given an integer `num`, repeatedly add all its digits until the result has only one digit, and return it.
+
+**Example 1:**
+
+> **Input:** num = 38
+>
+> **Output:** 2
+>
+> **Explanation:** The process is
+>
+> 38 --> 3 + 8 --> 11
+>
+> 11 --> 1 + 1 --> 2 
+>
+> Since 2 has only one digit, return it.
+
+**Example 2:**
+
+> Input: num = 0
+>
+> Output: 0
+
+**Constraints:**
+
+* <code>0 <= num <= 2<sup>31</sup> - 1</code>
 
 ## 322 Coin Change
 
