@@ -28,6 +28,7 @@ At this directory, I will write my notes here.
 |2942|Find Words Containing Character|`Array` `String`|Easy|Done|Done|
 |3028|Ant on the Boundary|`Array` `Prefix Sum` `Simulation`|Easy|Done| |
 |3065|Minimum Operations to Exceed Threshold Value|`Array`|Easy|Done| |
+|3110|Score of a String|`String`|Easy|Done|Done|
 
 **Notice:** The difficulty listed here is sorted by LeetCode.
 
@@ -1277,3 +1278,41 @@ int minOperations(int* nums, int numsSize, int k) {
     return a;
 }
 ```
+
+## 3110 Score of a String
+
+Finished on April 17, 2024.
+
+### Description
+
+You are given a string `s`. The **score** of a string is defined as the sum of the absolute difference between the **ASCII** values of adjacent characters.
+
+Return the **score** of `s`.
+
+**Example 1:**
+
+> **Input:** s = "hello"
+> 
+> **Output:** 13
+> 
+> **Explanation:**
+>
+> The **ASCII** values of the characters in `s` are: `'h' = 104`, `'e' = 101`, `'l' = 108`, `'o' = 111`. So, the score of `s` would be `|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13`.
+
+**Example 2:**
+
+> **Input:** s = "zaz"
+>
+> **Output:** 50
+>
+> **Explanation:**
+>
+> The **ASCII** values of the characters in `s` are: `'z' = 122`, `'a' = 97`. So, the score of `s` would be `|122 - 97| + |97 - 122| = 25 + 25 = 50`.
+
+ 
+
+**Constraints:**
+
+* `2 <= s.length <= 100`
+
+* `s` consists only of lowercase English letters.
