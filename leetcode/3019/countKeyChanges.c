@@ -9,10 +9,7 @@ int countKeyChanges(char *s)
     char *r = s + 1;
     while (*r)
     {
-        if (*l == *r || *l + 32 == *r || *l - 32 == *r)
-        {
-        }
-        else
+        if (!(*l == *r || *l + 32 == *r || *l - 32 == *r))
         {
             l = r;
             ans++;
