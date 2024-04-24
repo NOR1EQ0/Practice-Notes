@@ -3,10 +3,11 @@
 #include <memory.h>
 #include <string.h>
 
+// Give up (temporarily)
 char *finalString(char *s)
 {
     char *tmp = (char *)malloc(sizeof(s));
-    memset(tmp, NULL, sizeof(s));
+    memset(tmp, 0, sizeof(s));
     char *tmpPtr = tmp;
     char *ptr = s;
     for (; *ptr; ptr++)
@@ -20,12 +21,14 @@ char *finalString(char *s)
             tmpPtr++;
         }
     }
-    char *arr = (char *)malloc(strlen(tmp));
-    memcpy(arr,tmp,sizeof(arr));
+    char *arr = (char *)malloc((strlen(tmp) + 1) * sizeof(char));
+    memcpy(arr, tmp, sizeof(arr));
+    return arr;
 }
 
-int main(){
-    char str1[]="string";
+int main()
+{
+    char str1[] = "string";
     // char *
     return 0;
 }
