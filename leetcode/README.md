@@ -11,6 +11,7 @@ At this directory, I will write my notes here.
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
 |66|Plus One|`Array` `Math`|Easy|Idle| |
 |256|Add Digits|`Math` `Number Theory` `Simulation`|Easy|Done|Done|
+|283|Move Zeroes|`Array` `Two Pointers`|Easy|Done|Done|
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
 |434|Number of Segments in a String|`string`|Easy|Done|Done|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
@@ -306,6 +307,73 @@ Given an integer `num`, repeatedly add all its digits until the result has only 
 **Constraints:**
 
 * <code>0 <= num <= 2<sup>31</sup> - 1</code>
+
+## 283 Move Zeroes
+
+Finished on April 25, 2024.
+
+### Description
+
+Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
+
+**Note** that you must do this in-place without making a copy of the array.
+
+**Example 1:**
+
+**Input:** nums = [0,1,0,3,12]
+
+**Output:** [1,3,12,0,0]
+
+**Example 2:**
+
+**Input:** nums = [0]
+
+**Output:** [0]
+
+**Constraints:**
+
+* <code>1 <= nums.length <= 10<sup>4</sup></code>
+* <code>-2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1</code>
+
+**Follow up:** Could you minimize the total number of operations done?
+
+### Answer
+
+#### Two Pointers
+
+Count the number of **non-zero** digits:
+
+```c
+void moveZeroes(int* nums, int numsSize) {
+    int nonZero = 0, *l = nums, *ptr = nums;
+    while (ptr < nums + numsSize) {
+        if (*ptr != 0) {
+            *l = *ptr;
+            l++,nonZero++;
+        }
+        ptr++;
+    }
+    memset(nums+nonZero,0,sizeof(int)*(numsSize-nonZero));
+}
+```
+
+If we remove `nonZero`, it means the 1st row would be `int *l = nums, *ptr = nums;`. `memset(nums+nonZero,0,sizeof(int)*(numsSize-nonZero));` can be changed into this:
+
+```c
+...
+    while (l < nums + numsSize) {
+        *l++ = 0;
+    }
+...
+```
+
+Just keep `l` pointer shifting forward until `l` reaches the end of `nums`.
+
+Why don't I just replace that part? Hmmm... Actually, it's just because the first code block is my first submission XD.
+
+### Reproduction
+
+File: [./283/moveZeroes.c](./283/moveZeroes.c)
 
 ## 322 Coin Change
 
@@ -646,6 +714,10 @@ int *getConcatenation(int *nums, int numsSize, int *returnSize)
 ### Reproduction
 
 Copy `nums` twice: [./1929/getConcatenation.c](./1929/getConcatenation.c)
+
+### Misc
+
+I'm thinking that: can I just make `ans[i+n]` points to `ans[i]` (or `nums[i]`) ? But I met some barriers... So I will try to solve it in that way one day.
 
 ## 2235 Add Two Integers
 
