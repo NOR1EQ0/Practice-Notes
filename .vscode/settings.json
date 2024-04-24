@@ -1,6 +1,3 @@
 {
-    "files.associations": {
-        "memory.h": "c",
-        "memoryapi.h": "c"
-    }
+    "C_Cpp.default.cStandard": "c11"
 }

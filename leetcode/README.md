@@ -17,6 +17,7 @@ At this directory, I will write my notes here.
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
 |1342|Number of Steps to Reduce a Number to Zero|`Bit Manipulation` `Math`|Easy|Done| |
+|1929|Concatenation of Array|`Array` `Simulation`|Easy|Done|Done|
 |2235|Add Two Integers|`Math`|Easy|Done| |
 |2413|Smallest Even Multiple|`Math` `Number Theory`|Easy|Done| |
 |2529|Maximum Count of Positive Integer and Negative Integer|`Array` `Binary Search` `Counting`|Easy| | |
