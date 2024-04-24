@@ -40,6 +40,7 @@ Optimization List:
 
 |No.|Optimization|Status|Comment / Barrier|
 |----|----|----|----|
+|1|Two Sum|Haven't finished follow-up| |
 |3|Use pointers and remove redundant code|Stucked in LeetCode test|**Access violation**<br>Even [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c) can be compiled with GCC without warnings and run on my Ubuntu system in my virtual machine. But obviously, access violation is a big problem.<br>Even if I already know that, but it seems that I may write some wrong expressions in the 15th row. Maybe I shouldn use `if`, not ternary operator. But I don't think this change will solve access violation. Maybe I should malloc and maintain a place for `*(right-1)`? But that's weired...<br>I shouldn't write such a long comment in this table here XD|
 
 ## 1 Two Sum
