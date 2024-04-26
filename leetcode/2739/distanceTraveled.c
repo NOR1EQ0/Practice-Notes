@@ -24,7 +24,7 @@ int distanceTraveled(int mainTank, int additionalTank)
 int main()
 {
     int mainTank = 5;
-    int additionalTank = 10;
+    int additionalTank = 1;
     int ans = distanceTraveled(mainTank, additionalTank);
     printf("%d", ans);
     return 0;
