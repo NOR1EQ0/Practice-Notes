@@ -43,6 +43,7 @@ Optimization List:
 |----|----|----|----|
 |1|Two Sum|Haven't finished follow-up| |
 |3|Use pointers and remove redundant code|Stucked in LeetCode test|**Access violation**<br>Even [./3/lengthOfLongestSubstring.c](./3/lengthOfLongestSubstring.c) can be compiled with GCC without warnings and run on my Ubuntu system in my virtual machine. But obviously, access violation is a big problem.<br>Even if I already know that, but it seems that I may write some wrong expressions in the 15th row. Maybe I shouldn use `if`, not ternary operator. But I don't think this change will solve access violation. Maybe I should malloc and maintain a place for `*(right-1)`? But that's weired...<br>I shouldn't write such a long comment in this table here XD|
+|1929|Concatenation of Array|Decide use pointers to make the new numbers in the answer array point to the corresponding number in the original array|It may be unrealizable...|
 
 ## 1 Two Sum
 
@@ -717,7 +718,7 @@ Copy `nums` twice: [./1929/getConcatenation.c](./1929/getConcatenation.c)
 
 ### Misc
 
-I'm thinking that: can I just make `ans[i+n]` points to `ans[i]` (or `nums[i]`) ? But I met some barriers... So I will try to solve it in that way one day.
+I'm thinking: can I just make `ans[i+n]` points to `ans[i]` (or `nums[i]`) ? But I met some barriers... So I will try to solve it in that way one day.
 
 ## 2235 Add Two Integers
 
