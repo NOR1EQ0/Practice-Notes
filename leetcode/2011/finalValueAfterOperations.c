@@ -18,7 +18,7 @@ int finalValueAfterOperations(char **operations, int operationsSize)
     return ans;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     char *operations[] = {"--X", "X++", "X++"};
     printf("%d",finalValueAfterOperations(operations, 3));
