@@ -26,7 +26,7 @@ At this directory, I will write my notes here.
 |2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
 |2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Idle| |
 |2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
-|2798|满足目标工作时长的员工数目|`Array`|Easy|Done|Done|
+|2798|Number of Employees Who Met the Target|`Array`|Easy|Done|Done|
 |2864|Maximum Odd Binary Number|`Greedy` `Math` `String`|Easy|Done| |
 |2894|Divisible and Non-divisible Sums Difference|`Math`|Easy|Done|Done|
 |2942|Find Words Containing Character|`Array` `String`|Easy|Done|Done|
