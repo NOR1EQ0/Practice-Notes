@@ -6,8 +6,8 @@
 // Give up (temporarily)
 char *finalString(char *s)
 {
-    char *tmp = (char *)malloc(sizeof(s));
-    memset(tmp, 0, sizeof(s));
+    char *tmp = (char *)malloc(strlen(s) * sizeof(char));
+    memset(tmp, 0, sizeof(char) * strlen(s));
     char *tmpPtr = tmp;
     char *ptr = s;
     for (; *ptr; ptr++)
@@ -20,6 +20,10 @@ char *finalString(char *s)
             }
             tmpPtr++;
         }
+        else
+        {
+            *tmpPtr = *ptr;
+        }
     }
     char *arr = (char *)malloc((strlen(tmp) + 1) * sizeof(char));
     memcpy(arr, tmp, sizeof(arr));
@@ -29,6 +33,7 @@ char *finalString(char *s)
 int main()
 {
     char str1[] = "string";
-    // char *
+    char *result = finalString(str1);
+    printf("%s\n", result);
     return 0;
 }
