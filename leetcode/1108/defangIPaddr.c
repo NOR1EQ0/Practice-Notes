@@ -4,9 +4,8 @@
 
 char *defangIPaddr(char *address)
 {
-    char *ans = (char *)malloc(sizeof(char) * (strlen(address) + 6));
-    // memset(ans, '\0', sizeof(char) * strlen(address) + 6);
-    printf("%d", strlen(address));
+    char *ans = (char *)malloc(sizeof(char) * (strlen(address) + 7));
+    memset(ans, '\0', sizeof(char) * strlen(address) + 7);
     char *p = ans, *s = address;
     while (s < address + (char)strlen(address))
     {
