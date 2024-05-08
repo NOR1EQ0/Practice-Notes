@@ -17,6 +17,7 @@ At this directory, I will write my notes here.
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
+|1108|Defanging an IP Address|`String`|Easy|Done|Done|
 |1342|Number of Steps to Reduce a Number to Zero|`Bit Manipulation` `Math`|Easy|Done| |
 |1929|Concatenation of Array|`Array` `Simulation`|Easy|Done|Done|
 |2235|Add Two Integers|`Math`|Easy|Done| |
@@ -574,6 +575,62 @@ int numJewelsInStones(char* jewels, char* stones) {
     return a;
 }
 ```
+
+## 1108 Defanging an IP Address
+
+Finished on May 8, 2024.
+
+### Description
+
+Given a valid (IPv4) IP `address`, return a defanged version of that IP address.
+
+*A defanged IP address* replaces every period `"."` with `"[.]"`.
+
+**Example 1:**
+
+> **Input:** address = "1.1.1.1"
+> 
+> **Output:** "1[.]1[.]1[.]1"
+
+**Example 2:**
+
+> **Input:** address = "255.100.50.0"
+>
+> **Output:** "255[.]100[.]50[.]0"
+
+**Constraints:**
+
+* The given address is a valid IPv4 address.
+
+### Answer
+
+```c
+char *defangIPaddr(char *address)
+{
+    char *ans = (char *)malloc(sizeof(char) * (strlen(address) + 7));
+    memset(ans, '\0', sizeof(char) * strlen(address) + 7);
+    char *p = ans, *s = address;
+    while (s < address + (char)strlen(address))
+    {
+        if (*s >= '0' && *s <= '9')
+        {
+            *p = *s;
+            p++;
+        }
+        else
+        {
+            memcpy(p, "[.]", sizeof(char) * 3);
+            p += 3;
+        }
+        s++;
+    }
+    return ans;
+}
+```
+
+### Reproduction
+
+File: [./1108/defangIPaddr.c](./1108/defangIPaddr.c)
 
 ## 1342 Number of Steps to Reduce A Number to Zero
 
