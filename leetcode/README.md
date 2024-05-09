@@ -25,6 +25,7 @@ At this directory, I will write my notes here.
 |2413|Smallest Even Multiple|`Math` `Number Theory`|Easy|Done| |
 |2529|Maximum Count of Positive Integer and Negative Integer|`Array` `Binary Search` `Counting`|Easy| | |
 |2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
+|2656|Maximum Sum With Exactly K Elements|`Greedy` `Array`|Easy|Done|Done|
 |2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Idle| |
 |2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
 |2798|Number of Employees Who Met the Target|`Array`|Easy|Done|Done|
@@ -1082,6 +1083,92 @@ int findDelayedArrivalTime(int arrivalTime, int delayedTime){
     return (arrivalTime + delayedTime) % 24;
 }
 ```
+
+## 2656 Maximum Sum With Exactly K Elements 
+
+Finished on May 7, 2024.
+
+### Description
+
+You are given a **0-indexed** integer array `nums` and an integer `k`. Your task is to perform the following operation **exactly** `k` times in order to maximize your score:
+
+1. Select an element m from nums.
+
+2. Remove the selected element m from the array.
+
+3. Add a new element with a value of m + 1 to the array.
+
+4. Increase your score by m.
+
+Return *the maximum score you can achieve after performing the operation exactly* `k` *times*.
+
+**Example 1:**
+
+> **Input:** nums = [1,2,3,4,5], k = 3
+> 
+> **Output:** 18
+> 
+> **Explanation:** We need to choose exactly 3 elements from nums to maximize the sum.
+> 
+> For the first iteration, we choose 5. Then sum is 5 and nums = [1,2,3,4,6]
+> 
+> For the second iteration, we choose 6. Then sum is 5 + 6 and nums = [1,2,3,4,7]
+> 
+> For the third iteration, we choose 7. Then sum is 5 + 6 + 7 = 18 and nums = [1,2,3,4,8]
+> 
+> So, we will return 18.
+> 
+> It can be proven, that 18 is the maximum answer that we can achieve.
+
+**Example 2:**
+
+> **Input:** nums = [5,5,5], k = 2
+> 
+> **Output:** 11
+> 
+> **Explanation:** We need to choose exactly 2 elements from nums to maximize the sum.
+> 
+> For the first iteration, we choose 5. Then sum is 5 and nums = [5,5,6]
+> 
+> For the second iteration, we choose 6. Then sum is 5 + 6 = 11 and nums = [5,5,7]
+> 
+> So, we will return 11.
+> 
+> It can be proven, that 11 is the maximum answer that we can achieve.
+
+**Constraints:**
+
+* `1 <= nums.length <= 100`
+
+* `1 <= nums[i] <= 100`
+
+* `1 <= k <= 100`
+
+### Answer
+
+```c
+int maximizeSum(int *nums, int numsSize, int k)
+{
+    int *ptr = nums, max = *nums;
+    while (ptr < nums + numsSize)
+    {
+        max = *ptr > max ? *ptr : max;
+        ptr++;
+    }
+    free(ptr);
+    int ans = 0;
+    for (int i = 0; i < k; i++)
+    {
+        ans += max;
+        max++;
+    }
+    return ans;
+}
+```
+
+### Reproduction
+
+*Empty*
 
 ## 2744 Find Maximum Number of String Pairs
 
