@@ -3,7 +3,7 @@
 int wateringPlants(int *plants, int plantsSize, int capacity)
 {
     int tank = capacity, steps = 1;
-    for (int pos = 0; plants[plantsSize - 1] != 0;)
+    for (int pos = 0; pos == plantsSize;)
     {
         if (tank < plants[pos])
         {
