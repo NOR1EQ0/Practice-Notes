@@ -13,13 +13,14 @@ At this directory, I will write my notes here.
 |256|Add Digits|`Math` `Number Theory` `Simulation`|Easy|Done|Done|
 |283|Move Zeroes|`Array` `Two Pointers`|Easy|Done|Done|
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
-|434|Number of Segments in a String|`string`|Easy|Done|Done|
+|434|Number of Segments in a String|`String`|Easy|Done|Done|
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
 |1108|Defanging an IP Address|`String`|Easy|Done|Done|
 |1342|Number of Steps to Reduce a Number to Zero|`Bit Manipulation` `Math`|Easy|Done| |
 |1929|Concatenation of Array|`Array` `Simulation`|Easy|Done|Done|
+|2011|Final Value of Variable After Performing Operations|`Array` `String` `Simulation`|Easy|Done|Done|
 |2235|Add Two Integers|`Math`|Easy|Done| |
 |2413|Smallest Even Multiple|`Math` `Number Theory`|Easy|Done| |
 |2529|Maximum Count of Positive Integer and Negative Integer|`Array` `Binary Search` `Counting`|Easy| | |
@@ -776,7 +777,104 @@ Copy `nums` twice: [./1929/getConcatenation.c](./1929/getConcatenation.c)
 
 ### Misc
 
-I'm thinking: can I just make `ans[i+n]` points to `ans[i]` (or `nums[i]`) ? But I met some barriers... So I will try to solve it in that way one day.
+~~I'm thinking: can I just make `ans[i+n]` points to `ans[i]` (or `nums[i]`) ? But I met some barriers... So I will try to solve it in that way one day.~~ I give up XD
+
+## 2011 Final Value of Variable After Performing Operations
+
+Finished on May 8, 2024.
+
+### Description
+
+There is a programming language with only **four** operations and **one** variable `X`:
+
+* `++X` and `X++` increments the value of the variable `X` by `1`.
+
+* `--X` and `X--` decrements the value of the variable `X` by `1`.
+
+Initially, the value of `X` is `0`.
+
+Given an array of strings `operations` containing a list of operations, return `the final value of X after performing all the operations`.
+
+**Example 1:**
+
+> **Input:** operations = ["--X","X++","X++"]
+> 
+> **Output:** 1
+> 
+> **Explanation:** The operations are performed as follows:
+> 
+> Initially, X = 0.
+> 
+> --X: X is decremented by 1, X =  0 - 1 = -1.
+> 
+> X++: X is incremented by 1, X = -1 + 1 =  0.
+> 
+> X++: X is incremented by 1, X =  0 + 1 =  1.
+
+**Example 2:**
+
+> **Input:** operations = ["++X","++X","X++"]
+> 
+> **Output:** 3
+> 
+> **Explanation:** The operations are performed as follows:
+> 
+> Initially, X = 0.
+> 
+> ++X: X is incremented by 1, X = 0 + 1 = 1.
+> 
+> ++X: X is incremented by 1, X = 1 + 1 = 2.
+> 
+> X++: X is incremented by 1, X = 2 + 1 = 3.
+
+**Example 3:**
+
+> **Input:** operations = ["X++","++X","--X","X--"]
+> 
+> **Output:** 0
+> 
+> **Explanation:** The operations are performed as follows:
+> 
+> Initially, X = 0.
+> 
+> X++: X is incremented by 1, X = 0 + 1 = 1.
+> 
+> ++X: X is incremented by 1, X = 1 + 1 = 2.
+> 
+> --X: X is decremented by 1, X = 2 - 1 = 1.
+> 
+> X--: X is decremented by 1, X = 1 - 1 = 0.
+
+**Constraints:**
+
+* `1 <= operations.length <= 100`
+
+* `operations[i]` will be either `"++X"`, `"X++"`, `"--X"`, or `"X--"`.
+
+### Answer
+
+```c
+int finalValueAfterOperations(char **operations, int operationsSize)
+{
+    int ans=0;
+    for (char i = 0; i < operationsSize; i++)
+    {
+        if (operations[i][1] == '+')
+        {
+            ans++;
+        }
+        else
+        {
+            ans--;
+        }
+    }
+    return ans;
+}
+```
+
+### Reproduction
+
+File: [./2011/finalValueAfterOperations.c](./2011/finalValueAfterOperations.c)
 
 ## 2235 Add Two Integers
 
