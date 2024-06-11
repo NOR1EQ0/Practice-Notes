@@ -43,6 +43,6 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 
 int main(int argc, char const *argv[])
 {
-
+    struct LinkList *l1;
     return 0;
 }
