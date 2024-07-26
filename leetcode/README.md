@@ -53,47 +53,6 @@ Optimization List:
 
 Finished on March 16, 2024.
 
-### Description
-
-Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
-
-You may assume that each input would have **exactly one solution**, and you may not use the same element twice.
-
-You can return the answer in any order.
-
-**Example 1:**
-
-> **Input:** nums = [2,7,11,15], target = 9
-> 
-> **Output:** [0,1]
-> 
-> **Explanation:** Because nums[0] + nums[1] == 9, we return [0, 1].
-
-**Example 2:**
-
-> **Input:** nums = [3,2,4], target = 6
-> 
-> **Output:** [1,2]
-
-**Example 3:**
-
-> **Input:** nums = [3,3], target = 6
-> 
-> **Output:** [0,1]
-
-
-**Constraints:**
-
-* `2 <= nums.length <= 104`
-
-* <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>
-
-* <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>
-
-* **Only one valid answer exists.**
-
-**Follow-up:** Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code> time complexity?
-
 ### Answer
 
 Brute-force traversal
@@ -128,42 +87,6 @@ File: [./1/two-sum.c](./1/two-sum.c)
 ## 3 Longest Substring without Repeating Characters
 
 Finished on March 23, 2024.
-
-### Description
-
-Given a string `s`, find the length of **longest substring** without repeating characters.
-
-**Example 1:**
-
-> **Input:** s = "abcabcbb"
-> 
-> **Output:** 3
-> 
-> **Explanation:** The answer is "abc", with the length of 3.
-
-**Example 2:**
-
-> **Input:** s = "bbbbb"
-> 
-> **Output:** 1
-> 
-> **Explanation:** The answer is "b", with the length of 1.
-
-**Example 3:**
-
-> **Input:** s = "pwwkew"
-> 
-> **Output:** 3
-> 
-> **Explanation:** The answer is "wke", with the length of 3.
-> 
-> Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
-**Constraints:**
-
-* <code>0 <= s.length <= 5 * 10<sup>4</sup></code>
-
-* `s` consists of English letters, digits, symbols and spaces.
 
 ### Answer
 
@@ -217,40 +140,6 @@ First commission: [./3/firstSubmission.c](./3/firstSubmission.c)
 
 Finished on March 20, 2024.
 
-### Description
-
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with `O(log n)` runtime complexity.
-
-**Example 1:**
-
-> **Input:** nums = [1,3,5,6], target = 5
-> 
-> **Output:** 2
-
-**Example 2:**
-
-> **Input:** nums = [1,3,5,6], target = 2
-> 
-> **Output:** 1
-
-**Example 3:**
-
-> **Input:** nums = [1,3,5,6], target = 7
-> 
-> **Output:** 4
-
-**Constraints:**
-
-* <code>1 <= nums.length <= 10<sup>4</sup></code>
-
-* <code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>
-
-* `nums` contains **distinct** values sorted in **ascending** order.
-
-* <code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>
-
 ### Answer
 
 ```c
@@ -285,62 +174,9 @@ File: [./35/searchInsert.c](./35/searchInsert.c)
 
 Finished on April 17, 2024.
 
-### Description
-
-Given an integer `num`, repeatedly add all its digits until the result has only one digit, and return it.
-
-**Example 1:**
-
-> **Input:** num = 38
->
-> **Output:** 2
->
-> **Explanation:** The process is
->
-> 38 --> 3 + 8 --> 11
->
-> 11 --> 1 + 1 --> 2 
->
-> Since 2 has only one digit, return it.
-
-**Example 2:**
-
-> Input: num = 0
->
-> Output: 0
-
-**Constraints:**
-
-* <code>0 <= num <= 2<sup>31</sup> - 1</code>
-
 ## 283 Move Zeroes
 
 Finished on April 25, 2024.
-
-### Description
-
-Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
-
-**Note** that you must do this in-place without making a copy of the array.
-
-**Example 1:**
-
-**Input:** nums = [0,1,0,3,12]
-
-**Output:** [1,3,12,0,0]
-
-**Example 2:**
-
-**Input:** nums = [0]
-
-**Output:** [0]
-
-**Constraints:**
-
-* <code>1 <= nums.length <= 10<sup>4</sup></code>
-* <code>-2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1</code>
-
-**Follow up:** Could you minimize the total number of operations done?
 
 ### Answer
 
@@ -386,42 +222,6 @@ Click [here](#518-coin-change-ii) to see the next part of **Coin Change**.
 
 Haven't finished...
 
-### Description
-
-You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.
-
-Return *the fewest number of coins that you need to make up that amount*. If that amount of money cannot be made up by any combination of the coins, return `-1`.
-
-You may assume that you have an infinite number of each kind of coin.
-
-**Example 1:**
-
-> **Input:** coins = `[1, 2, 5]`, amount = `11`
-> 
-> **Output:** `3`
-> 
-> **Explanation:** 11 = 5 + 5 + 1
-
-**Example 2:**
-
-> **Input:** coins = `[2]`, amount = `3`
-> 
-> **Output:** -1
-
-**Example 3:**
-
-> **Input:** coins = [1], amount = 0
-> 
-> **Output:** 0
-
-**Constraints:**
-
-* `1 <= coins.length <= 12`
-
-* <code>1 <= coins[i] <= 2<sup>31</sup> - 1</code>
-
-* <code>0 <= amount <= 10<sup>4</sup></code>
-
 ### Answer
 
 *Empty*
@@ -433,34 +233,6 @@ You may assume that you have an infinite number of each kind of coin.
 ## 434 Number of Segments in a String
 
 Finished on April 7, 2024.
-
-### Description
-
-Given a string `s`, return *the number of segments in the string*.
-
-A **segment** is defined to be a contiguous of **non-space characters**.
-
-**Example 1:**
-
-> **Input:** s = "Hello, my name is John"
-> 
-> **Output:** 5
-> 
-> **Explanation:** The five segments are ["Hello,", "my", "name", "is", "John"]
-
-**Example 2:**
-
-> **Input:** s = "Hello"
-> 
-> **Output:** 1
-
-**Constraints:**
-
-* `0 <= s.length <= 300`
-
-* `s` consists of lowercase and uppercase English letters, digits, or one of the following characters `"!@#$%^&*()_+-=',.:"`.
-
-* The only space character in `s` is `' '`.
 
 ### Answer
 
@@ -495,34 +267,6 @@ Havent't finished...
 
 Finshed on June 27, 2023.
 
-### Description
-
-Given a string `s`, return *the string after replacing every uppercase letter with the same lowercase letter*.
-
-**Example 1:**
-
-> **Input:** s = "Hello"
-> 
-> **Output:** "hello"
-
-**Example 2:**
- 
-> **Input:** s = "here"
-> 
-> **Output:** "here"
-
-**Example 3:**
-
-> **Input:** s = "LOVELY"
->
-> **Output:** "lovely"
-
-**Constraints:**
-
-* `1 <= s.length <= 100`
-
-* `s` consists of printable ASCII characters.
-
 ### Answer
 
 ```c
@@ -538,30 +282,6 @@ char * toLowerCase(char * s){
 ## 771 Jewels and Stones
 
 Finished on March 11, 2024.
-
-### Description
-
-You're given strings `jewels` representing the types of stones that are jewels, and `stones` representing the stones you have. Each character in `stones` is a type of stone you have. You want to know how many of the stones you have are also jewels.
-
-The letters are case sensitive, so `"a"` and `"A"` are different types of stones.
-
-**Example 1:**
-
-> **Input:** jewels = "aA", stones = "aAAbbbb"
-> 
-> **Output:** 3
-
-**Example 2:**
-
-> **Input:** jewels = "z", stones = "ZZ"
-> 
-> **Output:** 0
-
-**Constraints:**
-
-* `1 <= jewels.length, stones.length <= 50`
-* `jewels` and `stones` are made up of English letters only
-* All characters in `jewels` are **unique**
 
 ### Answer
 
@@ -582,28 +302,6 @@ int numJewelsInStones(char* jewels, char* stones) {
 ## 1108 Defanging an IP Address
 
 Finished on May 8, 2024.
-
-### Description
-
-Given a valid (IPv4) IP `address`, return a defanged version of that IP address.
-
-*A defanged IP address* replaces every period `"."` with `"[.]"`.
-
-**Example 1:**
-
-> **Input:** address = "1.1.1.1"
-> 
-> **Output:** "1[.]1[.]1[.]1"
-
-**Example 2:**
-
-> **Input:** address = "255.100.50.0"
->
-> **Output:** "255[.]100[.]50[.]0"
-
-**Constraints:**
-
-* The given address is a valid IPv4 address.
 
 ### Answer
 
@@ -639,58 +337,6 @@ File: [./1108/defangIPaddr.c](./1108/defangIPaddr.c)
 
 Finished on September 20, 2023.
 
-### Description
-
-Given an integer `num`, return *the number of steps to reduce it to zero*.
-
-In one step, if the current number is even, you have to divide it by `2`, otherwise, you have to subtract `1` from it.
-
-**Example 1:**
-
-> **Input:** num = 14
-> 
-> **Output:** 6
-> 
-> **Explanation:**
-> 
-> Step 1) 14 is even; divide by 2 and obtain 7. 
-> 
-> Step 2) 7 is odd; subtract 1 and obtain 6.
-> 
-> Step 3) 6 is even; divide by 2 and obtain 3. 
-> 
-> Step 4) 3 is odd; subtract 1 and obtain 2. 
-> 
-> Step 5) 2 is even; divide by 2 and obtain 1. 
-> 
-> Step 6) 1 is odd; subtract 1 and obtain 0.
-
-**Example 2:**
-
-> **Input:** num = 8
-> 
-> **Output:** 4
-> 
-> **Explanation:**
-> 
-> Step 1) 8 is even; divide by 2 and obtain 4. 
-> 
-> Step 2) 4 is even; divide by 2 and obtain 2. 
-> 
-> Step 3) 2 is even; divide by 2 and obtain 1. 
-> 
-> Step 4) 1 is odd; subtract 1 and obtain 0.
-
-**Example 3:**
-
-> **Input:** num = 123
-> 
-> **Output:** 12
-
-**Constraints:**
-
-* <code>0 <= num <= 10<sup>6</sup></code>
-
 ### Answer
 
 ```c
@@ -713,46 +359,6 @@ int numberOfSteps(int num){
 ## 1929 Concatenation of Array
 
 Finished on April 24, 2024.
-
-### Description
-
-Given an integer array `nums` of length `n`, you want to create an array `ans` of length `2n` where `ans[i] == nums[i]` and `ans[i + n] == nums[i]` for `0 <= i < n` (**0-indexed**).
-
-Specifically, `ans` is the **concatenation** of two `nums` arrays.
-
-Return the array `ans`.
-
-**Example 1:**
-
-> **Input:** nums = [1,2,1]
->
-> **Output:** [1,2,1,1,2,1]
->
-> **Explanation:** The array ans is formed as follows:
->
-> \- ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
->
-> \- ans = [1,2,1,1,2,1]
-
-**Example 2:**
-
-> **Input:** nums = [1,3,2,1]
->
-> **Output:** [1,3,2,1,1,3,2,1]
->
-> **Explanation:** The array ans is formed as follows:
->
-> \- ans = [nums[0],nums[1],nums[2],nums[3],nums[0],nums[1],nums[2],nums[3]]
->
-> \- ans = [1,3,2,1,1,3,2,1]
-
-**Constraints:**
-
-* n == nums.length
-
-* 1 <= n <= 1000
-
-* 1 <= nums[i] <= 1000
 
 ### Answer
 
@@ -784,74 +390,6 @@ Copy `nums` twice: [./1929/getConcatenation.c](./1929/getConcatenation.c)
 
 Finished on May 8, 2024.
 
-### Description
-
-There is a programming language with only **four** operations and **one** variable `X`:
-
-* `++X` and `X++` increments the value of the variable `X` by `1`.
-
-* `--X` and `X--` decrements the value of the variable `X` by `1`.
-
-Initially, the value of `X` is `0`.
-
-Given an array of strings `operations` containing a list of operations, return `the final value of X after performing all the operations`.
-
-**Example 1:**
-
-> **Input:** operations = ["--X","X++","X++"]
-> 
-> **Output:** 1
-> 
-> **Explanation:** The operations are performed as follows:
-> 
-> Initially, X = 0.
-> 
-> --X: X is decremented by 1, X =  0 - 1 = -1.
-> 
-> X++: X is incremented by 1, X = -1 + 1 =  0.
-> 
-> X++: X is incremented by 1, X =  0 + 1 =  1.
-
-**Example 2:**
-
-> **Input:** operations = ["++X","++X","X++"]
-> 
-> **Output:** 3
-> 
-> **Explanation:** The operations are performed as follows:
-> 
-> Initially, X = 0.
-> 
-> ++X: X is incremented by 1, X = 0 + 1 = 1.
-> 
-> ++X: X is incremented by 1, X = 1 + 1 = 2.
-> 
-> X++: X is incremented by 1, X = 2 + 1 = 3.
-
-**Example 3:**
-
-> **Input:** operations = ["X++","++X","--X","X--"]
-> 
-> **Output:** 0
-> 
-> **Explanation:** The operations are performed as follows:
-> 
-> Initially, X = 0.
-> 
-> X++: X is incremented by 1, X = 0 + 1 = 1.
-> 
-> ++X: X is incremented by 1, X = 1 + 1 = 2.
-> 
-> --X: X is decremented by 1, X = 2 - 1 = 1.
-> 
-> X--: X is decremented by 1, X = 1 - 1 = 0.
-
-**Constraints:**
-
-* `1 <= operations.length <= 100`
-
-* `operations[i]` will be either `"++X"`, `"X++"`, `"--X"`, or `"X--"`.
-
 ### Answer
 
 ```c
@@ -881,30 +419,6 @@ File: [./2011/finalValueAfterOperations.c](./2011/finalValueAfterOperations.c)
 
 Finished on June 13, 2023. ~~WTF? The number of this question should be exchanged with [the first one](https://leetcode.cn/problems/two-sum)!~~
 
-### Description
-
-Given two integers `num1` and `num2`, return *the **sum** of those integers*.
-
-**Example 1:**
-
-> **Input:** num1 = 12, num2 = 5
-> 
-> **Output:** 17
-> 
-> **Explanation:** num1 is 12, num2 is 5, and their sum is 12 + 5 = 17, so 17 is returned.
-
-**Example 2:**
-
-> **Input:** num1 = -10 and num2 = 4
-> 
-> **Output:** -6
-> 
-> **Explanation:** num1 + num2 = -6, so -6 is returned.
-
-**Constraints:**
-
-* `-100 <= num1, num2 <= 100`
-
 ### Answer
 
 Normal way
@@ -921,30 +435,6 @@ int sum(int num1, int num2){
 
 Finished on June 22, 2023.
 
-### Description
-
-Given a **positive** integer `n`, return *the smallest positive integer that is a multiple of **both** `2` and `n`*.
-
-**Example 1:**
-
-> **Input:** n = 5
->
-> **Output:** 10
->
-> **Explanation:** The smallest multiple of both 5 and 2 is 10.
-
-**Example 2:**
-
-> **Input:** n = 6
->
-> **Output:** 6
->
-> **Explanation:** The smallest multiple of both 6 and 2 is 6. Note that a number is a multiple of itself.
-
-**Constraints:**
-
-* `1 <= n <= 150`
-
 ### Answer
 
 ```c
@@ -956,48 +446,6 @@ int smallestEvenMultiple(int n){
 ## 2529 Maximum Count of Positive Integer and Negative Integer
 
 Haven't finished...
-
-### Description
-
-Given an array `nums` sorted in **non-decreasing** order, return *the maximum between the number of positive integers and the number of negative integers*.
-
-* In other words, if the number of positive integers in `nums` is `pos` and the number of negative integers is `neg`, then return the maximum of `pos` and `neg`.
-
-**Note** that `0` is neither positive nor negative.
-
-**Example 1:**
-
-> **Input:** nums = [-2,-1,-1,1,2,3]
-> 
-> **Output:** 3
-> 
-> **Explanation:** There are 3 positive integers and 3 negative integers. The maximum count among them is 3.
-
-**Example 2:**
-
-> **Input:** nums = [-3,-2,-1,0,0,1,2]
-> 
-> **Output:** 3
-> 
-> **Explanation:** There are 2 positive integers and 3 negative integers. The maximum count among them is 3.
-
-**Example 3:**
-
-> **Input:** nums = [5,20,66,1314]
-> 
-> **Output:** 4
-> 
-> **Explanation:** There are 4 positive integers and 0 negative integers. The maximum count among them is 4.
-
-**Constraints:**
-
-* `1 <= nums.length <= 2000`
-
-* `-2000 <= nums[i] <= 2000`
-
-* `nums` is sorted in **a non-decreasing order**.
-
-**Follow up:** Can you solve the problem in `O(log(n))` time complexity?
 
 ### Answer
 
@@ -1036,36 +484,6 @@ int maximumCount(int *nums, int numsSize)
 
 Finished on March 9, 2024.
 
-### Description
-
-You are given a positive integer `arrivalTime` denoting the arrival time of a train in hours, and another positive integer `delayedTime` denoting the amount of delay in hours.
-
-Return *the time when the train will arrive at the station*.
-
-Note that the time in this problem is in 24-hours format.
-
-**Example 1:**
-
-> **Input:** arrivalTime = 15, delayedTime = 5
-> 
-> **Output:** 20
-> 
-> **Explanation:** Arrival time of the train was 15:00 hours. It is delayed by 5 hours. Now it will reach at 15+5 = 20 (20:00 hours).
-
-**Example 2:**
-
-> **Input:** arrivalTime = 13, delayedTime = 11
-> 
-> **Output:** 0
-> 
-> **Explanation:** Arrival time of the train was 13:00 hours. It is delayed by 11 hours. Now it will reach at 13+11=24 (Which is denoted by 00:00 in 24 hours format so return 0).
-
-**Constraints:**
-
-* `1 <= arrivaltime < 24`
-
-* `1 <= delayedTime <= 24`
-
 ### Answer
 
 No.1
@@ -1087,62 +505,6 @@ int findDelayedArrivalTime(int arrivalTime, int delayedTime){
 ## 2656 Maximum Sum With Exactly K Elements 
 
 Finished on May 7, 2024.
-
-### Description
-
-You are given a **0-indexed** integer array `nums` and an integer `k`. Your task is to perform the following operation **exactly** `k` times in order to maximize your score:
-
-1. Select an element m from nums.
-
-2. Remove the selected element m from the array.
-
-3. Add a new element with a value of m + 1 to the array.
-
-4. Increase your score by m.
-
-Return *the maximum score you can achieve after performing the operation exactly* `k` *times*.
-
-**Example 1:**
-
-> **Input:** nums = [1,2,3,4,5], k = 3
-> 
-> **Output:** 18
-> 
-> **Explanation:** We need to choose exactly 3 elements from nums to maximize the sum.
-> 
-> For the first iteration, we choose 5. Then sum is 5 and nums = [1,2,3,4,6]
-> 
-> For the second iteration, we choose 6. Then sum is 5 + 6 and nums = [1,2,3,4,7]
-> 
-> For the third iteration, we choose 7. Then sum is 5 + 6 + 7 = 18 and nums = [1,2,3,4,8]
-> 
-> So, we will return 18.
-> 
-> It can be proven, that 18 is the maximum answer that we can achieve.
-
-**Example 2:**
-
-> **Input:** nums = [5,5,5], k = 2
-> 
-> **Output:** 11
-> 
-> **Explanation:** We need to choose exactly 2 elements from nums to maximize the sum.
-> 
-> For the first iteration, we choose 5. Then sum is 5 and nums = [5,5,6]
-> 
-> For the second iteration, we choose 6. Then sum is 5 + 6 = 11 and nums = [5,5,7]
-> 
-> So, we will return 11.
-> 
-> It can be proven, that 11 is the maximum answer that we can achieve.
-
-**Constraints:**
-
-* `1 <= nums.length <= 100`
-
-* `1 <= nums[i] <= 100`
-
-* `1 <= k <= 100`
 
 ### Answer
 
@@ -1174,65 +536,6 @@ int maximizeSum(int *nums, int numsSize, int k)
 
 Haven't finished...
 
-### Description
-
-You are given a **0-indexed** array `words` consisting of **distinct** strings.
-
-The string `words[i]` can be paired with the string `words[j]` if:
-
-* The string `words[i]` is equal to the reversed string of `words[j]`.
-
-* `0 <= i < j < words.length`.
-
-Return *the **maximum** number of pairs that can be formed from the array words*.
-
-Note that each string can belong in **at most one** pair.
-
-**Example 1:**
-
-> **Input:** words = ["cd","ac","dc","ca","zz"]
-> 
-> **Output:** 2
-> 
-> **Explanation:** In this example, we can form 2 pair of strings in the following way:
-> 
-> \- We pair the 0<sup>th</sup> string with the 2<sup>nd</sup> string, as the reversed string of word[0] is "dc" and is equal to words[2].
-> 
-> \- We pair the 1<sup>st</sup> string with the 3<sup>rd</sup> string, as the reversed string of word[1] is "ca" and is equal to words[3].
-> 
-> It can be proven that 2 is the maximum number of pairs that can be formed.
-
-**Example 2:**
-
-> **Input:** words = ["ab","ba","cc"]
-> 
-> **Output:** 1
-> 
-> **Explanation:** In this example, we can form 1 pair of strings in the following way:
-> 
-> \- We pair the 0<sup>th</sup> string with the 1<sup>st</sup> string, as the reversed string of words[1] is "ab" and is equal to words[0].
-> 
-> It can be shown that the maximum number of matches is one.
-
-**Example 3:**
-
-> **Input:** words = ["aa","ab"]
-> 
-> **Output:** 0
-> 
-> **Explanation:** In this example, we are unable to form any pair of strings.
-
-
-**Constraints:**
-
-* `1 <= words.length <= 50`
-
-* `words[i].length == 2`
-
-* `words` consists of distinct strings.
-
-* `words[i]` contains only lowercase English letters.
-
 ### Answer
 
 ### Reproduction
@@ -1242,47 +545,6 @@ FIle: [./2744/maximumNumberOfStringPairs.c](./2744/maximumNumberOfStringPairs.c)
 ## 2769 Find the Maximum Achievable Number
 
 Finished on March 10, 2024.
-
-### Description
-
-You are given two integers, `num` and `t`.
-
-An integer `x` is called **achievable** if it can become equal to `num` after applying the following operation no more than `t` times:
-
-* Increase or decrease `x` by `1`, and simultaneously increase or decrease `num` by `1`.
-
-Return *the maximum possible achievable number*. It can be proven that there exists at least one achievable number.
-
-**Example 1:**
-
-> **Input:** num = 4, t = 1
-> 
-> **Output:** 6
-> 
-> **Explanation:** The largest achievable number is x = 6, which can be set to num by:
-> 
-> 1- Decrease x by 1, and increase num by 1. Now, x = 5 and num = 5.
-> 
-> It can be proven that there is no achievable number larger than 6.
-
-**Example 2:**
-
-> **Input:** num = 3, t = 2
-> 
-> **Output:** 7
->
-> **Explanation:** The maximum achievable number is x = 7; after performing these operations, x will equal num:
->
-> 1- x is decreased by 1 while num is increased by 1. In this case, x = 6 and num = 4.
->
-> 2- x is decreased by 1 while num is increased by 1. In this case, x = 5 and num = 5.
-> 
-> It can be shown that there is no achievable number greater than 7.
-
-
-**Constraints:**
-
-* `1 <= num, t <= 50`
 
 ### Answer
 
@@ -1295,52 +557,6 @@ int theMaximumAchievableX(int num, int t){
 ## 2798 Number of Employees Who Met the Target
 
 Finished on May 7, 2024.
-
-### Description
-
-There are n employees in a company, numbered from 0 to n - 1. Each employee i has worked for hours[i] hours in the company.
-
-The company requires each employee to work for at least target hours.
-
-You are given a 0-indexed array of non-negative integers hours of length n and a non-negative integer target.
-
-Return the integer denoting the number of employees who worked at least target hours.
-
-**Example 1:**
-
-> **Input:** hours = [0,1,2,3,4], target = 2
->
-> **Output:** 3
->
-> **Explanation:** The company wants each employee to work for at least 2 hours.
->
-> \- Employee 0 worked for 0 hours and didn't meet the target.
->
-> \- Employee 1 worked for 1 hours and didn't meet the target.
->
-> \- Employee 2 worked for 2 hours and met the target.
->
-> \- Employee 3 worked for 3 hours and met the target.
->
-> \- Employee 4 worked for 4 hours and met the target.
->
-> There are 3 employees who met the target.
-
-**Example 2:**
-
-> **Input:** hours = [5,1,4,2,2], target = 6
-> 
-> **Output:** 0
-> 
-> **Explanation:** The company wants each employee to work for at least 6 hours.
-> 
-> There are 0 employees who met the target.
-
-**Constraints:**
-
-* `1 <= n == hours.length <= 50`
-
-* <code>0 <= hours[i], target <= 10<sup>5<sup></code>
 
 ### Answer
 
@@ -1360,40 +576,6 @@ int numberOfEmployeesWhoMetTarget(int *hours, int hoursSize, int target)
 ## 2864 Maximum Odd Binary Number
 
 Finished on March 13, 2024.
-
-### Description
-
-You are given a **binary** string `s` that contains at least one `'1'`.
-
-You have to **rearrange** the bits in such a way that the resulting binary number is the **the maximum binary odd number** that can be created from this combination.
-
-Return *a string representing the maximum odd binary number that can be created from the given combination*.
-
-**Note** that the result string **can** contain leading zeros.
-
-**Example 1:**
-
-> **Input:** s = "010"
-> 
-> **Output:** "001"
-> 
-> **Explanation:** Because there is just one '1', it must be in the last position. So the answer is "001".
-
-**Example 2:**
-
-> **Input:** s = "0101"
-> 
-> **Output:** "1001"
-> 
-> **Explanation:** One of the '1's must be in the last position. The maximum number that can be made with the remaining digits is "100". So the answer is "1001".
-
-**Constraints:**
-
-* `1 <= s.length <= 100`
-
-* `s` consists only of `'0'` and `'1'`
-
-* `s` contains at least one `'1'`
 
 ### Answer
 
@@ -1430,64 +612,6 @@ char* maximumOddBinaryNumber(char* s) {
 
 Finished on March 20, 2024.
 
-### Description
-
-You are given two positive integers `n` and `m`.
-
-Define two integers, `num1` and `num2`, as follows:
-
-* `num1`: he sum of all integers in the range `[1, n]` that are **not divisible** by `m`.
-
-* `num2`: he sum of all integers in the range `[1, n]` that are **divisible** by `m`.
-
-Returns *the integers* `num1-num2`.
-
-**Example 1:**
-
-> **Input:** n = 10, m = 3
->
-> **Output:** 19
-> 
-> **Explanation:** In the given example:
-> 
-> \- Integers in the range [1, 10] that are not divisible by 3 are [1,2,4,5,7,8,10], num1 is the sum of those integers = 37.
->
-> \- Integers in the range [1, 10] that are divisible by 3 are [3,6,9], num2 is the sum of those integers = 18.
->
-> We return 37 - 18 = 19 as the answer.
-
-**Example 2:**
-
-> **Input:** n = 5, m = 6
-> 
-> **Output:** 15
-> 
-> **Explanation:** In the given example:
-> 
-> \- Integers in the range [1, 5] that are not divisible by 6 are [1,2,3,4,5], num1 is the sum of those integers = 15.
-> 
-> \- Integers in the range [1, 5] that are divisible by 6 are [], num2 is the sum of those integers = 0.
-> 
-> We return 15 - 0 = 15 as the answer.
-
-**Example 3:**
-
-> **Input:** n = 5, m = 1
->
-> **Output:** -15
-> 
-> **Explanation:** In the given example:
-> 
-> \- Integers in the range [1, 5] that are not divisible by 1 are [], num1 is the sum of those integers = 0.
->
-> \- Integers in the range [1, 5] that are divisible by 1 are [1,2,3,4,5], num2 is the sum of those integers = 15.
->
-> We return 0 - 15 = -15 as the answer.
-
-**Constraints:**
-
-* `1 <= n, m <= 1000`
-
 ### Answer
 
 ```c
@@ -1515,49 +639,6 @@ File: [./2894/differentOfSums.c](./2894/differentOfSums.c)
 ## 2942 Find Words Containing Character
 
 Finished on March 13, 2024.
-
-### Description
-
-You are given a **0-indexed** array of strings `words` and a character `x`.
-
-Return *an **array of indices** representing the words that contain the character* `x`.
-
-Note that the returned array may be in any order.
-
-**Example 1:**
-
-> **Input:** words = ["leet","code"], x = "e"
-> 
-> **Output:** [0,1]
-> 
-> **Explanation:** "e" occurs in both words: "l<u>**ee**</u>t", and "cod<u>**e**</u>". Hence, we return indices 0 and 1.
-
-**Example 2:**
-
-> **Input:** words = ["abc","bcd","aaaa","cbc"], x = "a"
-> 
-> **Output:** [0,2]
-> 
-> **Explanation:** "a" occurs in "<u>**a**</u>bc", and "<u>**aaaa**</u>". Hence, we return indices 0 and 2.
-
-**Example 3:**
-
-> **Input:** words = ["abc","bcd","aaaa","cbc"], x = "z"
-> 
-> **Output:** []
-> 
-> **Explanation:** "z" does not occur in any of the words. Hence, we return an empty array.
-
-
-**Constraints:**
-
-* `1 <= words.length <= 50`
-
-* `1 <= words[i].length <= 50`
-
-* `x` is a lowercase English letter.
-
-* `words[i]` consists only of lowercase English letters.
 
 ### Answer
 
@@ -1588,14 +669,6 @@ Normative Way: [./2942/normative-reproduction.c](./2942/normative-reproduction.c
 
 Finished on April 22, 2023.
 
-### Description
-
-You are given a **0-indexed** string `s` typed by a user. Changing a key is defined as using a key different from the last used key. For example, `s = "ab"` has a change of a key while `s = "bBBb"` does not have any.
-
-Return *the number of times the user had to change the key*.
-
-**Note:** Modifiers like `shift` or `caps lock` won't be counted in changing the key that is if a user typed the letter `'a'` and then the letter `'A'` then it will not be considered as a changing of key.
-
 ### Answer
 
 ```c
@@ -1625,100 +698,9 @@ int countKeyChanges(char *s)
 
 File: [./3019/countKeyChanges.c](./3019/countKeyChanges.c)
 
-**Example 1:**
-
-> **Input:** s = "aAbBcC"
-> 
-> **Output:** 2
-> 
-> **Explanation:** 
-> 
-> From s[0] = 'a' to s[1] = 'A', there is no change of key as caps lock or shift is not counted.
-> 
-> From s[1] = 'A' to s[2] = 'b', there is a change of key.
-> 
-> From s[2] = 'b' to s[3] = 'B', there is no change of key as caps lock or shift is not counted.
-> 
-> From s[3] = 'B' to s[4] = 'c', there is a change of key.
-> 
-> From s[4] = 'c' to s[5] = 'C', there is no change of key as caps lock or shift is not counted.
-
-**Example 2:**
-
-> **Input:** s = "AaAaAaaA"
-> 
-> **Output:** 0
-> 
-> **Explanation:** There is no change of key since only the letters 'a' and 'A' are pressed which does not require change of key.
- 
-
-**Constraints:**
-
-* `1 <= s.length <= 100`
-
-* `s` consists of only upper case and lower case English letters.
-
 ## 3028 Ant on the Boundary
 
 Finished on March 11, 2024.
-
-### Description
-
-An ant is on the boundary. It sometimes goes **left** and sometimes **right**.
-
-You are given an array of **non-zero** integers `nums`. The ant starts reading `nums` from the first element of it to its end. At each step, it moves according to the value of the current element:
-
-* If `nums[i] < 0`, it moves **left** by `-nums[i]` units.
-
-* If `nums[i] > 0`, it moves **right** by `nums[i]` units.
-
-Returns *the number of times the ant **returns** to the boundary*.
-
-**Notes:**
-
-* There is an infinite space on both sides of the boundary.
-
-* We check whether the ant is on the boundary only after it has moved `| nums [I] |` units. In other words, if the ant crosses the boundary during its movement, it does not count.
-
-
-**Example 1:**
-
-> **Input:** nums = [2,3,-5]
-> 
-> **Output:** 1
-> 
-> **Explanation:** After the first step, the ant is 2 steps to the right of the boundary.
-> 
-> After the second step, the ant is 5 steps to the right of the boundary.
-> 
-> After the third step, the ant is on the boundary.
-> 
-> So the answer is 1.
-
-**Example 2:**
-
-> **Input:** nums = [3,2,-3,-4]
-> 
-> **Output:** 0
-> 
-> **Explanation:** After the first step, the ant is 3 steps to the right of the boundary.
-> 
-> After the second step, the ant is 5 steps to the right of the boundary.
-> 
-> After the third step, the ant is 2 steps to the right of the boundary.
-> 
-> After the fourth step, the ant is 2 steps to the left of the boundary.
-> 
-> The ant never returned to the boundary, so the answer is 0.
-
-
-**Constraints:**
-
-* `1 <= nums.length <= 100`
-
-* `-10 <= nums[i] <= 10`
-
-* `nums[i] ! = 0`
 
 ### Answer
 
@@ -1738,57 +720,6 @@ int returnToBoundaryCount(int* nums, int numsSize) {
 
 Finished on March 10, 2024.
 
-### Description
-
-You are given a **0-indexed** integers array `nums`, and an integer `k`.
-
-In one operation, you can remove one occurrence of the smallest element of `nums`.
-
-Return *the **minimum** number of operations needed so that all elements of the array are greater than or equal to `k`*.
-
-**Example 1:**
-
-> **Input:** nums = [2,11,10,1,3], k = 10
->
-> **Output:** 3
->
-> **Explanation:** After one operation, nums becomes equal to [2, 11, 10, 3].
->
-> After two operations, nums becomes equal to [11, 10, 3].
->
-> After three operations, nums becomes equal to [11, 10].
->
-> At this stage, all the elements of nums are greater than or equal to 10 so we can stop.
->
-> It can be shown that 3 is the minimum number of operations needed so that all elements of the array are greater than or equal to 10.
-
-**Example 2:**
- 
-> **Input:** nums = [1,1,2,4,9], k = 1
-> 
-> **Output:** 0
-> 
-> **Explanation:** All elements of the array are greater than or equal to 1 so we do not need to apply any operations on nums.
-
-**Example 3:**
-
-> **Input:** nums = [1,1,2,4,9], k = 9
-> 
-> **Output:** 4
-> 
-> **Explanation:** only a single element of nums is greater than or equal to 9 so we need to apply the operations 4 times on nums.
-
-
-**Constraints:**
-
-* `1 <= nums.length <= 50`
-
-* `1 <= nums[i] <= 109`
-
-* `1 <= k <= 109`
-
-* The input is generated such that there is at least one index `i` such that `nums[i] >= k`.
-
 ### Answer
 
 ```c
@@ -1805,37 +736,3 @@ int minOperations(int* nums, int numsSize, int k) {
 ## 3110 Score of a String
 
 Finished on April 17, 2024.
-
-### Description
-
-You are given a string `s`. The **score** of a string is defined as the sum of the absolute difference between the **ASCII** values of adjacent characters.
-
-Return the **score** of `s`.
-
-**Example 1:**
-
-> **Input:** s = "hello"
-> 
-> **Output:** 13
-> 
-> **Explanation:**
->
-> The **ASCII** values of the characters in `s` are: `'h' = 104`, `'e' = 101`, `'l' = 108`, `'o' = 111`. So, the score of `s` would be `|104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13`.
-
-**Example 2:**
-
-> **Input:** s = "zaz"
->
-> **Output:** 50
->
-> **Explanation:**
->
-> The **ASCII** values of the characters in `s` are: `'z' = 122`, `'a' = 97`. So, the score of `s` would be `|122 - 97| + |97 - 122| = 25 + 25 = 50`.
-
- 
-
-**Constraints:**
-
-* `2 <= s.length <= 100`
-
-* `s` consists only of lowercase English letters.
