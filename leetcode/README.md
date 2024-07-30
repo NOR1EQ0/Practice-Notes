@@ -1,6 +1,6 @@
 # Notes for *LeetCode Problem Set*
 
-At this directory, I will write my notes here.
+At this markdown file, I will write my answers here.
 
 ## Answer Status
 
@@ -18,6 +18,7 @@ At this directory, I will write my notes here.
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
 |1108|Defanging an IP Address|`String`|Easy|Done|Done|
+|1154|Day of the year|`Math` `String`|Easy|Done|Done|
 |1342|Number of Steps to Reduce a Number to Zero|`Bit Manipulation` `Math`|Easy|Done| |
 |1929|Concatenation of Array|`Array` `Simulation`|Easy|Done|Done|
 |2011|Final Value of Variable After Performing Operations|`Array` `String` `Simulation`|Easy|Done|Done|
@@ -332,6 +333,33 @@ char *defangIPaddr(char *address)
 ### Reproduction
 
 File: [./1108/defangIPaddr.c](./1108/defangIPaddr.c)
+
+## 1154 Day of the Year
+
+Finished on July 25, 2024.
+
+### Answer
+
+```c
+int dayOfMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int dayOfYear(char *date)
+{
+    date[4] = '\0';
+    date[7] = '\0';
+    int ans = 0, year = atoi(date), month = atoi(date + 5) - 1, day = atoi(date + 8);
+    for (int *i = dayOfMonth; i < dayOfMonth + month; i++)
+    {
+        ans += *i;
+    }
+    ans += day;
+    if (month > 1 && (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)))
+    {
+        ++ans;
+    }
+    return ans;
+}
+```
 
 ## 1342 Number of Steps to Reduce A Number to Zero
 
