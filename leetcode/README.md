@@ -5,7 +5,7 @@ At this markdown file, I will write my answers here.
 ## Answer Status
 
 |No.|Question|Tag|Difficulty|Status|Reproduction|
-|----|----|----|----|----|----|
+|---|--------|---|----------|------|------------|
 |1|Two Sum|`Array` `Hash Table`|Easy|Done|Done|
 |3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
@@ -27,6 +27,7 @@ At this markdown file, I will write my answers here.
 |2529|Maximum Count of Positive Integer and Negative Integer|`Array` `Binary Search` `Counting`|Easy| | |
 |2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
 |2656|Maximum Sum With Exactly K Elements|`Greedy` `Array`|Easy|Done|Done|
+|2729|Check if The Number is Fascinating|`Hash Table` `Math`|Easy|Done| |
 |2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Idle| |
 |2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
 |2798|Number of Employees Who Met the Target|`Array`|Easy|Done|Done|
