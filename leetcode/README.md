@@ -9,11 +9,12 @@ At this markdown file, I will write my answers here.
 |1|Two Sum|`Array` `Hash Table`|Easy|Done|Done|
 |3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
-|66|Plus One|`Array` `Math`|Easy|Idle| |
+|66|Plus One|`Array` `Math`|Easy|Shelved| |
 |256|Add Digits|`Math` `Number Theory` `Simulation`|Easy|Done|Done|
 |283|Move Zeroes|`Array` `Two Pointers`|Easy|Done|Done|
 |322|Coin Change|`Breadth-First Search` `Array` `Dynamic Programming`|Medium|Delay| |
 |434|Number of Segments in a String|`String`|Easy|Done|Done|
+|496|Next Greater Element I|`Stack` `Array` `Hash Table` `Monotonic Stack`|Easy| | |
 |518|Coin Change II|`Array` `Dynamic Programming`|Medium|Delay| |
 |709|To Lower Case|`String`|Easy|Done| |
 |771|Jewels and Stones|`Hash Table` `String`|Easy|Done| |
@@ -28,7 +29,7 @@ At this markdown file, I will write my answers here.
 |2651|Calculate Delayed Arrival Time|`Math`|Easy|Done| |
 |2656|Maximum Sum With Exactly K Elements|`Greedy` `Array`|Easy|Done|Done|
 |2729|Check if The Number is Fascinating|`Hash Table` `Math`|Easy|Done| |
-|2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Idle| |
+|2744|Find Maximum Number of String Pairs|`Array` `Hash Table` `String` `Simulation`|Easy|Shelved| |
 |2769|Find the Maximum Achievable Number|`Math`|Easy|Done| |
 |2798|Number of Employees Who Met the Target|`Array`|Easy|Done|Done|
 |2864|Maximum Odd Binary Number|`Greedy` `Math` `String`|Easy|Done| |
@@ -38,8 +39,9 @@ At this markdown file, I will write my answers here.
 |3028|Ant on the Boundary|`Array` `Prefix Sum` `Simulation`|Easy|Done| |
 |3065|Minimum Operations to Exceed Threshold Value|`Array`|Easy|Done| |
 |3110|Score of a String|`String`|Easy|Done|Done|
+|LCP 40|心算挑战|`Greedy` `Array` `Sorting`|Easy|Shelved| |
 
-**Notice:** The difficulty listed here is sorted by LeetCode.
+**Notice:** The difficulty listed here is sorted by LeetCode. Some problem titles is not available in English in the LeetCode official Chinese site.
 
 ----
 
