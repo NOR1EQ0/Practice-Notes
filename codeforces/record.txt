@@ -1,0 +1,27 @@
+1: Codeforces Beta Round 1
+    Start: Feb/19/2010 20:00 UTC+8
+    Length: 02:00
+    Registration: No
+    Virtual: No
+    My Submissions:
+        275312620:
+            When: Aug/09/2024 06:33 UTC+8
+            Problem: 1A
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 46ms
+            Memory: 200KB
+
+1999: Codeforces Round 964 (Div. 4)
+    Start: Aug/06/2024 22:35 UTC+8
+    Length: 02:25
+    Registration: No
+    Virtual: No
+    My Submissions:
+        275279131:
+            When: Aug/09/2024 00:42 UTC+8
+            Problem: 1999A
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 46ms
+            Memory: 100KB
