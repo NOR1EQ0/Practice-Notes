@@ -10,7 +10,7 @@ All times mentioned here are based on CST (UTC+8). All my rankings shown here re
 
 |No.|Problem|Tag|Difficulty|Submission Status|
 |---|-------|---|----------|-----------------|
-|3142|Check if Grid Satisfies Conditions|`Array` `Matrix`|Easy|Correct|
+|3142|Check if Grid Satisfies Conditions|`Array` `Matrix`|Easy|Accepted|
 |3143|Maximum Points Inside the Square|`Array` `Hash Table` `String` `Binary Search` `Sorting`|Medium||
 |3144|Minimum Substring Partition of Equal Character Frequency|`Hash Table` `String` `Dynamic Programming` `Counting`|Medium||
 |3145|Find Products of Elements of Big Array|`Bit Manipulation` `Array` `Binary Search`|Hard||
@@ -23,7 +23,7 @@ All times mentioned here are based on CST (UTC+8). All my rankings shown here re
 
 |No.|Problem|Tag|Difficulty|Submission Status|
 |---|-------|---|----------|-----------------|
-|3146|Permutation Difference between Two Strings|`Hash Table` `String`|Easy|Correct|
+|3146|Permutation Difference between Two Strings|`Hash Table` `String`|Easy|Accepted|
 |3147|Taking Maximum Energy From the Mystic Dungeon|`Array` `Prefix Sum`|Medium||
 |3148|Maximum Difference Score in a Grid|`Array` `Dynamic Programming` `Matrix`|Medium||
 |3149|Find the Minimum Cost Array Permutation|`Bit Manipulation` `Array` `Dynamic Programming` `Bitmask`|Hard||
@@ -36,7 +36,7 @@ All times mentioned here are based on CST (UTC+8). All my rankings shown here re
 
 |No.|Problem|Tag|Difficulty|Submission Status|
 |---|-------|---|----------|-----------------|
-|3158|Find the XOR of Numbers Which Appear Twice|`Bit Manipulation` `Array` `Hash Table`|Easy|Correct|
+|3158|Find the XOR of Numbers Which Appear Twice|`Bit Manipulation` `Array` `Hash Table`|Easy|Accepted|
 |3159|Find Occurrences of an Element in an Array|`Array` `Hash Table`|Medium||
 |3160|Find the Number of Distinct Colors Among the Balls|`Array` `Hash Table` `Simulation`|Medium||
 |3161|Block Placement Queries|`Binary Indexed Tree` `Segment Tree` `Array` `Binary Search`|Hard||
@@ -49,7 +49,7 @@ All times mentioned here are based on CST (UTC+8). All my rankings shown here re
 
 |No.|Problem|Tag|Difficulty|Submission Status|
 |---|-------|---|----------|-----------------|
-|3238|Find the Number of Winning Players|`Array` `Hash Table` `Counting`|Easy|Correct|
+|3238|Find the Number of Winning Players|`Array` `Hash Table` `Counting`|Easy|Accepted|
 |3239|Minimum Number of Flips to Make Binary Grid Palindromic I|`Array` `Two Pointers` `Matrix`|Medium||
 |3240|Minimum Number of Flips to Make Binary Grid Palindromic II|`Array` `Two Pointers` `Matrix`|Medium||
 |3241|Time Taken to Mark All Nodes|`Tree` `Depth-First Search` `Graph` `Dynamic Programming`|Hard||
