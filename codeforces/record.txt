@@ -6,11 +6,25 @@
     My Submissions:
         275312620:
             When: Aug/09/2024 06:33 UTC+8
-            Problem: 1A
+            Problem: (A) Theatre Square
             Lang: GNU C11
             Verdict: Accepted
             Time: 46ms
             Memory: 200KB
+        275414336:
+            When: Aug/10/2024 00:01 UTC+8
+            Problem: (B) Spreadsheet
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 966ms
+            Memory: 100KB
+        275417232:
+            When: Aug/10/2024 00:24 UTC+8
+            Problem: (B) Spreadsheet
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 1028ms
+            Memory: 100KB
 
 1999: Codeforces Round 964 (Div. 4)
     Start: Aug/06/2024 22:35 UTC+8
@@ -20,8 +34,16 @@
     My Submissions:
         275279131:
             When: Aug/09/2024 00:42 UTC+8
-            Problem: 1999A
+            Problem: (A) A+B Again?
             Lang: GNU C11
             Verdict: Accepted
             Time: 46ms
             Memory: 100KB
+        275322115:
+            When: Aug/09/2024 09:56 UTC+8
+            Problem: (B) Card Game
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 61ms
+            Memory: 100KB
+        

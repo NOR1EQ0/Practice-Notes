@@ -9,6 +9,7 @@ At this markdown file, I will write my answers here.
 |1|Two Sum|`Array` `Hash Table`|Easy|Done|Done|
 |3|Longest Substring Without Repeating Characters|`Hash Table` `String` `Sliding Window`|Medium|Done| |
 |9|Palindrome Number|`Math`|Easy|Done| |
+|27|Remove Element|`Array` `Two Pointers`|Easy|Done| |
 |35|Search Insert Position|`Array` `Binary Search`|Easy|Done|Done|
 |66|Plus One|`Array` `Math`|Easy|Shelved| |
 |256|Add Digits|`Math` `Number Theory` `Simulation`|Easy|Done|Done|
