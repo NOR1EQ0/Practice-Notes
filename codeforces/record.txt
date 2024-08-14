@@ -3,7 +3,7 @@
     Length: 02:00
     Registration: No
     Virtual: No
-    My Submissions:
+    My:
         275312620:
             When: Aug/09/2024 06:33 UTC+8
             Problem: (A) Theatre Square
@@ -46,4 +46,24 @@
             Verdict: Accepted
             Time: 61ms
             Memory: 100KB
-        
+
+2000: Codeforces Round 966 (Div. 3)
+    Start: Aug/13/2024 22:40 UTC+8
+    Length: 02:15
+    Registration: Yes
+    Virtual: No
+    My:
+        276182402:
+            When: Aug/13/2024 23:15 UTC+8
+            Problem: (A) Primary Task
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 77ms
+            Memory: 0KB
+        276264231:
+            When: Aug/14/2024 00:20 UTC+8
+            Problem: (B) Seating in a Bus
+            Lang: GNU C11
+            Verdict: Accepted
+            Time: 61ms
+            Memory: 100KB
