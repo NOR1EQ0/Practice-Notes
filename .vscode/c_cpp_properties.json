@@ -11,7 +11,7 @@
             "cStandard": "c11",
             "intelliSenseMode": "linux-gcc-x64",
             "compilerArgs": [
-                "\"-lm\""
+                "-lm"
             ]
         }
     ],
