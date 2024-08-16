@@ -13,6 +13,17 @@
             "compilerArgs": [
                 "-lm"
             ]
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "C:\\Portable Programs\\MinGW-w64\\mingw64\\bin\\gcc.exe",
+            "cppStandard": "c++14",
+            "cStandard": "c11",
+            "intelliSenseMode": "windows-gcc-x64"
         }
     ],
     "version": 4
