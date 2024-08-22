@@ -16,6 +16,7 @@
 |-|----|----------|------|---------------|---------------|
 |1|Codeforces Beta Round 1|Feb/19/2010 20:00 UTC+8|02:00|No|A B|
 |1999|Codeforces Round 964 (Div. 4)|Aug/06/2024 22:35 UTC+8|02:25|No|A B|
+|2002|EPIC Institute of Technology Round August 2024 (Div. 1 + Div. 2)|Aug/11/2024 22:35 UTC+8|03:00|No|A|
 
 ## Accepted Solutions
 
@@ -31,6 +32,7 @@
 |276264231|2000B|Aug/14/2024 00:20 UTC+8|GNU C11|77 ms|100 KB|Contestant|
 |276602837|2004A|Aug/15/2024 23:11 UTC+8|GNU C11|61 ms|0 KB|Contestant|
 |277483542|2001A|Aug/21/2024 15:08 UTC+8|GNU C11|46 ms|100 KB|Practice|
+|277633464|2002A|Aug/22/2024 17:59 UTC+8|GNU C11|62 ms|0 KB|Practice|
 
 ## Misc
 
