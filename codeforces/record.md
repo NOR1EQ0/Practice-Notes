@@ -15,13 +15,14 @@
 |#|Name|Start time|Length|Virtual contest|Solved Problems|
 |-|----|----------|------|---------------|---------------|
 |1|Codeforces Beta Round 1|Feb/19/2010 20:00 UTC+8|02:00|No|A B|
+|4|Codeforces Beta Round 4 (Div. 2 Only)|Mar/12/2010 20:00 UTC+8|02:00|No|A|
 |1999|Codeforces Round 964 (Div. 4)|Aug/06/2024 22:35 UTC+8|02:25|No|A B|
 |2002|EPIC Institute of Technology Round August 2024 (Div. 1 + Div. 2)|Aug/11/2024 22:35 UTC+8|03:00|No|A|
 
 ## Accepted Solutions
 
-|Solution #|Problem #|When|Lang|Time|Memory|Status|
-|----------|---------|----|----|----|------|------|
+|Submission #|Problem #|When|Lang|Time|Memory|Status|
+|------------|---------|----|----|----|------|------|
 |275279131|1999A|Aug/09/2024 00:42 UTC+8|GNU C11|46 ms|100 KB|Practice|
 |275312620|1A|Aug/09/2024 06:33 UTC+8|GNU C11|46 ms|200 KB|Practice|
 |275322115|1999B|Aug/09/2024 09:56 UTC+8|GNU C11|61 ms|100 KB|Practice|
@@ -33,6 +34,7 @@
 |276602837|2004A|Aug/15/2024 23:11 UTC+8|GNU C11|61 ms|0 KB|Contestant|
 |277483542|2001A|Aug/21/2024 15:08 UTC+8|GNU C11|46 ms|100 KB|Practice|
 |277633464|2002A|Aug/22/2024 17:59 UTC+8|GNU C11|62 ms|0 KB|Practice|
+|277803718|4A|Aug/23/2024 23:55 UTC+8|GNU C11|122 ms|100 KB|Practice|
 
 ## Misc
 

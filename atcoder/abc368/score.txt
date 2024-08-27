@@ -1,0 +1,8 @@
+TOTAL 600
+A 100 AC
+B 200 AC
+C 300 AC
+D 
+E 
+F 
+G 
