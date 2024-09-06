@@ -7,19 +7,25 @@
  * @param col 原矩阵列数
  */
 void transpose(int* grid, int* row, int* col) {
-    int n = *row * *col; // count
-    int arr[n];
-    memcpy(arr, grid, sizeof(int) * n);
-    for (int i = 0; i < n; ++i) {
-        // for (int j = 0; j < *col; ++j) {
-        //     grid[j * *col + i] = arr[i * *row + j];
-        // }
-        
-    }
     // swap
     *row = *row ^ *col;
     *col = *row ^ *col;
     *row = *row ^ *col;
+    int n = *row * *col; // count
+    int arr[n];
+    memcpy(arr, grid, sizeof(int) * n);
+    for (int i = 0; n; ) {
+        // for (int j = 0; j < *col; ++j) {
+        //     grid[j * *col + i] = arr[i * *row + j];
+        // }
+        for (int j = 0; j < *col; j++) {
+            for (int k = 0; k < *row; k++) {
+                grid[k * *col + j] = arr[i];
+                ++i;
+                --n;
+            }
+        }
+    }
 }
 
 int main() {
