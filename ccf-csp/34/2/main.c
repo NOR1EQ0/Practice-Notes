@@ -15,9 +15,6 @@ void transpose(int* grid, int* row, int* col) {
     int arr[n];
     memcpy(arr, grid, sizeof(int) * n);
     for (int i = 0; n; ) {
-        // for (int j = 0; j < *col; ++j) {
-        //     grid[j * *col + i] = arr[i * *row + j];
-        // }
         for (int j = 0; j < *col; j++) {
             for (int k = 0; k < *row; k++) {
                 grid[k * *col + j] = arr[i];
