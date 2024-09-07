@@ -5,7 +5,7 @@ typedef struct pair
 {
     char* str;
     int val;
-};
+} pair;
 
 
 int main() {
@@ -26,7 +26,7 @@ int main() {
     char dict[m][max_len+1];
     
     // Add single-letter word
-
+    
 
     return 0;
 }
