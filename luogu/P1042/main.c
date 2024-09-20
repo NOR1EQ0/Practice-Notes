@@ -5,7 +5,7 @@
 
 int main() {
     char in;
-    int ptarr[62525];
+    int ptarr[62525]; // col max = 25, row max = 2501
     memset(ptarr, 0, sizeof(int) * 62525);
     bool flag = true; // True W False L
     int pt11[2] = { 0, 0 };
