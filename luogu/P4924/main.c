@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void rotate(int** grid, int x, int y, int n, int r, int rot) {
+void rotate(int* grid, int x, int y, int n, int r, int rot) {
     int lt[2] = { x - r, y - r };
     int border = 2 * r + 1;
     int copy[border][border];
@@ -9,16 +9,20 @@ void rotate(int** grid, int x, int y, int n, int r, int rot) {
     // fill the copy
     for (int i = 0; i < border; ++i) {
         for (int j = 0; j < border; ++j) {
-            copy[i][j] = *grid[(lt[1] + j) * border + (lt[0] + i)];
+            copy[i][j] = grid[(lt[1] + i) * border + (lt[0] + j)];
         }
     }
 
     if (rot) { // reverse
-
+        for (int i = 0; i < border; ++i) {
+            for (int j = 0; j < border; ++j) {
+                grid[(lt[1] + border - j) * border + (lt[0] + i)] = copy[i][j];
+            }
+        }
     } else { // normal
         for (int i = 0; i < border; ++i) {
             for (int j = 0; j < border; ++j) {
-                *grid[(lt[1] + j) * border + (lt[0] + i)] = copy[i][j];
+                grid[(lt[1] + j) * border + (lt[0] + border - i)] = copy[i][j];
             }
         }
     }
@@ -29,6 +33,7 @@ int main() {
     scanf("%d %d", &n, &m);
     // Create a grid
     int grid[n][n];
+    int* ptr = grid[0];
     int tmp = 1;
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
@@ -41,14 +46,14 @@ int main() {
         int x, y, r, z; // z: rotate 0 normal 1 reverse
         scanf("%d %d %d %d", &x, &y, &r, &z);
         x--; y--; // fix center pos
-        rotate(grid, x, y, n, r, z);
+        rotate(ptr, x, y, n, r, z);
     }
 
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             printf("%d ", grid[i][j]);
         }
-        puts("\n");
+        printf("\n");
     }
     return 0;
 }
