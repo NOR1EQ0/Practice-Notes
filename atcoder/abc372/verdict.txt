@@ -1,0 +1,7 @@
+A AC
+B
+C 9AC + 8TLE (Submission #57995805: 2AC + 15TLE)
+D
+E
+F
+G

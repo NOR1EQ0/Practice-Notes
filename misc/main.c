@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <limits.h>
+#include <string.h>
+#include <stddef.h>
 
 int main() {
-    char str[25];
-    char str2[24];
-    for (char* ptr = str, i = 0; i < 25; ptr++, i++) {
-        *ptr = getchar();
-    }
+    char c = 4;
+    printf("%d",c);
     return 0;
 }

@@ -1,8 +1,0 @@
-TOTAL 150
-A 150 AC
-B 0 AC20+WA2
-C 
-D 
-E 
-F 
-G 
