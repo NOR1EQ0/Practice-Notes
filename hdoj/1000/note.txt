@@ -1,0 +1,1 @@
+I submitted the code but OJ returned 403. Someone said the reason is that the OJ want to prevent SQL injecting.
