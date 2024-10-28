@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "sortutil.h"
 
 void print_array(int* arr, int len, bool endl) {
     for (int i = 0; i < len; ++i) {
-        printf("%d ", arr);
+        printf("%d ", arr[i]);
     }
     if (endl) printf("\n");
 }
