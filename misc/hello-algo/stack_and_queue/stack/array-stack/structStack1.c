@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * 数组实现的栈结构体
@@ -33,7 +34,7 @@ void push(arrayStack* stack, int val) {
         return puts("Stack is full.");
     }
     stack->top++;
-    stack->data[stack->top]=val;
+    stack->data[stack->top] = val;
 }
 
 /**
@@ -50,14 +51,15 @@ void pop(arrayStack* stack) {
  * 访问栈内元素
  */
 int access(arrayStack* stack, int index) {
-    if (stack->top<=-1) {
+    if (stack->top <= -1) {
         puts("The stack is empty.");
         return -1;
     }
     else if (index > stack->top) {
         puts("The index given is greater than the top of the stack.");
         return -1;
-    } else if (index <= -1 || index >= stack->size) {
+    }
+    else if (index <= -1 || index >= stack->size) {
         puts("The index given is out of the boundary of the stack.");
         return -1;
     }
@@ -70,6 +72,11 @@ int access(arrayStack* stack, int index) {
 int peek(arrayStack* stack) {
     return access(stack, stack->top);
 }
+
+/**
+ * 检查数组是否为空
+ */
+bool isEmpty(arrayStack* stack) { return stack->top == -1 ? true : false; }
 
 int main() {
     arrayStack* stack = newArrayStack(5);
