@@ -77,3 +77,7 @@ int peek(LinkedListStack* stack) {
     }
     return -1;
 }
+
+bool isEmpty(LinkedListStack* stack) {
+    return !stack->size;
+}
