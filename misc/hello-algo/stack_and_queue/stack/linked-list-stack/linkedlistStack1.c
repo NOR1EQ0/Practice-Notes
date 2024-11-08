@@ -36,6 +36,7 @@ void delLinkedListStack(LinkedListStack* stack) {
         free(stack->top);
         stack->top = n;
     }
+    free(stack);
 }
 
 /**
