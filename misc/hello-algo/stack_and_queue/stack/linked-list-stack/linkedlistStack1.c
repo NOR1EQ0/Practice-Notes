@@ -34,7 +34,7 @@ void delLinkedListStack(LinkedListStack* stack) {
     while (stack->top) {
         listNode* n = stack->top->next;
         free(stack->top);
-        stack = n;
+        stack->top = n;
     }
 }
 
@@ -53,6 +53,9 @@ void push(LinkedListStack* stack, int val) {
  * 出栈
  */
 void pop(LinkedListStack* stack) {
+    if (!stack->top) {
+        return;
+    }
     listNode* del = stack->top;
     stack->top = stack->top->next;
     stack->size -= 1;
@@ -64,4 +67,12 @@ void pop(LinkedListStack* stack) {
  */
 int size(LinkedListStack* stack) { return stack->size; }
 
-int peek(LinkedListStack* stack) {}
+/**
+ * 访问栈顶
+ */
+int peek(LinkedListStack* stack) {
+    if (stack->top) {
+        return stack->top->val;
+    }
+    return -1;
+}
