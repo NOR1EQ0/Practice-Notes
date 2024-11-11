@@ -1,3 +1,4 @@
+// 自己尝试简单的数组栈实现
 #include <stdio.h>
 #include <stdlib.h>
 
