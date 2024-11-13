@@ -1,15 +1,29 @@
-#include <cstring>
 #include <iostream>
-#define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr);
-constexpr int MAXN = 100000;
+#include <vector>
 
-int solve(int n, int a[]) {
-    
+using namespace std;
+
+int solve(vector<int> arr) {
+    int ans = 0;
+    for (auto i = arr.begin(); i != arr.end(); ++i) {
+        for (auto j = i; j < arr.end(); ++j) {
+            if (*i + *j == 0) ans++;
+        }
+    }
+    return ans;
 }
 
 int main() {
-    IOS;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n;
-    std::cin >> n;
-    
+    cin >> n;
+    vector<int> arr;
+    for (int i = 0; i < n; ++i) {
+        int in;
+        cin >> in;
+        arr.emplace_back(in);
+    }
+    cout << solve(arr) << endl;
+    return 0;
 }
