@@ -86,6 +86,16 @@ void push(LinkedListDeque* deque, int val, bool pushFirst) {
 }
 
 /**
+ * 访问队首元素
+ */
+int peekFirst(LinkedListDeque* deque) { assert(deque->size && deque->front); return deque->front->val; }
+
+/**
+ * 访问队尾元素
+ */
+int peekLast(LinkedListDeque* deque) { assert(deque->size && deque->rear); return deque->rear->val; }
+
+/**
  * 队首入队
  */
 void pushFirst(LinkedListDeque* deque, int val) { push(deque, val, true); }
@@ -137,15 +147,46 @@ int popFirst(LinkedListDeque* deque) { return pop(deque, true); }
 int popLast(LinkedListDeque* deque) { return pop(deque, false); }
 
 /**
- * 访问队首元素
+ * 打印队列
  */
-int peekFirst(LinkedListDeque* deque) { assert(deque->size && deque->front); return deque->front->val; }
+void printDeque(LinkedListDeque* deque) {
+    DoublyListNode* ptr = deque->front;
+    if (ptr) {
+        printf("%d ", ptr->val);
+        ptr = ptr->next;
+    }
+    putchar('\n');
+}
 
-/**
- * 访问队尾元素
- */
-int peekLast(LinkedListDeque* deque) { assert(deque->size && deque->rear); return deque->rear->val; }
+// 测试代码
+int main() {
+    // Initial
+    LinkedListDeque* deque = newLinkedListDeque();
+    pushLast(deque, 3);
+    printDeque(deque);
+    pushLast(deque, 2);
+    printDeque(deque);
+    pushLast(deque, 5);
+    printDeque(deque);
 
-/**
- *
- */
+    // Progress
+    // Step I
+    puts("Step I:");
+    pushLast(deque, 4);
+    printDeque(deque);
+    // Step II
+    puts("Step II:");
+    popLast(deque);
+    printDeque(deque);
+    // Step III
+    puts("Step III:");
+    pushFirst(deque, 1);
+    printDeque(deque);
+    // Step IV
+    puts("Step IV:");
+    popFirst(deque);
+    printDeque(deque);
+
+    puts("Done.");
+    return 0;
+}
