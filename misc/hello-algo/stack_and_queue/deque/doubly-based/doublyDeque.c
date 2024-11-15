@@ -124,7 +124,7 @@ int pop(LinkedListDeque* deque, bool popFront) {
         deque->front = tmp;
     } else {
         val = peekLast(deque);
-        DoublyListNode* tmp = deque->front->prev;
+        DoublyListNode* tmp = deque->rear->prev;
         if (tmp) {
             tmp->next = NULL;
             deque->rear->prev = NULL;
@@ -151,7 +151,7 @@ int popLast(LinkedListDeque* deque) { return pop(deque, false); }
  */
 void printDeque(LinkedListDeque* deque) {
     DoublyListNode* ptr = deque->front;
-    if (ptr) {
+    while (ptr) {
         printf("%d ", ptr->val);
         ptr = ptr->next;
     }
