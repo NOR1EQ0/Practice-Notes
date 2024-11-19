@@ -3,12 +3,21 @@
 #include <string.h>
 #define MAX_SIZE 100
 
+// 简易Hash
+int hash(const int key) { return key % MAX_SIZE; }
+
 // 键值对
-typedef struct Pair
-{
+typedef struct Pair {
     int key;
     char* val;
 } Pair;
+
+// 集合
+typedef struct MapSet {
+    void* set;
+    int len;
+} MapSet;
+
 
 // 基于数组实现
 typedef struct ArrayHashMap {
@@ -43,6 +52,52 @@ void put(ArrayHashMap* hmap, const int key, const char* val) {
     pair->val = (char*)malloc(strlen(val) + 1);
     strcpy(pair->val, val);
 
-    int index = hashFunc(key);
+    int index = hash(key);
     hmap->buckets[index] = pair;
+}
+
+// 删除元素
+void removeItem(ArrayHashMap* hmap, const int key) {
+    int index = hash(key);
+    free(hmap->buckets[index]->val);
+    free(hmap->buckets[index]);
+    hmap->buckets[index] = NULL;
+}
+
+// 获取所有键值对
+void pairSet(ArrayHashMap* hmap, MapSet* set) {
+    int total = 0;
+    for (int i = 0; i < MAX_SIZE; ++i) {
+        if (hmap->buckets[i]) {
+            ++total;
+        }
+    }
+    Pair* entries = (Pair*)malloc(sizeof(Pair));
+    for (int i = 0, index = 0; i < MAX_SIZE; ++i) {
+        if (hmap->buckets[i]) {
+            entries[index].key = hmap->buckets[i]->key;
+            entries[index].val = (char*)malloc(strlen(hmap->buckets[i]->val) + 1);
+            strcpy(entries[index].val, hmap->buckets[i]);
+            index++;
+        }
+    }
+    set->set = entries;
+    set->len = total;
+}
+
+// 获取所有键
+void keySet(ArrayHashMap* hmap, MapSet* set) {
+    int total = 0;
+    for (int i = 0; i < MAX_SIZE; ++i) {
+        if (hmap->buckets[i]) {
+            total++;
+        }
+    }
+    int* keys = (int*)malloc(sizeof(int)*total);
+    for (int i = 0, index = 0; i < MAX_SIZE; ++i) {
+        if (hmap->buckets[i]) {
+            keys[index] = hmap->buckets[i]->key;
+        }
+    }
+    return keys;
 }
