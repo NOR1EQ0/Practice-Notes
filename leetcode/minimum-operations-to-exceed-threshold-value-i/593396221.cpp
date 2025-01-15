@@ -7,16 +7,13 @@ public:
     int minOperations(vector<int>& nums, int k) {
         sort(nums.begin(), nums.end());
         auto f = lower_bound(nums.begin(), nums.end(), k);
-        if (f==nums.end()) {
-            return 0;
-        }
-        return f-nums.begin()+1;
+        return f-nums.begin();
     }
 };
 
 int main() {
-    vector<int> vec{1,1,2,4,9};
-    int k = 1;
+    vector<int> vec{2,11,10,1,3};
+    int k = 10;
     Solution a;
     cout << a.minOperations(vec, k) << endl;
     return 0;
