@@ -1,20 +1,14 @@
-#include <iostream>
-#include <vector>
-#define IOS ios::sync_with_stdio(false);cin.tie(nullptr);
+#include <bits/stdc++.h>
+#define IOS do{ios::sync_with_stdio(false);cin.tie(nullptr);}while(0);
 
 using namespace std;
+
+bool block[21][21][21];
 
 int main() {
     IOS;
     int w, x, h, q;
-    // cin >> w >> x >> h >> q;
-    cin >> q;
-    vector<int> arr;
-    for (int i = 0; i < q; ++i) {
-        arr.emplace_back(cin);
-    }
-    for (auto i : arr) {
-        cout << i << " ";
-    }
+    cin >> w >> x >> h >> q;
+    
     return 0;
 }
