@@ -53,7 +53,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe 生成活动文件 (Windows)",
-            "command": "C:\\Portable Programs\\MinGW-w64\\mingw64\\bin\\gcc.exe",
+            "command": "C:\\Portable Programs\\MinGW-w64\\latest\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -62,7 +62,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "C:\\Portable Programs\\MinGW-w64\\mingw64\\bin"
+                "cwd": "C:\\Portable Programs\\MinGW-w64\\latest\\bin"
             },
             "problemMatcher": [
                 "$gcc"
@@ -76,7 +76,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe 生成活动文件 (Windows)",
-            "command": "C:\\Portable Programs\\MinGW-w64\\mingw64\\bin\\g++.exe",
+            "command": "C:\\Portable Programs\\MinGW-w64\\latest\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -85,7 +85,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "C:\\Portable Programs\\MinGW-w64\\mingw64\\bin"
+                "cwd": "C:\\Portable Programs\\MinGW-w64\\latest\\bin"
             },
             "problemMatcher": [
                 "$gcc"
