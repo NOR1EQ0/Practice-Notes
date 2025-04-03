@@ -20,6 +20,9 @@ public:
         TreeNode* current = root;
         stack<int> path;
         char meetRoot = 0;
+        auto checkLeave = [](TreeNode& node) -> bool {
+            return node.left || node.right;
+        };
     }
 };
 
