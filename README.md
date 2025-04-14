@@ -6,9 +6,10 @@ The note shall to be my C language study note but it actually becomes a place to
 
 This is just for me to take a view.
 
-|OJ|Problem|Status|In Progress?|
-|--|-------|------|------------|
+|OJ|Problem|Status|In Progress?|Comment|
+|--|-------|------|------------|-------|
 |luogu|P1205|Unaccepted|Delay|
+|luogu|P5015|||NOIP2018 T1|
 
 ## TODO ~~(Maybe)~~
 
