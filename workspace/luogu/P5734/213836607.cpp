@@ -35,10 +35,15 @@ int main() {
             break;
         }
         case 4: {
-            int a;
-            cin >> a;
             string sub;
             cin >> sub;
+            // match
+            auto ret = str.find(sub);
+            if (ret == str.npos)
+                cout << -1;
+            else
+                cout << ret;
+            cout << endl;
             break;
         }
         }
