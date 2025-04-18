@@ -12,16 +12,26 @@ int main() {
     while (n--) {
         int tmp;
         cin >> tmp;
-        vec.emplace_back(-tmp);
+        vec.emplace_back(tmp);
     }
     sort(vec.begin(), vec.end());
-    while (k--) {
-        vec[mid]--;
-        auto it = upper_bound(vec.rbegin() + mid + 1, vec.rend(), vec[mid]);
-        if (it != vec.rend()) {
-            iter_swap(it, vec.rbegin() + mid);
+    while (k) {
+        auto fret = find_if(vec.begin() + mid, vec.end(), [&vec, &mid](int& i) { return i != vec[mid];});
+        if (vec[mid] >= vec.back()) {
+            
         }
+        if (fret == vec.end()) {
+            vec[mid] += (k / (mid + 1));
+            break;
+        }
+        vec[mid]++;
+        auto it = upper_bound(fret, vec.end(), vec[mid], greater<int>());
+        it = find_end(it, vec.end(), it, it + 1);
+        if (it != vec.end()) {
+            iter_swap(it, vec.begin() + mid);
+        }
+        k--;
     }
-    cout << -vec[mid] << '\n';
+    cout << vec[mid] << '\n';
     return 0;
 }
