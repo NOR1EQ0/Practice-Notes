@@ -15,23 +15,7 @@ int main() {
         vec.emplace_back(tmp);
     }
     sort(vec.begin(), vec.end());
-    while (k) {
-        auto fret = find_if(vec.begin() + mid, vec.end(), [&vec, &mid](int& i) { return i != vec[mid];});
-        if (vec[mid] >= vec.back()) {
-            
-        }
-        if (fret == vec.end()) {
-            vec[mid] += (k / (mid + 1));
-            break;
-        }
-        vec[mid]++;
-        auto it = upper_bound(fret, vec.end(), vec[mid], greater<int>());
-        it = find_end(it, vec.end(), it, it + 1);
-        if (it != vec.end()) {
-            iter_swap(it, vec.begin() + mid);
-        }
-        k--;
-    }
+    for (int i = mid; i < )
     cout << vec[mid] << '\n';
     return 0;
 }
