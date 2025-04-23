@@ -71,15 +71,21 @@ C++
 * 从[这个代码](../../misc/oi-wiki/basic/sort/selection-sort/example-Luogu-P1271-TLE.cpp)截取出来并稍作整理而得。
 
 ```cpp
-void selection_sort(vector<int>& )
-for (int i = 0;i < m;++i) {
-    int ith = i;
-    for (int j = i + 1; j < m; ++j) {
-        if (vec[j] < vec[ith]) { ith = j; }
+void selection_sort(vector<int>& vec) {
+    auto len = vec.size();
+    for (int i = 0; i < len; ++i) {
+        int ith = i;
+        for (int j = i + 1; j < len; ++j) {
+            if (vec[j] < vec[ith]) { ith = j; }
+        }
+        swap(vec[ith], vec[i]);
     }
-    swap(vec[ith], vec[i]);
 }
 ```
+
+---
+
+写个奇奇怪怪的东西
 
 ## 睡觉排序（Sleeping Sort）
 
@@ -94,3 +100,34 @@ for (int i = 0;i < m;++i) {
 `O(max(array))`，`array` 为给定序列。
 
 但鉴于它依赖于多线程，所以执行起来是十分不可控的。
+
+### 示例代码
+
+我自己没有特地写这个，遂放置通义 AI 生成的 Java 代码：
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class SleepSort {
+    public static void main(String[] args) throws InterruptedException {
+        int[] array = {34, 7, 23, 32, 5, 62};
+        List<Thread> threads = new ArrayList<>();
+        for (final int num : array) {
+            Thread thread = new Thread(() -> {
+                try {
+                    Thread.sleep(num);
+                    System.out.print(num + " ");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+            threads.add(thread);
+            thread.start();
+        }
+        for (Thread thread : threads) {
+            thread.join();
+        }
+    }
+}
+```
