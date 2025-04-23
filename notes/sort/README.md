@@ -83,6 +83,10 @@ void selection_sort(vector<int>& vec) {
 }
 ```
 
+## 插入排序（Insertion Sort）
+
+[代码](../../misc/oi-wiki/basic/sort/insertion-sort/a.cpp)写了。明天再写这个 Markdown，好困。
+
 ---
 
 写个奇奇怪怪的东西
