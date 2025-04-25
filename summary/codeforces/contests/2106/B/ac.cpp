@@ -1,0 +1,1 @@
+../../../../../workspace/codeforces/contests/2106/B/317052732.cpp

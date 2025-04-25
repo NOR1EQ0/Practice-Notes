@@ -15,13 +15,24 @@ int main(int argc, char const* argv[]) {
         for (int i = 0; i < n; ++i) {
             cin >> a[i]; amax = max(amax, a[i]); amin = min(amin, a[i]);
         }
-        int sum = -1;
-        bool fullybroken = true;
+        ll sum = -1;
+        bool valid = true;
         for (int i = 0; i < n; ++i) {
-            cin >> b[i]; if (fullybroken && b[i] != -1) { sum = a[i] + b[i]; fullybroken = false; }
+            cin >> b[i];
+            if (b[i] != -1) {
+                ll current_sum = a[i] + b[i];
+                if (sum == -1) {
+                    sum = a[i] + b[i];
+                } else {
+                    if (current_sum != sum) { valid=false; }
+                }
+            }
+        }
+        if (!valid) {
+            cout << "0\n"; continue;
         }
         if (sum != -1) {
-            if (sum - amin >= k || sum - amax < 0) {
+            if (sum - amin > k || sum - amax < 0) {
                 cout << 0;
             } else {
                 cout << 1;
