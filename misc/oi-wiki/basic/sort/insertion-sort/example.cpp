@@ -6,7 +6,7 @@ template<typename ElemType = int, typename = enable_if<is_arithmetic<ElemType>::
 void insertion_sort(vector<ElemType>& vec) {
     auto len = vec.size();
     for (size_t i = 1; i < len; ++i) {
-        ElemType key = vec[i]; // 先用临时变量存储这一元素的值（哨兵）
+        ElemType key = vec[i]; // 先用临时变量存储这一元素的值
         size_t j = i - 1; 
         // 开始向前寻找比 key 更小的数，寻找过程中的数字均往后移动一位
         while (j >= 0 && vec[j] > key) {

@@ -85,7 +85,48 @@ void selection_sort(vector<int>& vec) {
 
 ## 插入排序（Insertion Sort）
 
-[代码](../../misc/oi-wiki/basic/sort/insertion-sort/a.cpp)写了。明天再写这个 Markdown，好困。
+### 原理
+
+在给定的序列中，每次执行一次如下的循环，直至排序正确为止：（以从小到大为例）
+
+* 第一次循环位置从序列中第二个元素开始，接下来每进入下一次循环，其下一次循环的开始位置在本次循环的开始位置加一。当循环的开始位置为序列中的最后位置时，排序已完成，退出循环。
+
+* 记处于本循环位置的元素为 `key`，并向左侧寻找第一个比 `key` 小的元素。找到之后，将 `key` 抽出序列，插入到被寻找到的元素的后面。如果没有找到，`key` 将被插入到序列中第一个位置。
+
+    * 换言之，先将 `key` 单独记录下来，然后按索引开始向左逐步找数。每一步中：
+        
+        若该元素不小于 `key`，则将元素向右移动一位，然后继续向左寻数。若该元素小于 `key`，则将该元素后面一位的元素值改为 `key`，停止寻数。
+
+* 进入下一次循环。
+
+### 时间复杂度
+
+|最好|平均|最坏|
+|:-:|:-:|:-:|
+|n|n^2|n^2|
+
+### 示例代码
+
+C++
+
+* 从[这个代码](../../misc/oi-wiki/basic/sort/insertion-sort/example.cpp)截取出来的。
+
+```cpp
+template<typename ElemType = int, typename = enable_if<is_arithmetic<ElemType>::value, void>>
+void insertion_sort(vector<ElemType>& vec) {
+    auto len = vec.size();
+    for (size_t i = 1; i < len; ++i) {
+        ElemType key = vec[i]; // 先用临时变量存储这一元素的值
+        size_t j = i - 1; 
+        // 开始向前寻找比 key 更小的数，寻找过程中的数字均往后移动一位
+        while (j >= 0 && vec[j] > key) {
+            vec[j + 1] = vec[j]; j--;
+        }
+        // 找到这个值，把 key 还原。如果一直找到开头，j 此时为 -1，这个时候自然把这值排在第一个元素，也就是最小的地方。
+        vec[j + 1] = key;
+    }
+}
+```
 
 ---
 
