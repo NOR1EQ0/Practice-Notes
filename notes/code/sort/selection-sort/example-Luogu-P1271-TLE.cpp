@@ -1,1 +1,1 @@
-../../../../../workspace/luogu/P1271/214623478-TLE-Selection-Sort.cpp
+../../../../workspace/luogu/P1271/214623478-TLE-Selection-Sort.cpp

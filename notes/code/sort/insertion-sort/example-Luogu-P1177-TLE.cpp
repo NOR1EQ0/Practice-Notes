@@ -1,1 +1,1 @@
-../../../../../workspace/luogu/P1177/214889720-Insertion-Sort-TLE.cpp
+../../../../workspace/luogu/P1177/214889720-Insertion-Sort-TLE.cpp
