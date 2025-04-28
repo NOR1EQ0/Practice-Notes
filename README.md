@@ -16,3 +16,7 @@ This is just for me to take a view.
 |OJ|Problem|Refactor|
 |--|-------|--------|
 |-|-|-|
+
+* Re-organize my notes. It will be done in a few days. Now `misc` folder is completely a mess! My source files lie everywhere! I feel tired when searching a file which I planned to edit everyday. ~~BUT re-organizing is much painful.~~
+
+* Finish [merge sort](./notes/code/sort/merge_sort/a.cpp) practice.
