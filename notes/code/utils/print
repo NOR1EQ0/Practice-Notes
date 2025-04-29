@@ -1,0 +1,32 @@
+#pragma once
+#include <bits/stdc++.h>
+
+using namespace std;
+
+template<typename InputIterator>
+inline void print_stl_container_range_element(InputIterator RangeBegin, InputIterator RangeLast, const char Separate[] = " ", const char End[] = "\n") {
+    if (RangeBegin == RangeLast) return;
+    else {
+        while (RangeBegin != RangeLast) {
+            cout << *RangeBegin++ << Separate;
+        }
+        cout << *RangeLast;
+    }
+    cout << End;
+}
+
+template<typename InputIterator>
+inline void print_stl_container_range_element_with_newline(InputIterator RangeBegin, InputIterator RangeLast, const char Separate[] = " ", bool Newline = true) {
+    print_stl_container_range_element(RangeBegin, RangeLast, Separate, Newline ? "\n" : "");
+}
+
+template<typename ContainerType>
+void print_stl_container_element(const ContainerType& Container, const char Separate[] = " ", const char End[] = "\n") {
+    if (Container.empty()) return;
+    print_stl_container_range_element(Container.begin(), prev(Container.end()), Separate, End);
+}
+
+template<typename ContainerType>
+inline void print_stl_container_element_with_newline(const ContainerType& Container, const char Separate[] = " ", bool Newline = true) {
+    print_stl_container_element(Container.begin(), prev(Container.end()), Separate, Newline ? "\n" : "");
+}
