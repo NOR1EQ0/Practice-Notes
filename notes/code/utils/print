@@ -28,5 +28,5 @@ void print_stl_container_element(const ContainerType& Container, const char Sepa
 
 template<typename ContainerType>
 inline void print_stl_container_element_with_newline(const ContainerType& Container, const char Separate[] = " ", bool Newline = true) {
-    print_stl_container_element(Container.begin(), prev(Container.end()), Separate, Newline ? "\n" : "");
+    print_stl_container_element(Container, Separate, Newline ? "\n" : "");
 }
