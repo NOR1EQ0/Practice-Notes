@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void merge(vector<int>& nums, int left, int mid, int right) {
+inline void merge(vector<int>& nums, int left, int mid, int right) {
     auto len = nums.size();
     vector<int> tmp(len);
     size_t i = left, j = mid + 1, k = 0;
