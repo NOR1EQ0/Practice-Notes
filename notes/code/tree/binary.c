@@ -16,3 +16,10 @@ TreeNode* newTreeNode(int val) {
     return node;
 }
 
+int main() {
+    TreeNode* tree = newTreeNode(2);
+    TreeNode* n1 = newTreeNode(20);
+    TreeNode* n2 = newTreeNode(127);
+    tree->left = n1;
+    tree->right = n2;
+}
