@@ -46,6 +46,7 @@ void quick_sort(vector<int>& vec, int left, int right) {
     quick_sort(vec, pivot + 1, right);
 }
 
+// median + tail recursion
 void quick_sort_median(vector<int>& vec, int left, int right) {
     while (left < right) {
         auto pivot = partition(vec, left, right);
