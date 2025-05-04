@@ -4,10 +4,11 @@
 
 using namespace std;
 
-inline time_t randnum() {
+inline int randnum() {
     auto time = chrono::system_clock::now();
     auto timestamp = chrono::system_clock::to_time_t(time);
-    return timestamp;
+    srand(timestamp);
+    return rand();
 }
 
 typedef struct TreeNode {
@@ -31,10 +32,10 @@ void assignLeavesOfTreeNode(TreeNode& rootNode, const TreeNode& leftNode, const 
     assignLeavesOfTreeNode(&rootNode, const_cast<pTreeNode>(&leftNode), const_cast<pTreeNode>(&rightNode));
 }
 
-using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, TreeNode& node);
+using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, const TreeNode& node);
 
 // preOrder
-void _binaryTreeTraversalPreOrder(vector<int>& vec, TreeNode& node) {
+void _binaryTreeTraversalPreOrder(vector<int>& vec, const TreeNode& node) {
     vec.emplace_back(node.val);
     if (node.left) _binaryTreeTraversalPreOrder(vec, *node.left);
     if (node.right) _binaryTreeTraversalPreOrder(vec, *node.right);
@@ -42,15 +43,15 @@ void _binaryTreeTraversalPreOrder(vector<int>& vec, TreeNode& node) {
 
 BinaryTreeTraversalOrderFunctionType PreOrder = _binaryTreeTraversalPreOrder;
 
-void _binaryTreeTraversalInOrder(vector<int>& vec, TreeNode& node) {
+void _binaryTreeTraversalInOrder(vector<int>& vec, const TreeNode& node) {
     if (node.left) _binaryTreeTraversalInOrder(vec, *node.left);
     vec.emplace_back(node.val);
-    if (node.right) (vec, *node.right);
+    if (node.right) _binaryTreeTraversalInOrder(vec, *node.right);
 }
 
 BinaryTreeTraversalOrderFunctionType InOrder = _binaryTreeTraversalInOrder;
 
-void _binaryTreeTraversalPostOrder(vector<int>& vec, TreeNode& node) {
+void _binaryTreeTraversalPostOrder(vector<int>& vec, const TreeNode& node) {
     if (node.left) _binaryTreeTraversalPostOrder(vec, *node.left);
     if (node.right) _binaryTreeTraversalPostOrder(vec, *node.right);
     vec.emplace_back(node.val);
@@ -58,8 +59,10 @@ void _binaryTreeTraversalPostOrder(vector<int>& vec, TreeNode& node) {
 
 BinaryTreeTraversalOrderFunctionType PostOrder = _binaryTreeTraversalPostOrder;
 
-void _binaryTreeTraversalLevelOrder(vector<int>& vec, TreeNode& node) {
-    
+void _binaryTreeTraversalLevelOrder(vector<int>& vec, const TreeNode& node, int layer = 0) {
+    auto isLeave = node.left == nullptr && node.right == nullptr;
+    vec.emplace_back(node.val);
+
 }
 
 vector<int> treeTraversal(TreeNode& rootNode, BinaryTreeTraversalOrderFunctionType order) {
