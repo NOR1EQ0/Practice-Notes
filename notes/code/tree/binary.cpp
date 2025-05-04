@@ -31,23 +31,37 @@ void assignLeavesOfTreeNode(TreeNode& rootNode, const TreeNode& leftNode, const 
     assignLeavesOfTreeNode(&rootNode, const_cast<pTreeNode>(&leftNode), const_cast<pTreeNode>(&rightNode));
 }
 
+using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, TreeNode& node);
+
 // preOrder
-void _treeTraversalPreOrder(vector<int>& vec, TreeNode& node) {
+void _binaryTreeTraversalPreOrder(vector<int>& vec, TreeNode& node) {
     if (!&node) return;
-    auto isLeave = (node.left == nullptr && node.right == nullptr);
-    if (isLeave) {
-        vec.emplace_back(node.val);
-    } else {
-        _treeTraversalPreOrder(vec, *node.left);
-        _treeTraversalPreOrder(vec, *node.right);
-    }
+    vec.emplace_back(node.val);
+    _binaryTreeTraversalPreOrder(vec, *node.left);
+    _binaryTreeTraversalPreOrder(vec, *node.right);
 }
 
-void _treeTraversalInOrder(vector<int>& vec, TreeNode& node) {}
+BinaryTreeTraversalOrderFunctionType PreOrder = _binaryTreeTraversalPreOrder;
 
-void(*PreOrder)(vector<int>&, TreeNode&) = _treeTraversalPreOrder;
+void _binaryTreeTraversalInOrder(vector<int>& vec, TreeNode& node) {
+    if (!&node) return;
+    _binaryTreeTraversalInOrder(vec, node);
+    vec.emplace_back(node.val);
+    _binaryTreeTraversalInOrder(vec, node);
+}
 
-vector<int> treeTraversal(TreeNode& rootNode, void(order)(vector<int>& vec, TreeNode& node)) {
+BinaryTreeTraversalOrderFunctionType InOrder = _binaryTreeTraversalInOrder;
+
+void _binaryTreeTraversalPostOrder(vector<int>& vec, TreeNode& node) {
+    if (!&node) return;
+    _binaryTreeTraversalPostOrder(vec, *node.left);
+    _binaryTreeTraversalPostOrder(vec, *node.right);
+    vec.emplace_back(node.val);
+}
+
+BinaryTreeTraversalOrderFunctionType PostOrder = _binaryTreeTraversalPostOrder;
+
+vector<int> treeTraversal(TreeNode& rootNode, BinaryTreeTraversalOrderFunctionType order) {
     vector<int> vec;
     order(vec, rootNode);
     return move(vec);
@@ -59,7 +73,7 @@ int main() {
     pTreeNode n1 = new TreeNode(98);
     pTreeNode n2 = new TreeNode(127);
     assignLeavesOfTreeNode(root, n1, n2);
-    auto ret = treeTraversal(root, _treeTraversalPreOrder);
+    auto ret = treeTraversal(root, PreOrder);
     print_stl_container_element_with_newline(ret);
     return 0;
 }
