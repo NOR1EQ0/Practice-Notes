@@ -35,31 +35,32 @@ using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, TreeNode& nod
 
 // preOrder
 void _binaryTreeTraversalPreOrder(vector<int>& vec, TreeNode& node) {
-    if (!&node) return;
     vec.emplace_back(node.val);
-    _binaryTreeTraversalPreOrder(vec, *node.left);
-    _binaryTreeTraversalPreOrder(vec, *node.right);
+    if (node.left) _binaryTreeTraversalPreOrder(vec, *node.left);
+    if (node.right) _binaryTreeTraversalPreOrder(vec, *node.right);
 }
 
 BinaryTreeTraversalOrderFunctionType PreOrder = _binaryTreeTraversalPreOrder;
 
 void _binaryTreeTraversalInOrder(vector<int>& vec, TreeNode& node) {
-    if (!&node) return;
-    _binaryTreeTraversalInOrder(vec, node);
+    if (node.left) _binaryTreeTraversalInOrder(vec, *node.left);
     vec.emplace_back(node.val);
-    _binaryTreeTraversalInOrder(vec, node);
+    if (node.right) (vec, *node.right);
 }
 
 BinaryTreeTraversalOrderFunctionType InOrder = _binaryTreeTraversalInOrder;
 
 void _binaryTreeTraversalPostOrder(vector<int>& vec, TreeNode& node) {
-    if (!&node) return;
-    _binaryTreeTraversalPostOrder(vec, *node.left);
-    _binaryTreeTraversalPostOrder(vec, *node.right);
+    if (node.left) _binaryTreeTraversalPostOrder(vec, *node.left);
+    if (node.right) _binaryTreeTraversalPostOrder(vec, *node.right);
     vec.emplace_back(node.val);
 }
 
 BinaryTreeTraversalOrderFunctionType PostOrder = _binaryTreeTraversalPostOrder;
+
+void _binaryTreeTraversalLevelOrder(vector<int>& vec, TreeNode& node) {
+    
+}
 
 vector<int> treeTraversal(TreeNode& rootNode, BinaryTreeTraversalOrderFunctionType order) {
     vector<int> vec;
@@ -70,9 +71,10 @@ vector<int> treeTraversal(TreeNode& rootNode, BinaryTreeTraversalOrderFunctionTy
 int main() {
     cout << "sizeof(" << NAME_TO_STRING(TreeNode) "): " << sizeof(TreeNode) << endl;
     TreeNode root(17);
-    pTreeNode n1 = new TreeNode(98);
-    pTreeNode n2 = new TreeNode(127);
-    assignLeavesOfTreeNode(root, n1, n2);
+    TreeNode leaves[6] = {2, 3, 4, 5, 6, 7};
+    assignLeavesOfTreeNode(root, leaves[0], leaves[1]);
+    assignLeavesOfTreeNode(leaves[0], leaves[2], leaves[3]);
+    assignLeavesOfTreeNode(leaves[1], leaves[4], leaves[5]);
     auto ret = treeTraversal(root, PreOrder);
     print_stl_container_element_with_newline(ret);
     return 0;
