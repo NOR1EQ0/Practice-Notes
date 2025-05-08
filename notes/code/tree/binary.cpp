@@ -19,8 +19,8 @@ typedef struct _BinaryTreeNode {
     int val;
     _BinaryTreeNode* left;
     _BinaryTreeNode* right;
-    _BinaryTreeNode(int value, _BinaryTreeNode* lptr = nullptr, _BinaryTreeNode* rptr = nullptr) : val(value), left(lptr), right(rptr) {};
-    _BinaryTreeNode() : val(randnum()), left(nullptr), right(nullptr) {};
+    constexpr _BinaryTreeNode(int value, _BinaryTreeNode* lptr = nullptr, _BinaryTreeNode* rptr = nullptr) : val(value), left(lptr), right(rptr) {};
+    constexpr _BinaryTreeNode() : val(int()), left(nullptr), right(nullptr) {};
 } TreeNode, BinaryTreeNode, * pTreeNode, * pBinaryTreeNode;
 
 inline void assignLeavesOfTreeNode(pTreeNode rootNode, const pTreeNode leftNode, const pTreeNode rightNode) {
@@ -36,7 +36,7 @@ void assignLeavesOfTreeNode(TreeNode& rootNode, const TreeNode& leftNode, const 
     assignLeavesOfTreeNode(&rootNode, const_cast<pTreeNode>(&leftNode), const_cast<pTreeNode>(&rightNode));
 }
 
-using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, const TreeNode& node);
+using BinaryTreeTraversalOrderFunctionType = void(*)(vector<int>&, const TreeNode&);
 
 // Binary tree traversal pre-order function
 void _binaryTreeTraversalPreOrder(vector<int>& vec, const TreeNode& node) {
@@ -160,8 +160,10 @@ private:
     }
 } ArrayBinaryTree;
 
+// 二叉搜索树
 typedef struct _binarySearchTree {
     BinaryTreeNode* root;
+
     TreeNode* search(int val) {
         TreeNode* cur = this->root;
         while (cur != nullptr) {
@@ -171,6 +173,7 @@ typedef struct _binarySearchTree {
         }
         return nullptr;
     }
+
     void insert(int val) {
         if (root == nullptr) {
             root = new TreeNode(val);
@@ -186,9 +189,19 @@ typedef struct _binarySearchTree {
         if (pre->val > val) pre->right = new TreeNode(val);
         else pre->left = new TreeNode(val);
     }
+
+    _binarySearchTree(TreeNode& node) {
+        typedef invoke_result<decltype(treeTraversal), TreeNode&, BinaryTreeTraversalOrderFunctionType>::type TreeTraversalVector;
+        typedef TreeTraversalVector::value_type ValueType;
+        TreeTraversalVector retVec = treeTraversal(node, LevelOrder);
+        sort(retVec.begin(), retVec.end());
+        const size_t len = retVec.size();
+        const size_t position = len / 2;
+        const ValueType middle = retVec[position];
+        this->root = new TreeNode(middle);
+        for (int i = 0; i < len; ++i) this->insert(retVec[i]);
+    }
 } BinarySearchTree;
-
-
 
 int main() {
     cout << "sizeof(" << NAME_TO_STRING(TreeNode) "): " << sizeof(TreeNode) << endl;
