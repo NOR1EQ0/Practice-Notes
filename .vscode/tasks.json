@@ -7,8 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                // "-Werror", 
-                // See warning as error
+                // "-Werror", // See warning as error
                 "${file}",
                 "-lm",
                 "-o",
