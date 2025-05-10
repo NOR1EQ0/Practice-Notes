@@ -4,13 +4,6 @@
 
 using namespace std;
 
-inline int randnum() {
-    auto time = chrono::system_clock::now();
-    auto timestamp = chrono::system_clock::to_time_t(time);
-    srand(timestamp);
-    return rand();
-}
-
 /**
  * 最简单的二叉树节点结构体。
  * pTreeNode 为该结构体的指针类型别名。
@@ -190,10 +183,13 @@ typedef struct _binarySearchTree {
         else pre->left = new TreeNode(val);
     }
 
-    _binarySearchTree(TreeNode& node) {
+    /// @brief 根据 `node` 构造一个平衡的二叉搜索树
+    /// @param node 二叉树根节点
+    /// @param order 遍历该二叉树时的遍历方式，默认使用层序遍历。
+    _binarySearchTree(TreeNode& node, BinaryTreeTraversalOrderFunctionType order = LevelOrder) : root(nullptr) {
         typedef invoke_result<decltype(treeTraversal), TreeNode&, BinaryTreeTraversalOrderFunctionType>::type TreeTraversalVector;
         typedef TreeTraversalVector::value_type ValueType;
-        TreeTraversalVector retVec = treeTraversal(node, LevelOrder);
+        TreeTraversalVector retVec = treeTraversal(node, order);
         sort(retVec.begin(), retVec.end());
         const size_t len = retVec.size();
         const size_t position = len / 2;
