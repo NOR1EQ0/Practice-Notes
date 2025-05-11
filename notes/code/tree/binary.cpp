@@ -157,9 +157,15 @@ private:
 typedef struct _binarySearchTree {
     BinaryTreeNode* root;
 
-    TreeNode* search(int val) {
+    TreeNode* search(int val, bool stackBuffer = false) noexcept {
+        if (stackBuffer) {
+            this->_eraseStackBuffer();
+        }
         TreeNode* cur = this->root;
         while (cur != nullptr) {
+            if (stackBuffer) {
+                this->_stackBuffer.emplace(cur);
+            }
             if (val < cur->val) cur = cur->left;
             else if (val > cur->val) cur = cur->right;
             else return cur;
@@ -167,7 +173,7 @@ typedef struct _binarySearchTree {
         return nullptr;
     }
 
-    void insert(int val) {
+    void insert(int val) noexcept {
         if (root == nullptr) {
             root = new TreeNode(val);
             return;
@@ -181,6 +187,28 @@ typedef struct _binarySearchTree {
         }
         if (pre->val > val) pre->right = new TreeNode(val);
         else pre->left = new TreeNode(val);
+    }
+
+    bool remove(int val) {
+        if (this->root == nullptr) return false; // 若真的需要删除根节点，需要寻找中值重新构造一个新 BST。在该类不应实现此功能。
+        auto resultNode = this->search(val, true);
+        auto pre = (this->_stackBuffer.pop(), this->_stackBuffer.top());
+        if (resultNode == nullptr) return false;
+        if (resultNode->left == nullptr || resultNode->right == nullptr) {
+            TreeNode* child = resultNode->left != nullptr ? resultNode->left : resultNode->right;
+            if (resultNode != nullptr) {
+                if (pre->left == resultNode) pre->left = child;
+                else pre->right = child;
+            }
+            delete resultNode;
+        } else {
+            TreeNode* tmp = resultNode->right;
+            while (resultNode != nullptr) {
+                tmp = resultNode->left;
+            }
+            resultNode->val = tmp->val;
+            this->remove(tmp->val);
+        }
     }
 
     /// @brief 根据 `node` 构造一个平衡的二叉搜索树
@@ -197,7 +225,15 @@ typedef struct _binarySearchTree {
         this->root = new TreeNode(middle);
         for (int i = 0; i < len; ++i) this->insert(retVec[i]);
     }
-} BinarySearchTree;
+
+    ~_binarySearchTree() {
+        this->root;
+    }
+private:
+    stack<TreeNode*> _stackBuffer;
+
+    void _eraseStackBuffer() { while (!this->_stackBuffer.empty()) this->_stackBuffer.pop(); }
+};
 
 int main() {
     cout << "sizeof(" << NAME_TO_STRING(TreeNode) "): " << sizeof(TreeNode) << endl;
