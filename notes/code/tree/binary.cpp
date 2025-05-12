@@ -215,9 +215,9 @@ typedef struct _binarySearchTree {
     /// @param node 二叉树根节点
     /// @param order 遍历该二叉树时的遍历方式，默认使用层序遍历。
     _binarySearchTree(TreeNode& node, BinaryTreeTraversalOrderFunctionType order = LevelOrder) : root(nullptr) {
-        typedef invoke_result<decltype(treeTraversal), TreeNode&, BinaryTreeTraversalOrderFunctionType>::type TreeTraversalVector;
+        typedef invoke_result<decltype(this->_globalTreeTraversal), TreeNode&, BinaryTreeTraversalOrderFunctionType>::type TreeTraversalVector;
         typedef TreeTraversalVector::value_type ValueType;
-        TreeTraversalVector retVec = treeTraversal(node, order);
+        TreeTraversalVector retVec = this->_globalTreeTraversal(node, order);
         sort(retVec.begin(), retVec.end());
         const size_t len = retVec.size();
         const size_t position = len / 2;
@@ -226,13 +226,29 @@ typedef struct _binarySearchTree {
         for (int i = 0; i < len; ++i) this->insert(retVec[i]);
     }
 
+    vector<int> treeTraversal() {
+        return this->_globalTreeTraversal(*this->root, InOrder);
+    }
+
     ~_binarySearchTree() {
-        this->root;
+        vector<TreeNode*> ret;
+        this->_treePtrTraversal(ret, *this->root);
+        ret.erase(ret.begin());
+        for (auto i: ret) {
+            delete i;
+        }
+        this->root->val = 0;
     }
 private:
     stack<TreeNode*> _stackBuffer;
-
     void _eraseStackBuffer() { while (!this->_stackBuffer.empty()) this->_stackBuffer.pop(); }
+    static constexpr vector<int> (*_globalTreeTraversal)(TreeNode&, BinaryTreeTraversalOrderFunctionType) = ::treeTraversal;
+    void _treePtrTraversal(vector<TreeNode*> vec, const TreeNode& node) {
+        if (&node == nullptr) return;
+        if (node.left) this->_treePtrTraversal(vec, *node.left);
+        vec.emplace_back(&node);
+        if (node.right) this->_treePtrTraversal(vec, *node.right);
+    }
 };
 
 int main() {
