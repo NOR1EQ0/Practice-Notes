@@ -32,6 +32,9 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-pedantic",
+                "-D_GLIBCXX_DEBUG",
+                "-fsanitize=undefined",
                 "${file}",
                 "-lm",
                 "-o",
@@ -79,6 +82,9 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                // "-pedantic",
+                // "-D_GLIBCXX_DEBUG",
+                // "-fsanitize=undefined",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
