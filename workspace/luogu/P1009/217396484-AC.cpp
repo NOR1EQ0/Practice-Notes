@@ -4,6 +4,26 @@ using namespace std;
 
 char result[4000][4000];
 
+string add(string& a, string& b) {
+    auto [alen, blen] = pair{ a.length(), b.length() };
+    auto [maxlen, minlen] = pair{ alen, blen };
+    int carry = 0;
+    string* vec[2] = { &a, &b };
+    string ret;
+    for (auto it_a = a.crbegin(), it_b = b.crbegin(); it_a < a.crend() || it_b < b.crend(); it_a++, it_b++) {
+        auto num = carry +
+            (it_a < a.crend() ? *it_a - '0' : 0) +
+            (it_b < b.crend() ? *it_b - '0' : 0);
+        carry = num / 10;
+        num %= 10;
+        ret.push_back(static_cast<char>(num) + '0');
+    }
+    if (carry) ret.push_back(static_cast<char>(carry) + '0');
+    ranges::reverse(ret);
+    // assert(ret.front() != '0');
+    return ret;
+}
+
 inline string times(string& a, string& b) {
     auto [alen, blen] = pair<size_t, size_t>(a.length(), b.length());
     string* str[2] = { &a, &b };
@@ -59,12 +79,13 @@ void solve(int n) {
     string res;
     res.reserve(4000);
     res = "1";
-    string sum;
+    string sum = "0";
     for (int i = 1; i <= n; ++i) {
         string now = to_string(i);
         res = times(res, now);
+        sum = add(sum, res);
     }
-    for (const auto i: res) {
+    for (const auto i: sum) {
         cout << i;
     }
     cout << '\n';
