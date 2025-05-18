@@ -68,3 +68,75 @@ _`PARDON` - 赦免 | `BANNED` - 处罚_
 嘛只能说，打草稿的时候要注意一下，并且这样想代码好写（大概吧 ~~，其实我没仔细想过~~， 只是起始位置会变成 `n`）。
 
 多维数组的话就不知道了，超过三维应该更是画不出来了（）应该用别的方式来表示。
+
+## 注意有没有在循环的时候把读写或循环条件写串了
+
+这个是我在做[洛谷 P1009](https://www.luogu.com.cn/problem/P1009) 的时候折腾了半天才发现的。
+
+我原本之前已经做了个基础的高精度加法的题[（洛谷 P1601）](https://www.luogu.com.cn/problem/P1601)，但是原来的判断条件是有问题的。
+
+读入两个数字，因为会有两个数字长度不一样的情况，所以其中一个数字字符串（A）读完之后，剩下的几位就都是 0 了。
+
+那怎么判断 A 读完了？那当然是读取元素的迭代器已经指到 `std::string` 最后一个迭代器或者最后一个迭代器的后面。
+
+那么我的[代码](../workspace/luogu/P1601/217396007-AC.cpp)如下：
+
+```cpp
+for (auto it_a = a.crbegin(), it_b = b.crbegin(); it_a < a.crend() || it_b < b.crendit_a++, it_b++) {
+    auto num = carry +
+        (it_a < a.crend() ? *it_a - '0' : 0) +
+        (it_b < a.crend() ? *it_b - '0' : 0);
+    carry = num / 10;
+    num %= 10;
+    ret.push_back(static_cast<char>(num) + '0');
+}
+```
+
+我是从两个字符串尾部一起向前开始读数的，把进位和 `a` 和 `b` 同一位的数字加起来嘛。
+
+我把这段代码提交到[洛谷 P1601](https://www.luogu.com.cn/problem/P1601) 之后，洛谷 5 个测试点过掉了。
+
+但是，在这里 `it_b` 比较的条件搞错了，我把 `b` 的指针 `it_b` 拿去和 `a` 的最后一个只读反向迭代器去比较了，结果再[洛谷 P1009](https://www.luogu.com.cn/problem/P1009) 吃了亏。为什么呢？因为我把和先初始化为 `0` 了（`string sum = "0";`），调用 `add` 函数的代码如下：
+
+```cpp
+void solve(int n) {
+    string res;
+    res.reserve(4000);
+    res = "1";
+    string sum = "0";
+    for (int i = 1; i <= n; ++i) {
+        string now = to_string(i);
+        res = times(res, now);
+        sum = add(sum, res);
+    }
+    for (const auto i: sum) {
+        cout << i;
+    }
+    cout << '\n';
+}
+```
+
+结果，`0` 和 `1` 相加之后，拿回来了一个 0 回来……
+
+毕竟 `it_b` 拿去和 `a` 的迭代器比较了。这样子比较返 `false` 啊，所以 `1` 作为 `add` 函数的 `b` 参数，就变成了 0 + 0 + 0，啥也没有。
+
+嘛最后还是改好了，然后把改好的代码在[洛谷 P1601](https://www.luogu.com.cn/problem/P1601) 重新交了一遍：
+
+```cpp
+for (auto it_a = a.crbegin(), it_b = b.crbegin(); it_a < a.crend() || it_b < b.crendit_a++, it_b++) {
+    auto num = carry +
+        (it_a < a.crend() ? *it_a - '0' : 0) +
+        (it_b < b.crend() ? *it_b - '0' : 0); // <-- 改
+    carry = num / 10;
+    num %= 10;
+    ret.push_back(static_cast<char>(num) + '0');
+}
+```
+
+当然，既然高精度加法那题改好了，[洛谷 P1009](https://www.luogu.com.cn/problem/P1009) 这题也顺利解决了。
+
+由此，我得出一个结论：
+
+**在做多个指针在多个容器同时移动的事情的时候，回过头来观察指针比较有没有写串了。**
+
+嘛也是个相当潦草的结论了，理解万岁~
