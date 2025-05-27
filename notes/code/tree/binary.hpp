@@ -91,23 +91,23 @@ typedef struct _arrayBinaryTree {
         return this->tree_.size();
     }
 
-    int val(int i) {
+    int val(size_t i) {
         if (i < 0 || i >= this->tree_.size()) {
-            return numeric_limits<int>().max();
+            return numeric_limits<size_t>::max();
         }
         return this->tree_.at(i);
     }
 
-    inline int left(int i) {
+    inline size_t left(size_t i) {
         return 2 * i + 1;
     }
 
-    inline int right(int i) {
+    inline size_t right(size_t i) {
         return 2 * i + 2;
     }
 
-    inline int parent(int i) {
-        return (i - 1) / 2;
+    inline size_t parent(size_t i) {
+        return i > 0 ? (i - 1) / 2 : numeric_limits<size_t>::max();
     }
 
     vector<int> levelOrder() {
@@ -130,6 +130,11 @@ typedef struct _arrayBinaryTree {
 
     vector<int> postOrder() {
         return dfsVector_(ORDER_::post);
+    }
+protected:
+    size_t treePush__(int val) {
+        this->tree_.emplace_back(val);
+        return this->tree_.size() - 1;
     }
 private:
     vector<int> tree_;
@@ -235,7 +240,7 @@ typedef struct _binarySearchTree {
         vector<TreeNode*> ret;
         this->_treePtrTraversal(ret, *this->root);
         ret.erase(ret.begin());
-        for (auto i: ret) {
+        for (auto i : ret) {
             delete i;
         }
         this->root->val = 0;
@@ -243,7 +248,7 @@ typedef struct _binarySearchTree {
 private:
     stack<TreeNode*> _stackBuffer;
     void _eraseStackBuffer() { while (!this->_stackBuffer.empty()) this->_stackBuffer.pop(); }
-    static constexpr vector<int> (*_globalTreeTraversal)(TreeNode&, BinaryTreeTraversalOrderFunctionType) = ::treeTraversal;
+    static constexpr vector<int>(*_globalTreeTraversal)(TreeNode&, BinaryTreeTraversalOrderFunctionType) = ::treeTraversal;
     void _treePtrTraversal(vector<TreeNode*> vec, const TreeNode& node) {
         if (&node == nullptr) return;
         if (node.left) this->_treePtrTraversal(vec, *node.left);
