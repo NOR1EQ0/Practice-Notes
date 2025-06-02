@@ -36,6 +36,7 @@ int partition_median(vector<int>& vec, int left, int right) {
         swap(vec[i], vec[j]);
     }
     swap(vec[left], vec[i]);
+    return i;
 }
 
 // basic algo
@@ -49,7 +50,7 @@ void quick_sort(vector<int>& vec, int left, int right) {
 // median + tail recursion
 void quick_sort_median(vector<int>& vec, int left, int right) {
     while (left < right) {
-        auto pivot = partition(vec, left, right);
+        auto pivot = partition_median(vec, left, right);
         if (pivot - left < right - pivot) {
             quick_sort_median(vec, left, pivot - 1);
             left = pivot + 1;
@@ -63,6 +64,10 @@ void quick_sort_median(vector<int>& vec, int left, int right) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    vector<int> vec;
+    vector<int> vec = {
+        3,8,4,10,6,7,2,5,9,1
+    };
+    quick_sort_median(vec, 0, vec.size() - 1);
+    print_stl_container_element_with_newline(vec);
     return 0;
 }

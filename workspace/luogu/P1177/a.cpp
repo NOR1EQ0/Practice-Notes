@@ -7,17 +7,13 @@ inline void print_vector_no_space_at_last(vector<int>& num, bool lf = true) {
     if (lf) cout << '\n';
 }
 
-void insertion_sort(vector<int>& num) {
+int partition(vector<int>& num, int l, int r) {
+    
+}
+
+void quick_sort(vector<int>& num, int l, int r) {
     auto len = num.size();
-    for (size_t i = 1; i < len; ++i) {
-        int key = num[i];
-        int j = i - 1;
-        while (j >= 0 and num[j] > key) {
-            num[j + 1] = num[j];
-            j--;
-        }
-        num[j + 1] = key;
-    }
+    
 }
 
 int main() {
@@ -26,7 +22,7 @@ int main() {
     int n; cin >> n;
     vector<int> vec(n);
     for (size_t i = 0;i < n;++i)cin >> vec[i];
-    insertion_sort(vec);
+    quick_sort(vec);
     print_vector_no_space_at_last(vec);
     return 0;
 }
