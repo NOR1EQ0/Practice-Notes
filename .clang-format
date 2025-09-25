@@ -7,8 +7,8 @@ IndentCaseLabels: true
 CaseIndentWidth: 4
 NamespaceIndentation: All
 ColumnLimit: 0
-AllowShortIfStatementsOnASingleLine: Never
-AllowShortLoopsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortLoopsOnASingleLine: true
 BreakBeforeBraces: Attach
 IndentAccessModifiers: false
 AccessModifierOffset: -4
