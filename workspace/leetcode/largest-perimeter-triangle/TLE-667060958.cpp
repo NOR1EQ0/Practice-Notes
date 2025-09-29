@@ -5,14 +5,25 @@ using namespace std;
 class Solution {
 public:
     int largestPerimeter(vector<int>& nums) {
-        map<int, size_t> m;
-        for (auto& i: nums) {
-            m[i]++;
-        }
+        auto satisfy = [](int arr[3]) -> bool {
+            if (arr[0] + arr[1] <= arr[2] || arr[0] + arr[2] <= arr[1] || arr[1] + arr[2] <= arr[0]) return false;
+            else
+                return true;
+        };
+        sort(nums.begin(), nums.end(), greater());
         int maxperi = 0;
-        for (auto i = m.begin(); i != m.end(); i++) {
-            int thisval = i->second;
+        const auto len = nums.size();
+        for (size_t i = 0; i < len - 2; i++) {
+            for (size_t j = i + 1; j < len - 1; j++) {
+                for (size_t k = j + 1; k < len; k++) {
+                    int l3[3] = {nums[j], nums[i], nums[k]};
+                    auto res = satisfy(l3);
+                    if (res)
+                        maxperi = max(nums[j] + nums[i] + nums[k], maxperi);
+                }
+            }
         }
+        return maxperi;
     }
 };
 
