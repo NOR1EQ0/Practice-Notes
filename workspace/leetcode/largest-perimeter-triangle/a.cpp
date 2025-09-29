@@ -7,10 +7,15 @@ public:
     int largestPerimeter(vector<int>& nums) {
         sort(nums.begin(), nums.end(), less());
         int maxl = nums.front();
+        int maxperi = maxl;
         const auto len = nums.size();
-        for (size_t i = 1; i < len; i++) {
-            
+        for (size_t i = 1; i < len - 1; i++) {
+            for (size_t j = i + 1; j < len; j++) {
+                int thisperi = maxl + nums[i] + nums[j];
+                maxperi = max(thisperi, maxperi);
+            }
         }
+        return maxperi;
     }
 };
 
@@ -20,10 +25,9 @@ int main() {
     Solution s;
     using ll = long long;
     vector<pair<vector<int>, ll>> vcases = {
-        {{2,1,2}, 5},
-        {{1,2,1,10}, 0}
-    };
-    for (auto& [c, ans]: vcases) {
+        {{2, 1, 2}, 5},
+        {{1, 2, 1, 10}, 0}};
+    for (auto& [c, ans] : vcases) {
         cout << "{";
         for (auto i = c.begin(); i != prev(c.end()); i++) {
             cout << *i << ',';
