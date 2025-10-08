@@ -32,7 +32,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-std=c++20",
+                "-std=c++17",
                 "-pedantic",
                 "-D_GLIBCXX_DEBUG",
                 "-fsanitize=undefined",
@@ -83,7 +83,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-std=c++20",
+                "-std=c++17",
                 "-pedantic",
                 "-D_GLIBCXX_DEBUG",
                 // "-fsanitize=undefined",
