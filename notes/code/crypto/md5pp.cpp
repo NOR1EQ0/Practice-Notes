@@ -67,8 +67,8 @@ T rotr(const T x, size_t n) {
 }
 
 void print_help() {
-    std::cout << "Usage: md5pp2 [FILE]...\n"
-                 "       md5pp2 --help, -h\n"
+    std::cout << "Usage: md5pp [FILE]...\n"
+                 "       md5pp --help, -h\n"
                  "\n"
                  "With no FILE, or when FILE is -, read standard input.\n";
     std::exit(EXIT_SUCCESS);
@@ -83,6 +83,8 @@ uint32_t load_le32(const char* ptr) {
 }
 
 void process_block(std::array<uint32_t, 4>& state) {
+    std::cout << __FUNCTION__ << " ";
+    std::cout.flush();
     uint32_t* u32_ptr = reinterpret_cast<uint32_t*>(message);
     for (size_t i = 0; i < sizeof(message) / sizeof(uint32_t); ++i) {
         u32_ptr[i] = load_le32(message + i * sizeof(uint32_t));
@@ -90,7 +92,7 @@ void process_block(std::array<uint32_t, 4>& state) {
 
     std::array<uint32_t, 4> tmpreg = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
     std::array<uint32_t, 4> backup = tmpreg;
-    auto& [a,b,c,d] = tmpreg;
+    auto& [a, b, c, d] = tmpreg;
     /* Rond 1 */
     for (size_t i = 0; i < 16; ++i) {
         a += F(b, c, d) + u32_ptr[i] + const_table[i];
@@ -133,9 +135,14 @@ void process_block(std::array<uint32_t, 4>& state) {
 
 void process_istream(std::istream& is) {
     std::array<uint32_t, 4> state = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
+    int cnt = 0;
+    size_t block_count = 0;
     while (!is.read(message, sizeof(message)).eof()) {
+        block_count++;
         process_block(state);
     }
+    auto gcnt = is.gcount();
+    message[gcnt] = 0x80; // append bit 1
 }
 
 int main(int argc, const char* argv[]) {
@@ -144,10 +151,14 @@ int main(int argc, const char* argv[]) {
             std::strcmp(argv[1], HELP2) == 0) {
             print_help();
         }
-        for (const char* fpath = argv[1]; *fpath; ++fpath) {
+        if (std::strcmp(argv[1], "-") == 0) {
+            goto RD_STDIN;
+        }
+        for (size_t i = 1; i < argc; ++i) {
+            const char* fpath = argv[i];
             std::ifstream ifs(fpath, std::ios::binary | std::ios::in);
             if (!ifs) {
-                std::cerr << "md5pp2: Failed to open '" << fpath << "': "
+                std::cerr << "md5pp: failed to open '" << fpath << "': "
                           << std::strerror(errno) << "\n";
                 continue;
             }
