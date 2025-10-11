@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <array>
 #include <bitset>
 #include <climits>
 #include <cmath>
@@ -5,7 +7,6 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
-#include <array>
 #include <type_traits>
 
 constexpr char HELP1[] = "--help";
@@ -32,6 +33,8 @@ constexpr size_t s_rotate_table[4][4] = {
     {5, 9, 14, 20},
     {4, 11, 16, 23},
     {6, 10, 15, 21}};
+
+char message[512 / CHAR_BIT];
 
 uint32_t F(uint32_t x, uint32_t y, uint32_t z) {
     return (x & y) | (~x & z);
@@ -79,14 +82,59 @@ uint32_t load_le32(const char* ptr) {
         (static_cast<uint32_t>(static_cast<uint8_t>(ptr[3])) << 24));
 }
 
+void process_block(std::array<uint32_t, 4>& state) {
+    uint32_t* u32_ptr = reinterpret_cast<uint32_t*>(message);
+    for (size_t i = 0; i < sizeof(message) / sizeof(uint32_t); ++i) {
+        u32_ptr[i] = load_le32(message + i * sizeof(uint32_t));
+    }
+
+    std::array<uint32_t, 4> tmpreg = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
+    std::array<uint32_t, 4> backup = tmpreg;
+    auto& [a,b,c,d] = tmpreg;
+    /* Rond 1 */
+    for (size_t i = 0; i < 16; ++i) {
+        a += F(b, c, d) + u32_ptr[i] + const_table[i];
+        a = rotl(a, s_rotate_table[0][i % 4]);
+        a += b;
+        std::rotate(tmpreg.begin(), std::prev(tmpreg.end()), tmpreg.end());
+    }
+
+    /* Round 2 */
+    for (size_t i = 16; i < 32; ++i) {
+        const auto m_index = (5 * i + 1) % 16;
+        a += G(b, c, d) + u32_ptr[m_index] + const_table[i];
+        a = rotl(a, s_rotate_table[1][i % 4]);
+        a += b;
+        std::rotate(tmpreg.begin(), std::prev(tmpreg.end()), tmpreg.end());
+    }
+
+    /* Round 3 */
+    for (size_t i = 32; i < 48; ++i) {
+        const auto m_index = (3 * i + 5) % 16;
+        a += H(b, c, d) + u32_ptr[m_index] + const_table[i];
+        a = rotl(a, s_rotate_table[2][i % 4]);
+        a += b;
+        std::rotate(tmpreg.begin(), std::prev(tmpreg.end()), tmpreg.end());
+    }
+
+    /* Round 4 */
+    for (size_t i = 48; i < 64; ++i) {
+        const auto m_index = (7 * i) % 16;
+        a += I(b, c, d) + u32_ptr[m_index] + const_table[i];
+        a = rotl(a, s_rotate_table[3][i % 4]);
+        a += b;
+        std::rotate(tmpreg.begin(), std::prev(tmpreg.end()), tmpreg.end());
+    }
+
+    for (size_t i = 0; i < 4; ++i) {
+        state[i] += tmpreg[i];
+    }
+}
+
 void process_istream(std::istream& is) {
-    char message[512 / CHAR_BIT];
     std::array<uint32_t, 4> state = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
     while (!is.read(message, sizeof(message)).eof()) {
-        uint32_t* u32_ptr = reinterpret_cast<uint32_t*>(message);
-        for (size_t i = 0; i < sizeof(message) / sizeof(uint32_t); ++i) {
-            u32_ptr[i] = load_le32(message + i * sizeof(uint32_t));
-        }
+        process_block(state);
     }
 }
 
