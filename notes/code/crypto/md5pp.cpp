@@ -52,14 +52,14 @@ uint32_t I(uint32_t x, uint32_t y, uint32_t z) {
     return y ^ (x | ~z);
 }
 
-template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
+template <typename T, typename = std::enable_if_t<std::is_arithmetic_v<T>>>
 T rotl(const T x, size_t n) {
     constexpr size_t width = sizeof(T) * CHAR_BIT;
     n %= width;
     return n ? (x << n) | (x >> (width - n)) : x;
 }
 
-template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
+template <typename T, typename = std::enable_if_t<std::is_arithmetic_v<T>>>
 T rotr(const T x, size_t n) {
     constexpr size_t width = sizeof(T) * CHAR_BIT;
     n %= width;
@@ -82,12 +82,21 @@ uint32_t load_le32(const char* ptr) {
         (static_cast<uint32_t>(static_cast<uint8_t>(ptr[3])) << 24));
 }
 
+template <typename T, typename = std::enable_if_t<std::is_arithmetic_v<T>>>
+T load_le(const char* ptr) {
+    T ret = static_cast<T>(0);
+    for (size_t i = 0; i < sizeof(T); ++i) {
+        ret |= static_cast<T>(static_cast<uint8_t>(ptr[i]) << (i * CHAR_BIT));
+    }
+    return ret;
+}
+
 void process_block(std::array<uint32_t, 4>& state) {
     std::cout << __FUNCTION__ << " ";
     std::cout.flush();
     uint32_t* u32_ptr = reinterpret_cast<uint32_t*>(message);
     for (size_t i = 0; i < sizeof(message) / sizeof(uint32_t); ++i) {
-        u32_ptr[i] = load_le32(message + i * sizeof(uint32_t));
+        u32_ptr[i] = load_le<uint32_t>(message + i * sizeof(uint32_t));
     }
 
     std::array<uint32_t, 4> tmpreg = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
@@ -141,8 +150,7 @@ void process_istream(std::istream& is) {
         block_count++;
         process_block(state);
     }
-    auto gcnt = is.gcount();
-    message[gcnt] = 0x80; // append bit 1
+    auto padding_head_ptr = is.gcount() % sizeof(message);
 }
 
 int main(int argc, const char* argv[]) {
