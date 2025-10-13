@@ -74,7 +74,7 @@ void print_help() {
     std::exit(EXIT_SUCCESS);
 }
 
-uint32_t load_le32(const char* ptr) {
+[[nodiscard]] uint32_t load_le32(const char* ptr) {
     return static_cast<uint32_t>(
         (static_cast<uint32_t>(static_cast<uint8_t>(ptr[0])) << 0) |
         (static_cast<uint32_t>(static_cast<uint8_t>(ptr[1])) << 8) |
@@ -146,11 +146,16 @@ void process_istream(std::istream& is) {
     std::array<uint32_t, 4> state = {0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476};
     int cnt = 0;
     size_t block_count = 0;
-    while (!is.read(message, sizeof(message)).eof()) {
+    while (!is.read(message, sizeof(message))) {
         block_count++;
         process_block(state);
     }
-    auto padding_head_ptr = is.gcount() % sizeof(message);
+    auto gcnt = is.gcount(); 
+    // If the last block which is read matches 512 bits (64 bytes), call process_blcok again.
+    if (gcnt == sizeof(message)) {
+        process_block(state);
+        gcnt = is.gcount();
+    }
 }
 
 int main(int argc, const char* argv[]) {
