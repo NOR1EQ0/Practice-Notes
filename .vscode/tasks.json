@@ -56,7 +56,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe 生成活动文件 (Windows)",
-            "command": "C:\\Portable Programs\\MinGW-w64\\latest\\bin\\gcc.exe",
+            "command": "gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -79,7 +79,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe 生成活动文件 (Windows)",
-            "command": "C:\\Portable Programs\\MinGW-w64\\latest\\bin\\g++.exe",
+            "command": "g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
