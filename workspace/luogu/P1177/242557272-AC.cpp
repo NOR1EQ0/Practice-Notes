@@ -31,7 +31,6 @@ int main() {
         cin >> tmp;
         v.emplace_back(tmp);
     }
-    cout << "emplace done" << endl;
     quicksort(v, 0, v.size() - 1);
     for (const auto i : v) {
         cout << i << ' ';
