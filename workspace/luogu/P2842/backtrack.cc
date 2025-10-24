@@ -6,9 +6,6 @@ using ll = long long;
 
 vector<ll> v;
 
-ll backtrack(vector<ll>& types,ll balance, ll n, vector<ll>& sol) {
-    
-}
 
 int main() {
     ios::sync_with_stdio(false);
@@ -21,7 +18,5 @@ int main() {
         cin >> tmp;
         v.emplace_back(tmp);
     }
-    sort(v.begin(), v.end());
-
-    
+    sort(v.begin(), v.end(), greater());
 }
