@@ -3,21 +3,21 @@
 using namespace std;
 
 int main() {
-    using ull = unsigned long long;
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int n, m;
+    ios::sync_with_stdio(0), cin.tie(0);
+    using ll = long long;
+    ll n, m;
     cin >> n >> m;
-    ull sq = n*m, rect = !(n==m);
-    for (int i = 1; i < n; ++i) {
-        for (int j = 1; j < m; ++j) {
-            if (i == j) {
-                sq += (n/i) * (m/j);
-                continue;
-            }
-            rect += (n/i) * (m/j);
-        }
+    ll square{}, rect{};
+    ll lmin = min(n, m), lmax = max(n, m);
+
+    // SQUARE
+    for (ll i = 1; i <= lmin; i++) {
+        square += ((lmin / i + lmin % i) * (lmax / i + lmax % i));
     }
-    cout << sq << ' ' << rect << '\n';
-    return 0;
+
+    // RECTANGLE
+    for (ll i = 1; i <= lmax; i++) {
+
+    }
+    cout << square << '\n';
 }
