@@ -10,24 +10,14 @@ int main() {
     for (int i = 0; i < n; i++) cin >> a[i];
     for (int i = 0; i < n; i++) cin >> b[i];
     size_t win{}, lose{}, draw{};
-    bool aflg = true;
+    vector<int> p(n);
+    iota(p.begin(), p.end(), 0);
     do {
-        do {
-            long asco{}, bsco{};
-            for (int i = 0; i < n; i++) {
-                if (a[i] > b[i]) {
-                    asco++;
-                } else if (a[i] < b[i]) {
-                    bsco++;
-                }
-            }
-            if (asco > bsco)
-                win++;
-            else if (asco == bsco)
-                draw++;
-            else 
-                lose++;
-        } while (next_permutation(b.begin(), b.end()));
-    } while (next_permutation(a.begin(), a.end()));
+        long ascore{}, bscore{};
+        for (int i = 0; i < n; i++) {
+            
+        }
+    } while (next_permutation(p.begin(), p.end()));
+
     printf("%u %u %u\n", win, lose, draw);
 }
