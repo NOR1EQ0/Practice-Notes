@@ -17,7 +17,7 @@ int main() {
         cin >> tmp;
         auto ptr = lower_bound(v, v + n, tmp);
         if (ptr == v + n || *ptr != tmp) {
-            cout << "-1\n";
+            cout << "-1 ";
         } else {
             cout << ptr - v + 1 << ' ';
         }
