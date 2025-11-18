@@ -7,7 +7,7 @@ bool is_composite[(int)1e8 + 5];
 
 void euler_sieve(int n) {
     for (int i = 2; i <= n; i++) {
-        if (is_composite[i]) {
+        if (!is_composite[i]) {
             primes.emplace_back(i);
         }
         for (int p : primes) {
@@ -23,6 +23,7 @@ int main() {
     int n;
     cin >> n;
     cout << "Input number: " << n << "\nPrime list: \n";
+    euler_sieve(n);
     for (auto i: primes) {
         cout << i << ' ';
     }
