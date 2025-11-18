@@ -15,7 +15,7 @@ int main() {
         printf("dlerror(): %s\n", dlerror());
         return EXIT_FAILURE;
     } else {
-        printf("Succeeded to open %s! Handle pointer: %p\n", lib_handle);
+        printf("Succeeded to open %s! Handle pointer: %p\n", lib_path, lib_handle);
     }
     void (*target_func)(void) = dlsym(lib_handle, "test_func");
     target_func();
