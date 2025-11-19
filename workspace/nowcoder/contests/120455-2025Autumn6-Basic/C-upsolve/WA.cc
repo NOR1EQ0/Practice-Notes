@@ -7,7 +7,7 @@ ll layout[2005][2005];
 int main() {
     ios::sync_with_stdio(0), cin.tie(0);
     int h, n, m;
-    cin >> h >> n >> m;
+    cin >> n >> m >> h;
     for (int i = 0; i < h; i++) {
         ll x, y, z;
         cin >> x >> y >> z;
