@@ -18,9 +18,10 @@ struct matrix {
         }
 
         T& at(size_t col_index) {
+#ifdef THROW
             if (col_index >= col_size)
                 throw std::out_of_range("Column index out of range.");
-
+#endif
             return (*this)[col_index];
         }
 
@@ -34,22 +35,25 @@ struct matrix {
     }
 
     row_reference at(size_t row) {
+#ifdef THROW
         if (row >= row_size)
             throw std::out_of_range("Row index out of range.");
-
+#endif
         return (*this)[row];
     }
 
     T& underlying(size_t index, bool check_flag = true) {
+#ifdef THROW
         if (index >= v.size() && check_flag)
-            throw std::out_of_range("Underlying index our of range.");
-
+            throw std::out_of_range("Underlying index out of range.");
+#endif
         return v[index];
     }
 
     matrix() = delete;
     matrix(std::vector<T> val, size_t rows, size_t cols = std::numeric_limits<size_t>::max())
         : v(val), row_size(rows), col_size(cols) {
+#ifdef THROW
         if (cols == std::numeric_limits<size_t>::max()) {
             auto col_res = val.size() / cols, rest = val.size() % cols;
             if (rest) {
@@ -65,6 +69,7 @@ struct matrix {
                                             "match the matrix's size.");
             }
         }
+#endif
     }
     matrix(size_t rows, size_t cols) : v(rows * cols), row_size(rows), col_size(cols) {}
     matrix(size_t n) : v(n * n) {}
