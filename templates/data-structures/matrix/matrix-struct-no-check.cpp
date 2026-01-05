@@ -1,3 +1,4 @@
+#include <iostream>
 #include <limits>
 #include <stdexcept>
 #include <vector>
@@ -8,36 +9,31 @@ struct matrix {
     size_t col_size;
 
     struct row_reference {
-        std::vector<T>& origVec;
-        size_t row_index;
-        size_t col_size;
+        matrix& o;
+        size_t idx;
 
         T& operator[](size_t col_index) {
-            return origVec[row_index + col_size * col_index];
+            return o[idx + o.col_size * col_index];
         }
-
-        T& at(size_t col_index) {
-            return (*this)[col_index];
-        }
-
-        row_reference() = delete;
-        row_reference(std::vector<T>& orig, size_t row, size_t cols)
-            : origVec(orig), row_index(row), col_size(cols) {}
+        row_reference(std::vector<T>& orig, size_t row)
+            : o(orig), idx(row) {}
     };
 
     row_reference operator[](size_t row) {
-        return row_reference(v, row, col_size);
+        return row_reference(v, row);
     }
 
-    row_reference at(size_t row) {
-        return (*this)[row];
+    void read() {
+        for (auto& i : v) {
+            std::cin >> i;
+        }
     }
 
-    T& underlying(size_t index, bool check_flag = true) {
-        return v[index];
+    static matrix create(size_t rows, size_t cols) {
+        matrix ret(rows, cols);
+        ret.read();
+        return matrix;
     }
-
-    matrix() = delete;
     matrix(std::vector<T> val, size_t rows, size_t cols = std::numeric_limits<size_t>::max())
         : v(val), col_size(cols) {
     }
