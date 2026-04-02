@@ -8,10 +8,16 @@ int main() {
     int n, m;
     cin >> n >> m;
     ll sum{};
+    ll a;
     for (int i = 0; i < m; i++) {
-        ll a;
         cin >> a;
         sum += a;
     }
-    
+    if (sum == n * m) {
+        cout << n << '\n';
+    } else if (sum > (m - 1) * n) {
+        cout << sum % n << '\n';
+    } else {
+        cout << "0\n";
+    }
 }
