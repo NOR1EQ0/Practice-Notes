@@ -8,6 +8,13 @@
             "cStandard": "c17"
         },
         {
+            "name": "Linux C++11",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "g++",
+            "cppStandard": "c++11",
+            "cStandard": "c11"
+        },
+        {
             "name": "Win32",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerPath": "g++",
