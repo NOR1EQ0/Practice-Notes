@@ -15,6 +15,12 @@
             "cStandard": "c11"
         },
         {
+            "name": "Linux GNU++20",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "g++",
+            "cppStandard": "gnu++20"
+        },
+        {
             "name": "Win32",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerPath": "g++",
