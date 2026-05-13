@@ -5,7 +5,7 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;using ll=long long;using ull=unsigned long long;",
-			"void solve() {$0}",
+			"static inline void solve() {$0}",
 			"int main() {",
 			"#ifdef ONLINE_JUDGE",
 			"ios::sync_with_stdio(0),cin.tie(0);",
