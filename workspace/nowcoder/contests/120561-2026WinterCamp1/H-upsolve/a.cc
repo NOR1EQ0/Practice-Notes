@@ -27,6 +27,7 @@ static inline void solve() {
 
     cout << dp[n] << '\n';
 }
+#define ONLINE_JUDGE
 int main() {
 #ifdef ONLINE_JUDGE
     ios::sync_with_stdio(0), cin.tie(0);
