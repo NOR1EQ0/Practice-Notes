@@ -19,7 +19,13 @@ static inline void solve() {
             ++wndl;
         }
         orval |= v[i];
+        ll sum = pref[i-1];
+        if (wndl >= 2) sum = (sum - pref[wndl - 2] + MOD) % MOD;
+        dp[i] = sum;
+        pref[i] = (dp[i] + pref[i-1]) % MOD;
     }
+
+    cout << dp[n] << '\n';
 }
 int main() {
 #ifdef ONLINE_JUDGE
