@@ -16,12 +16,12 @@ static inline void solve() {
     }
 }
 int main() {
-#define set(c, x) ansitable[c] = x
-    set('R', 1);
-    set('Y', 2);
-    set('G', 3);
-    set('B', 4);
-#undef set
+#define settable(c, x) ansitable[c] = x
+    settable('R', 1);
+    settable('Y', 2);
+    settable('G', 3);
+    settable('B', 4);
+#undef settable
 #ifdef ONLINE_JUDGE
     ios::sync_with_stdio(0),
         cin.tie(0);
