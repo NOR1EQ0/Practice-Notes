@@ -8,6 +8,8 @@
 			"static inline void solve() {$0}int main() {",
 			"#ifdef ONLINE_JUDGE",
 			"ios::sync_with_stdio(0),cin.tie(0);",
+			"#elif ${2:1}0",
+			"freopen(\"${3:1.in}\",\"rb\",stdin);",
 			"#endif","0;",
 			"ll t=1;${1:cin>>t};while(t--){solve();}}"
 		]
