@@ -14,7 +14,8 @@ static inline void solve() {
         if (threecnt > 0) {
             ans += threecnt * b;
             n %= 3;
-            
+        } else {
+            cout << min(a * n, b) << '\n';
         }
     }
 }
