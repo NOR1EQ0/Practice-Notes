@@ -2,6 +2,8 @@
 
 This repository stores solutions I have submitted to OJs and some other codes.
 
+Some AC solutions in the repository are not completely finished by me.
+
 ## Status / Record
 
 This is just for me to take a view.
