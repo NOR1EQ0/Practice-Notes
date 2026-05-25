@@ -25,7 +25,14 @@ static inline void solve() {
     //     cout << c << ' ' << len << '\n';
     // }
     int seg_cnt = segments.size();
+
+    ll base{};
+    for (auto& [c, len] : segments) {
+        base += len * len;
+    }
+
     ll maxdiff = LLONG_MIN;
+#if 0
     for (int i = 0; i < seg_cnt - 1; i++) {
         // swap(seg1,seg2)
 
@@ -34,7 +41,7 @@ static inline void solve() {
             maxdiff = max(maxdiff, (ll)1);
         }
 
-// calculate original
+        // calculate original
         ll original_sum = mypow(segments[i].len) + mypow(segments[i + 1].len);
 
         // ll arr[2] = {segments[i].len - 1, segments[i + 1].len - 1};
@@ -43,17 +50,11 @@ static inline void solve() {
         // ll diff = segments[i].len == 1 || segments[i+1].len == 1;
         ll new_sum = mypow(segments[i].len - 1) + mypow(segments[i + 1].len);
         if (i != 0) {
-
         }
 
         // maxdiff = max(maxdiff, diff);
     }
-
-    ll beauty{};
-    for (auto [_, len] : segments) {
-        beauty += len * len;
-    }
-    cout << beauty + maxdiff << '\n';
+#endif
 }
 int main() {
 #if defined(ONLINE_JUDGE) || 1
