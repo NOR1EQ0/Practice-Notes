@@ -9,6 +9,7 @@
                 "-g",
                 // "-Werror", // See warning as error
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -37,6 +38,7 @@
                 "-D_GLIBCXX_DEBUG",
                 "-fsanitize=undefined",
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -65,6 +67,7 @@
                 "-D_GLIBCXX_DEBUG",
                 "-fsanitize=undefined",
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -93,6 +96,7 @@
                 "-D_GLIBCXX_DEBUG",
                 "-fsanitize=undefined",
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -119,6 +123,7 @@
                 "-std=c++17",
                 "-pedantic",
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -148,6 +153,7 @@
                 "-D_GLIBCXX_DEBUG",
                 "-fsanitize=undefined",
                 "${file}",
+                "-pipe",
                 "-lm",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
@@ -172,6 +178,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-pipe",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
@@ -199,6 +206,7 @@
                 "-D_GLIBCXX_DEBUG",
                 // "-fsanitize=undefined",
                 "${file}",
+                "-pipe",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
