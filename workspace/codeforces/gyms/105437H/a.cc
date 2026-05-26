@@ -35,23 +35,35 @@ static inline void solve() {
 
     for (int i = 0; i < seg_cnt - 1; i++) {
         auto &L = segments[i], &R = segments[i + 1];
-        ll diff = 0;
+
+        ll old_region = mypow(L.len) + mypow(R.len);
+        bool lneigh = i - 1 >= 0,
+             rneigh = i + 2 < n;
+        if (lneigh) old_region += mypow(segments[i - 1].len);
+        if (rneigh) old_region += mypow(segments[i + 2].len);
+        ll new_region = 0;
+
         if (L.len == 1 && R.len == 1) {
-            if (i - 1 >= 0 && segments[i - 1].c == R.c) {
-                ll ldiff = mypow(segments[i - 1].len + 1) - mypow(segments[i - 1].len);
-                diff += ldiff;
+            if (lneigh)
+                new_region += mypow(segments[i - 1].len + (segments[i - 1].c == R.c));
+            if (rneigh)
+                new_region += mypow(segments[i + 2].len + (segments[i + 2].len == L.c));
+
+#if 0
+            if (lneigh && segments[i - 1].c == R.c) {
+                new_region += mypow(segments[i - 1].len + 1);
+            } else {
+                new_region += mypow(segments[i - 1].len);
             }
-            if (i + 2 < n && segments[i + 2].c == L.c) {
-                ll rdiff = mypow(segments[i + 2].len + 1) - mypow(segments[i + 2].len);
-                diff += rdiff;
+            if (rneigh && segments[i + 2].c == L.c) {
+                new_region += my
             }
+#endif
         } else if (L.len == 1 && R.len >= 2) {
-            
+
         } else if (L.len >= 2 && R.len == 1) {
         } else {
         }
-
-        maxdiff = max(maxdiff, diff);
     }
 
 #if 0
