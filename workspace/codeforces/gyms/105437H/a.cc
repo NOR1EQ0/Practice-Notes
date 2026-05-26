@@ -32,6 +32,28 @@ static inline void solve() {
     }
 
     ll maxdiff = LLONG_MIN;
+
+    for (int i = 0; i < seg_cnt - 1; i++) {
+        auto &L = segments[i], &R = segments[i + 1];
+        ll diff = 0;
+        if (L.len == 1 && R.len == 1) {
+            if (i - 1 >= 0 && segments[i - 1].c == R.c) {
+                ll ldiff = mypow(segments[i - 1].len + 1) - mypow(segments[i - 1].len);
+                diff += ldiff;
+            }
+            if (i + 2 < n && segments[i + 2].c == L.c) {
+                ll rdiff = mypow(segments[i + 2].len + 1) - mypow(segments[i + 2].len);
+                diff += rdiff;
+            }
+        } else if (L.len == 1 && R.len >= 2) {
+            
+        } else if (L.len >= 2 && R.len == 1) {
+        } else {
+        }
+
+        maxdiff = max(maxdiff, diff);
+    }
+
 #if 0
     for (int i = 0; i < seg_cnt - 1; i++) {
         // swap(seg1,seg2)
