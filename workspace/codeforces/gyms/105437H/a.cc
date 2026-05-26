@@ -44,25 +44,22 @@ static inline void solve() {
         ll new_region = 0;
 
         if (L.len == 1 && R.len == 1) {
-            if (lneigh)
-                new_region += mypow(segments[i - 1].len + (segments[i - 1].c == R.c));
+            if (lneigh) {
+                if (segments[i - 1].c == R.c)
+                    new_region += mypow(segments[i - 1].len + 1);
+                else
+                    new_region += mypow(segments[i - 1].len) + 1;
+            }
             if (rneigh)
-                new_region += mypow(segments[i + 2].len + (segments[i + 2].len == L.c));
-
-#if 0
-            if (lneigh && segments[i - 1].c == R.c) {
-                new_region += mypow(segments[i - 1].len + 1);
-            } else {
-                new_region += mypow(segments[i - 1].len);
-            }
-            if (rneigh && segments[i + 2].c == L.c) {
-                new_region += my
-            }
-#endif
+                if (segments[i + 2].len == L.c)
+                    new_region += mypow(segments[i + 2].len + (segments[i + 2].len == L.c));
+                else
+                    new_region += mypow(segments[i + 2].len) + 1;
         } else if (L.len == 1 && R.len >= 2) {
 
         } else if (L.len >= 2 && R.len == 1) {
-        } else {
+        } else /* if (L.len >= 2 && R.len >= 2) */ {
+            
         }
     }
 
