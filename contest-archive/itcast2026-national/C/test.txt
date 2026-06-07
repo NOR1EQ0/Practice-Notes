@@ -1,0 +1,18 @@
+abc ->
+
+bac -> abc / bca
+
+acb -> abc / cab
+
+aab -> ingoing
+
+baa (2) / aab (2/0)
+
+abb ->
+
+bba (2) / abb (2/0)
+
+aba -> clear
+
+baa (1/2) / aab (1/2)
+    
