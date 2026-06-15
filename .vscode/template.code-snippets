@@ -19,7 +19,9 @@
 		"prefix": "leetcode",
 		"body": [
 			"#include<bits/stdc++.h>",
-			"using namespace std;using ll=long long;using ull=unsigned long long;"
+			"using namespace std;",
+			"struct ListNode {int val;ListNode *next;ListNode() : val(0), next(nullptr) {}ListNode(int x) : val(x), next(nullptr) {}ListNode(int x, ListNode *next) : val(x), next(next) {}};",
+			"class Solution {using ll=long long;using ull=unsigned long long;public:$0};"
 		]
 	}
 }
