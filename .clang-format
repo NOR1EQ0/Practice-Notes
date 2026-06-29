@@ -4,7 +4,6 @@ IndentWidth: 4
 UseCRLF: false
 UseTab: Never
 IndentCaseLabels: true
-CaseIndentWidth: 4
 NamespaceIndentation: All
 ColumnLimit: 0
 AllowShortIfStatementsOnASingleLine: Always
@@ -18,13 +17,10 @@ SpacesInParentheses: false
 SpacesInSquareBrackets: false 
 SpaceInEmptyParentheses: false 
 SpaceBeforeAssignmentOperators: true
-SpaceAfterAssignmentOperators: true
 SpaceBeforeRangeBasedForLoopColon: true
-SpaceAfterRangeBasedForLoopColon: true
 SpacesInAngles: false 
 SpacesInContainerLiterals: false
 SpacesInCStyleCastParentheses: false 
-SpacesInTrailingComments: true 
 IncludeBlocks: Regroup
 DerivePointerAlignment: false 
 PointerAlignment: Left
