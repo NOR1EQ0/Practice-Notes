@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+# ============================================================================
+# Pre-commit Hook
+# Validates .clang-format configuration and Windows-safe filenames.
+# All checks run to completion; commit is rejected only if any check fails.
+# ============================================================================
+
+FAILED=0
+
+# ----------------------------------------------------------------------------
+# Check 1: Validate .clang-format configuration
+# ----------------------------------------------------------------------------
+CLANG_FORMAT_CONFIG=".clang-format"
+
+if [ -f "$CLANG_FORMAT_CONFIG" ]; then
+    echo "[pre-commit] Validating $CLANG_FORMAT_CONFIG ..."
+    # Capture stderr directly; stdout is discarded as we only care about validity
+    CLANG_FORMAT_ERR="$(clang-format --dump-config 2>&1 > /dev/null)"
+    CLANG_FORMAT_RC=$?
+    if [ "$CLANG_FORMAT_RC" -ne 0 ]; then
+        echo "[pre-commit] ERROR: $CLANG_FORMAT_CONFIG is invalid."
+        # Output the raw error from clang-format directly
+        printf '%s\n' "$CLANG_FORMAT_ERR" | sed 's/^/             /'
+        FAILED=1
+    else
+        echo "[pre-commit] OK: $CLANG_FORMAT_CONFIG is valid."
+    fi
+else
+    echo "[pre-commit] SKIP: $CLANG_FORMAT_CONFIG not found in repository root."
+fi
+
+# ----------------------------------------------------------------------------
+# Check 2: Validate staged filenames for Windows compatibility
+# Windows forbids: \ / : * ? " < > |
+# Also forbid trailing dots/spaces and reserved device names.
+# ----------------------------------------------------------------------------
+echo "[pre-commit] Checking staged filenames for Windows compatibility ..."
+
+# Reserved device names on Windows (case-insensitive, with or without extension)
+RESERVED_NAMES="CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9]"
+
+INVALID_FILES=""
+
+while IFS= read -r -d '' file; do
+    basename="$(basename "$file")"
+
+    # Check for forbidden characters in the full path
+    if printf '%s' "$file" | grep -qE '[\\:*?"<>|]'; then
+        INVALID_FILES="${INVALID_FILES}  - ${file} (contains forbidden character)"$'\n'
+        continue
+    fi
+
+    # Check for trailing dot or space in any path component
+    if printf '%s' "$file" | grep -qE '(^|/)[^/]*[. ](/|$)'; then
+        INVALID_FILES="${INVALID_FILES}  - ${file} (trailing dot or space in path component)"$'\n'
+        continue
+    fi
+
+    # Check for reserved device names (with or without extension)
+    name_no_ext="${basename%%.*}"
+    if printf '%s' "$name_no_ext" | grep -qiE "^(${RESERVED_NAMES})$"; then
+        INVALID_FILES="${INVALID_FILES}  - ${file} (reserved Windows device name)"$'\n'
+        continue
+    fi
+done < <(git diff --cached --name-only -z --diff-filter=ACMR)
+
+if [ -n "$INVALID_FILES" ]; then
+    echo "[pre-commit] ERROR: The following staged files are not Windows-compatible:"
+    printf '%s' "$INVALID_FILES"
+    FAILED=1
+else
+    echo "[pre-commit] OK: All staged filenames are Windows-compatible."
+fi
+
+# ----------------------------------------------------------------------------
+# Final verdict
+# ----------------------------------------------------------------------------
+echo ""
+if [ "$FAILED" -ne 0 ]; then
+    echo "[pre-commit] REJECTED: One or more checks failed. Commit aborted."
+    exit 1
+fi
+
+echo "[pre-commit] PASSED: All checks passed. Proceeding with commit."
+exit 0
