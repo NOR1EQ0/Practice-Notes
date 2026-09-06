@@ -5,4 +5,5 @@
     "C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": false,
     "C_Cpp.inlayHints.referenceOperator.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "cph.language.cpp.Args": "-std=gnu++20 -Wall -Wextra",
 }
