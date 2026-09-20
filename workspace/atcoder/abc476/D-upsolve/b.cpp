@@ -6,6 +6,16 @@ constexpr ll MOD = 998244353;
 static inline void solve() {
     ll n, m, k, x, y;
     cin >> n >> m >> k >> x >> y;
+    vector<ll> a(n), b(m);
+    for (auto& i : a) cin >> i;
+    for (auto& i : b) cin >> i;
+    ranges::sort(a), ranges::sort(b);
+    for (int i = 1; i < n; i++) a[i] += a[i - 1];
+    for (int i = 1; i < n; i++) b[i] += b[i - 1];
+    
+
+#if 0 
+
     vector<pair<ll, int>> v(n + m);
     fill(v.begin(), v.begin() + n, pair<ll, int>(0, 1));
     fill(v.begin() + n, v.end(), pair<ll, int>(0, 2));
@@ -18,26 +28,41 @@ static inline void solve() {
 
     ll ans = 0;
     // 1 for dessert, 2 for drink
-    for (auto& [price, type] : v) {
+    for (auto&& [price, type] : v) {
+        price -= type;
         if (type == 1) {
             if (x >= price) x -= price;
             else {
                 auto kconsume = price / k,
                      restcoin = price % k;
                 if (x >= restcoin) {
+                    if (y - kconsume < 0) {
+                        continue;
+                    }
                     x -= restcoin;
                 } else {
                     kconsume++;
+                    if (y - kconsume < 0) {
+                        continue;
+                    }
                     x += (kconsume * k - price);
                 }
                 y -= kconsume;
             }
         } else {
             auto kconsume = price / k + (bool)price % k;
+            if (y - kconsume < 0) {
+                continue;
+            } else {
+                y -= kconsume;
+                x += (kconsume * k - price);
+            }
         }
+        kbalance = y * k;
+        ans++;
     }
+    cout << ans << '\n';
 
-#if 0 
     for (auto& i : a) cin >> i;
     for (auto& i : b) cin >> i;
     ranges::sort(a), ranges::sort(b);
