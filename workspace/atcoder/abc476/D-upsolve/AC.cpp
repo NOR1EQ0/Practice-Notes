@@ -2,17 +2,45 @@
 using namespace std;
 using ll = long long;
 using ull = unsigned long long;
+using PLL = pair<ll, ll>;
 constexpr ll MOD = 998244353;
 static inline void solve() {
     ll n, m, k, x, y;
     cin >> n >> m >> k >> x >> y;
-    vector<ll> a(n), b(m);
-    for (auto& i : a) cin >> i;
-    for (auto& i : b) cin >> i;
+    vector<ll> a(n + 1), b(m + 1), bk(m + 1);
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    for (int i = 1; i <= m; i++) {
+        cin >> b[i];
+    }
     ranges::sort(a), ranges::sort(b);
-    for (int i = 1; i < n; i++) a[i] += a[i - 1];
-    for (int i = 1; i < n; i++) b[i] += b[i - 1];
-    
+    for (int i = 1; i <= m; i++) {
+        bk[i] = (b[i] / k + (bool)(b[i] % k)) + bk[i - 1];
+        b[i] += b[i - 1];
+    }
+    for (int i = 1; i <= n; i++) {
+        a[i] += a[i - 1];
+    }
+
+    ll ans = 0;
+    for (int i = 0; i <= m; i++) {
+        // i: pick i drinks
+        ll balance = x + y * k - b[i];
+        ll yafter = y - bk[i];
+        if (balance < 0 || yafter < 0) break;
+
+        auto it = ranges::upper_bound(a, balance);
+        if (it != a.end()) {
+            ans = max<ll>(ans, it - a.begin() - 1 + i);
+        } else {
+            ans = max<ll>(ans, i + n);
+        }
+
+        // ll dessert = it - a.begin() - 1;
+        // ans = max(ans, dessert + i);
+    }
+    cout << ans << '\n';
 
 #if 0 
 
